@@ -1,0 +1,20 @@
+<!--pages/experts_detail/idnex.wxml-->
+<view class="container">
+  <van-nav-bar class="bg" title="专家详情" left-text="返回" left-arrow />
+  <view class="experts">
+    <view class="exper-top flex-ctr">
+      <image src="../../images/p4.png" style="width:72px;height:72px;border-radius:50%;"></image>
+      <view class="exper-info">
+        <view class="lft">
+          <view class="name">简称：古方</view>
+          <view>类别：古代书籍</view>
+        </view>
+        <view>鉴赏次数：100次</view>
+      </view>
+    </view>
+    <view class="title com-bot-border">简介：</view>
+    <view class="info com-bot-border">
+      古方老师为....
+    </view>
+  </view>
+</view>

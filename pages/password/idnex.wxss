@@ -1,0 +1,70 @@
+/* pages/password/idnex.wxss */
+.password-input-box{
+  margin: auto;
+  /* position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1002; */
+  border-radius: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 70rpx;
+  box-sizing: border-box;
+  height: 100rpx;
+}
+
+.input-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input{
+ height: 100rpx;
+  width: 100%;
+  border: 1px solid #893100;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;   
+ text-align: center;
+}
+
+.input>view:nth-child(6){
+   border-right: none;
+}
+
+.input>view{
+  height: 100%;
+  width: 16.6%;
+  border-right: 1px solid #893100;
+}
+
+.password-input{  
+  width: 0;  
+  height: 0;  
+} 
+.header{
+  text-align: center;
+  margin-top: 50px;
+  font-size: 16px;
+}
+.btn{
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  background-color: #893100;
+  border-radius: 5px;
+  margin: 50px auto;
+}
+.forwat{
+  text-align: right;
+  padding-right: 70rpx;
+  color: #893100;
+}

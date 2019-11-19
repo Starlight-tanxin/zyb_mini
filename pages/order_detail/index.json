@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-nav-bar": "../../dist/nav-bar/index",
+    "van-icon": "../../dist/icon/index",
+    "van-popup": "../../dist/popup/index",
+    "van-field": "../../dist/field/index"
+  },
+  "navigationBarTitleText": "订单详情"
+}

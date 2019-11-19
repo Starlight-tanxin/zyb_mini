@@ -1,0 +1,26 @@
+<!--pages/clockIn/index.wxml-->
+<view class="container">
+   <view>
+    <van-search value="{{ value }}" bind:search="search" bind:change="setVal" placeholder="请输入您的姓氏进行打卡"  use-action-slot>
+      <view slot="action" bind:tap="search">搜索</view>
+    </van-search>
+   </view>
+   <!-- 打卡区 -->
+   <view class="clock-area">
+      <view class='line'>
+        <van-row >
+          <van-col span="2" wx:for="{{serchRes}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="gotoDetail">
+            <view class="xs">{{item.name}}</view>
+          </van-col>
+        </van-row>
+      </view>
+      
+      
+   </view>
+    <!-- 姓氏起源 -->
+    <view class='gotoclock' bindtap="gotoCollection">
+      <text>查看姓氏源请先进官方收藏</text>
+      <text class='clor'>现在就去  >></text> 
+    </view>
+
+</view>

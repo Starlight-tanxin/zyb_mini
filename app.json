@@ -1,0 +1,95 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/shop_detail/index",
+    "pages/order/index",
+    "pages/cart/index",
+    "pages/clockIn/index",
+    "pages/ranking/index",
+    "pages/rank_detail/idnex",
+    "pages/message/index",
+    "pages/rank/index",
+    "pages/mark_sure_order/index",
+    "pages/collection/idnex",
+    "pages/address/index",
+    "pages/add_address/index",
+    "pages/all_book/index",
+    "pages/order_detail/index",
+    "pages/profile/index",
+    "pages/account-detail/index",
+    "pages/top_up/index",
+    "pages/withdrawal/index",
+    "pages/profile_set/index",
+    "pages/after-sales/index",
+    "pages/after-sales-detail/index",
+    "pages/repair/index",
+    "pages/add-repair/index",
+    "pages/repair-experts/index",
+    "pages/wait/idnex",
+    "pages/pay-sucess/index",
+    "pages/repair_sure/index",
+    "pages/order_detail_1/idnex",
+    "pages/repair_records/index",
+    "pages/order_detail_2/index",
+    "pages/experts_detail/idnex",
+    "pages/appreciation/index",
+    "pages/appreciation_detail/index",
+    "pages/appreciation_detail_1/idenx",
+    "pages/appreciation_res/index",
+    "pages/arrre_repair/index",
+    "pages/common_loop/index",
+    "pages/nav_list/index",
+    "pages/order_wl_detail/index",
+    "pages/password/idnex",
+    "pages/password1/index",
+    "pages/set_phone/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#893100",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "backgroundColorTop": "#893100"
+  },
+  "tabBar": {
+    "color": "#8e8e8e",
+    "selectedColor": "#893100",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "./images/home.png",
+        "selectedIconPath": "./images/home_active.png"
+      },
+      {
+        "pagePath": "pages/arrre_repair/index",
+        "text": "鉴赏",
+        "iconPath": "./images/look.png",
+        "selectedIconPath": "./images/look_active.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "书城",
+        "iconPath": "./images/book.png",
+        "selectedIconPath": "./images/book_active.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "./images/cart.png",
+        "selectedIconPath": "./images/cart_active.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "./images/mine.png",
+        "selectedIconPath": "./images/mine_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

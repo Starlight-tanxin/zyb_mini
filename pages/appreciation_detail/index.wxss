@@ -1,0 +1,79 @@
+/* pages/appreciation_detail/index.wxss */
+.top{
+  padding: 25px 20px;
+}
+.p{
+  margin-bottom: 20px;
+}
+.tip{
+  margin-bottom: 15px;
+}
+.cont{
+  min-height: 150px;
+}
+.add-btn{
+  text-align: center;
+}
+.add-btn>.ti{
+  margin-top: 5px;
+  font-size: 8px;
+  color: #8e8e8e;
+}
+
+.pop{
+  padding: 15px;
+}
+.pop-title{
+  font-size: 14px;
+  color: #000;
+  font-weight: 700;
+}
+.pop>.chose{
+  margin: 10px 0;
+  width: 75%;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 12px;
+  font-size: 10px;
+  color: #8e8e8e;
+  border: 1px solid #893100;
+  border-radius: 5px;
+  position: relative;
+}
+.dsj{
+  right: 10px;
+  top: 12px;
+  border-top-color: #893100;
+}
+.pop>textarea{
+  margin: 15px 0;
+  height: 60px;
+  padding: 15px 12px;
+  border: 1px solid #893100;
+}
+.pop>.btn-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pop>.btn-box>.btn{
+  width: 40px;
+  padding: 3px 6px;
+  color: #fff;
+  font-size: 10px;
+  background-color: #893100;
+  text-align: center;
+  border-radius:12px;
+  margin-right: 30px;
+}
+.popbox{
+  padding: 20px 30px;
+
+}
+.popbox>.txt{
+  line-height: 30px;
+  text-align: center;
+}
+.tap{
+  background: #893100;
+}

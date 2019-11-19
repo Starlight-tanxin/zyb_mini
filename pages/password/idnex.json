@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-cell": "../../dist/cell/index",
+    "van-cell-group": "../../dist/cell-group/index",
+    "van-field": "../../dist/field/index",
+    "van-button": "../../dist/button/index"
+  },
+  "navigationBarTitleText": "支付密码"
+}

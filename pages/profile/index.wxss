@@ -1,0 +1,50 @@
+/* pages/profile/index.wxss */
+
+.top{
+  background-color:#893100;
+  padding: 20px 15px;
+  height: 80px; 
+  box-sizing: border-box;
+}
+
+.top > .user-info >.rgt{
+  margin-left: 10px;
+  color: #fff;
+}
+.top > .user-info >.rgt>.name{
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.top > .user-info >.rgt>.name>text{
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: red;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-bottom: 2px;
+}
+.account{
+ padding: 13px 0;
+}
+.account-btn{
+  width: 80px;
+  height: 25px;
+  font-size: 10px;
+  line-height: 25px;
+  color: #fff;
+  text-align: center;
+  background-color: #893100;
+  border-radius: 15px;
+  margin-bottom: 3px;
+}
+.tip{
+  margin: 50px auto;
+  color: #8e8e8e;
+  text-align: center;
+  width: 100%;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

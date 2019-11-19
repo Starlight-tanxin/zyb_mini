@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-nav-bar": "../../dist/nav-bar/index",
+    "van-row": "../../dist/row/index",
+    "van-col": "../../dist/col/index",
+    "van-popup": "../../dist/popup/index"
+  },
+  "navigationBarTitleText": "鉴赏详情"
+}

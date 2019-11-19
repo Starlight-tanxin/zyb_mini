@@ -1,0 +1,100 @@
+<!--pages/shop_detail/index.wxml-->
+<view class="container">
+  <view class='swiper'>
+    <swiper style='width:100%;height:100%;'
+      ndicator-dots="{{indicatorDots}}"
+      indicator-color="rgb(142,142,140)"
+    >
+      <block wx:for="{{swiper}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item">
+            <image src="{{item}}" bindtap="priveImg" data-url="{{item}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='shop-box'>
+    <view class='lft'>
+      书籍名称
+    </view>
+    <view class='rgt'>
+      <view class='name'>{{result.goodsName}}</view>
+    </view>
+  </view>
+  <view class='shop-box'>
+    <view class='lft'>
+      书籍描述
+    </view>
+    <view class='rgt'>
+      <view class='shop-desc'>{{result.bookDesc}}</view>
+    </view>
+  </view>
+  <view class='shop-box'>
+    <view class='lft'>
+      价格
+    </view>
+    <view class='rgt'>
+      <view class='price' wx:if="{{!result.isCollection}}" style="color:#893100;font-weight:700;">￥{{result.goodsPrice}} 元</view>
+      <view class='price' wx:if="{{result.isCollection}}">暂不出售</view>
+    </view>
+  </view>
+  <view class='shop-box'>
+    <view class='lft'>
+      作者
+    </view>
+    <view class='rgt'>
+      <view class='name'>{{result.author}}</view>
+    </view>
+  </view>
+  <view class='shop-box'>
+    <view class='lft'>
+      年代
+    </view>
+    <view class='rgt'>
+      <view class='name'>{{result.yearName}}</view>
+    </view>
+  </view>
+  <view class='shop-box' wx:if="{{!result.isCollection}}">
+    <view class='lft'>
+      运费
+    </view>
+    <view class='rgt'>
+      <view class='name' style="color:#893100;font-weight:700;">￥10元</view>
+    </view>
+  </view>
+  <view class='shop-box'>
+    <view class='lft'>
+      库存
+    </view>
+    <view class='rgt'>
+      <view class='name'>{{result.bookNum}}</view>
+    </view>
+  </view>
+  <view class='shop-box'>
+    <view class='lft'>
+      上书时间
+    </view>
+    <view class='rgt'>
+      <view class='name'>{{result.createdTime}}</view>
+    </view>
+  </view>
+
+  <view class="btn" wx:if="{{result.isCollection}}">
+      联系客服
+  </view>
+  <view class='footer' wx:if="{{!result.isCollection}}">
+    <view class='cor'>
+      <van-icon name="../../images/kefu.png" custom-style="width:25px;height:25px;"/>
+      <view class='title'>客服</view>
+    </view>
+    <view class='cor' bindtap="gotoCart">
+        <van-icon name="../../images/cart.png" info="{{cartNum}}" custom-style="width:25px;height:25px;"/>
+        <view class='title'>购物车</view>
+    </view>
+    <view class='fot-btn'>
+      <view class='lft' bindtap="addCart">加入购物车</view>
+      <view class='rgt' bindtap="gotoBuy">立即购买</view>
+    </view>
+  </view>
+</view>

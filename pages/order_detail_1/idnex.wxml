@@ -1,0 +1,18 @@
+<!--pages/order_detail_1/idnex.wxml-->
+<view class="container">
+  <van-nav-bar class="bg" title="订单详情" left-text="返回" left-arrow />
+  <view class="cont">
+    <view class="item">
+      订单号：199
+    </view>
+    <view class="item">
+      订单状态：处理中,请耐心等待
+    </view>
+    <view class="item">
+      支付状态：未支付
+    </view>
+    <view class="item">
+     修复开始时间：2019-10-23
+    </view>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<!--pages/repair-experts/index.wxml-->
+<view class='container'>
+  <view class='repair-cont'>
+    <van-radio-group value="{{ radio }}" bind:change="onChange">
+      <!-- <van-radio name="1">单选框 1</van-radio> -->
+      <view class='repair-item flex-ctr com-bot-border' wx:for="{{list}}" wx:key="{{item.id}}">
+        <van-radio name="{{index+1}}"></van-radio>
+        <view class='ctr'>
+          <image src='{{item.proImg}}' style='width:70px;height:70px ;margin-right:20px; margin-left:3px;'></image>
+          <view class='cont'>
+            <view>{{item.realname}}</view>
+            <view>{{item.proDetail}}</view>
+          </view>
+        </view>
+        <view >
+          <text>￥{{item.price}}</text>
+          <!-- <image wx:if="{{index == 0}}" src='../../images/fire.png'  style='width:20px;height:30px;'></image> -->
+        </view>
+      </view>
+      </van-radio-group>
+   
+      
+
+  </view>
+  <view class='btn' bindtap="save">发起修复申请</view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-search": "../../dist/search/index",
+    "van-nav-bar": "../../dist/nav-bar/index",
+    "van-row": "../../dist/row/index",
+    "van-col": "../../dist/col/index"
+  },
+  "navigationBarTitleText": "姓氏打卡"
+}

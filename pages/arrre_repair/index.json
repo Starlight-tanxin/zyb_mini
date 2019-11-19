@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-nav-bar": "../../dist/nav-bar/index",
+    "van-icon": "../../dist/icon/index"
+  },
+  "navigationBarTitleText":"鉴赏"
+ 
+}

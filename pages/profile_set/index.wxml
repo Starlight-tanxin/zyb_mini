@@ -1,0 +1,22 @@
+<!--pages/profile_set/index.wxml-->
+<view class='container'>
+  <view class='profile-set'>
+    <view class="com-bot-border">
+      <van-cell border="{{false}}" title="名称" value="{{result.nickname}}" />
+    </view>
+    <view class="com-bot-border flex-ctr cs">
+        <view>头像</view>
+        <!-- <van-icon slot="right-icon" name="../../images/p4.png" class="custom-icon" size='30px'/> -->
+        <image src='{{result.headImg}}' style='width:30px;height:30px;'></image>
+      
+    </view>
+
+    <view class="com-bot-border ts" >
+      <van-cell border="{{false}}" title="手机号码" url="../set_phone/index" is-link />
+    </view>
+    <view class="com-bot-border">
+      <van-cell border="{{false}}" title="支付密码" url="../password/idnex"  is-link/>
+    </view>
+
+  </view>
+</view>

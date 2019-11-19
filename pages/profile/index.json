@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-icon": "../../dist/icon/index",
+    "van-cell": "../../dist/cell/index",
+    "van-grid": "../../dist/grid/index",
+    "van-grid-item": "../../dist/grid-item/index",
+    "van-dialog": "../../dist/dialog/index"
+  },
+  "navigationBarTitleText": "我的"
+}

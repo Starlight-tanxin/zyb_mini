@@ -1,0 +1,41 @@
+/* pages/cart/index.wxss */
+
+.shop-item{
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+.shop-info{
+  flex: 1;
+  margin-left: 15px;
+}
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.price{
+  color: #8d0200;
+  margin-right: 20px;
+}
+.checkall{
+  margin-left: 15px;
+}
+.main{
+  margin-bottom: 60px;
+}
+
+/* 修改样式 */
+.van-card{
+  background-color: #fff !important;
+}
+.van-card__thumb{
+  height: 112px !important;
+  width: 112px !important;
+}
+.cart-none{
+  text-align: center;
+  color: #8e8e8e;
+  margin: 100px auto;
+}

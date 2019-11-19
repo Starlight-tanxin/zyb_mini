@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-nav-bar": "../../dist/nav-bar/index",
+    "van-radio": "../../dist/radio/index",
+    "van-radio-group": "../../dist/radio-group/index",
+    "van-icon": "../../dist/icon/index"
+  },
+  "navigationBarTitleText": "收货地址"
+}

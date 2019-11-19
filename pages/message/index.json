@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-nav-bar": "../../dist/nav-bar/index"
+  },
+  "navigationBarTitleText": "消息"
+}

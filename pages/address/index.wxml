@@ -1,0 +1,26 @@
+<!--pages/address/index.wxml-->
+<view class="container">
+
+  <view class='address'>
+    <van-radio-group value="{{ radio }}" bind:change="onChange">
+      <view class='address-item flex-ctr' wx:for="{{address}}" wx:key="{{item.id}}">
+        <van-radio name="{{index+1}}">
+        </van-radio>
+        <view class='address-info'>
+          <view class='title'>
+            {{item.realname}} {{item.mobile}}
+            <text class='txt' wx:if="{{item.isDefault}}">默认</text>
+          </view>
+          <view class='desc'>{{item.addressDetail}}</view>
+        </view>
+        <!-- <van-icon name="edit" size='20px;' /> -->
+        <van-icon name="delete" bindtap="delItem" data-id="{{item.id}}" size='20px;' style="margin-left:8px;"/>
+      </view>
+    </van-radio-group>
+  </view>
+
+  <view class='btn'>
+    <navigator url="../add_address/index">+新建收获地址</navigator>
+    
+  </view>
+</view>

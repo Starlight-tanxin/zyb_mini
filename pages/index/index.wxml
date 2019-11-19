@@ -1,0 +1,91 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='wrap-bg'>
+    <view class='title'>图书商城</view>
+     <navigator url="../nav_list/index">
+      <view class='search'>
+        <van-icon name="search" size="15px" custom-style='margin-top:6px;' />
+        <text class='txt' style='margin-top:-3px;'>搜索书籍名称、作者名称</text>
+      </view>
+     </navigator>
+  </view>
+  <view class='swiper'>
+    <swiper style='width:100%;height:100%;'>
+      <block wx:for="{{result.bannerList}}" wx:key="{{item.goodsBookId}}">
+        <swiper-item>
+          <view class="swiper-item" >
+            <image src="{{item.mainImg}}" style="width:100%;height:100%;" data-id="{{item.goodsBookId}}" bindtap="gotoShopDeatil"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- <view class='border1px'></view> -->
+
+  <!-- 内容区 -->
+  <view class='pancel' style=' margin-top: 200rpx;'>
+    <view class='pancel-title'>
+    <navigator url="../collection/idnex">官方收藏>></navigator>
+    </view>
+    <view class='pancel-cont'>
+      <van-row gutter="30">
+        <van-col span="6" wx:for="{{result.collectionList}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="gotoShopDeatil">
+          <view class='pacel-item'>
+            <view class='top'>
+              <image src="{{item.mainImg}}" style="width:100%;height:100%;"></image>
+            </view>
+            <view class='bottom'>{{item.goodsName}}</view>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
+  </view>
+  <view class='border1px'></view>
+  <view class='pancel'>
+    <view class='pancel-title'>
+    <navigator url="../all_book/index"> 全部书籍>></navigator>
+    </view>
+    <view class='pancel-cont'>
+      <van-row gutter="30">
+        <van-col span="6" wx:for="{{result.bookList}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="gotoShopDeatil">
+          <view class='pacel-item'>
+            <view class='top'>
+            <image src="{{item.mainImg}}" style="width:100%;height:100%;"></image>
+            </view>
+            <view class='bottom'>{{item.goodsName}}</view>
+          </view>
+        </van-col>
+       
+      </van-row>
+    </view>
+  </view>
+  <view class='border1px'></view>
+  <!-- 好书推荐 -->
+  <view class="recom-box">
+    <view class='recom-title'>
+      <view class='liner'></view>
+      <view class='title'>好书推荐</view>
+      <view class='liner'></view>
+    </view>
+
+    <view class='recom-cont'>
+      <van-row gutter="15">
+        <van-col span="12" wx:for="{{result.recommendGoods}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="gotoShopDeatil">
+          <view class='recom-shop'>
+            <view class='lft'>
+              <image src='{{item.mainImg}}'></image>
+            </view>
+            <view class='rgt'>
+              <view class='title'>{{item.goodsName}}</view>
+              <view class='desc'>{{item.bookDesc}}</view>
+              <view class='price'>￥{{item.goodsPrice}}元</view>
+            </view>
+          </view>
+        </van-col>
+        </van-row>
+    </view>
+
+    
+  </view>
+</view>
+ 

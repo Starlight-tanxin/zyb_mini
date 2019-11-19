@@ -1,0 +1,15 @@
+<!--pages/set_phone/index.wxml-->
+
+<van-cell border="{{ false }}">
+  <van-field
+    value="{{ value }}"
+    placeholder="请输入手机号"
+    border="{{ true }}"
+    type="number"
+    bind:change="onChange"
+  />
+</van-cell>
+<view style="text-align:center;margin:60rpx;">
+  <van-button bind:click="setPhone" color="#893100;"  size="small" type="primary">确定</van-button>
+</view>
+ 

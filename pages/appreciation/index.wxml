@@ -1,0 +1,31 @@
+<!--pages/appreciation/index.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="header com-bot-border">
+      <van-row>
+        <van-col span="2">序号</van-col>
+        <van-col span="5">日期</van-col>
+        <van-col span="4">专家</van-col>
+        <van-col span="5">专家回复</van-col>
+         <van-col span="4">状态</van-col>
+        <van-col span="4"></van-col>
+      </van-row>
+    </view>
+    <view class="records">
+      <van-row wx:for="{{list}}" wx:key="{{item.id}}">
+        <van-col span="2" custom-class="records-item">{{index+1}}</van-col>
+        <van-col span="5" custom-class="records-item">{{item.createdTime}}</van-col>
+        <van-col span="4" custom-class="records-item">{{item.userProId}}</van-col>
+        <van-col span="5" custom-class="records-item">{{item.proReplyMsg}}</van-col>
+         <van-col span="4" custom-class="records-item">
+          {{item.identify == 1 ? '创建鉴赏' : item.identify == 2? '提交鉴赏' : item.identify == 3?'鉴赏完成':item.identify == 4?'退回鉴赏':'未知'}}
+         </van-col>
+        <van-col span="4" custom-class="records-item">
+          <view class="btn" data-id="{{item.id}}" bindtap="gotoDetail">详情</view>
+        </van-col>
+      </van-row>
+    </view>
+    
+  </view>
+</view>
+

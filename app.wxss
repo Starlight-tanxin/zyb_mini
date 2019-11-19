@@ -1,0 +1,73 @@
+/**app.wxss**/
+@import "./dist/common/index.wxss";
+page{
+  font-size: 12px;
+  box-sizing: border-box;
+}
+.navigator-hover{
+ background-color: transparent;
+}
+.ellipsis{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.ellipsis-2{
+  display: -webkit-box;  
+  -webkit-line-clamp: 2;  
+  -webkit-box-orient: vertical;  
+}
+.ellipsis-3{
+  display: -webkit-box;  
+  -webkit-line-clamp: 3;  
+  -webkit-box-orient: vertical;  
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.flex-c{
+  display: flex;
+  align-items: center;
+}
+.flex-ctr{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.border1px{
+  height: 1px;
+  width: 100%;
+  background: #893100;
+}
+.com-bot-border{
+  border-bottom: 1px solid #893100;
+}
+.dsj{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-top-color: #8e8e8e ;
+}
+.com-btn{
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  background-color: #893100;
+  border-radius: 5px;
+  margin: 50px auto;
+}
+.no-data{
+  text-align: center;
+  color: #8e8e8e;
+  line-height: 82px;
+}
+.van-checkbox{
+  align-items: center;
+}

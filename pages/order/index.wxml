@@ -1,0 +1,251 @@
+
+<van-tabs active="{{actived}}" swipe-threshold='5' sticky bind:change="change">
+  <van-tab title="全部" name="1">
+    <view class='orders'>
+      <view wx:for="{{allpayment}}" wx:key="{{item.id}}" bindtap="gotoShopDetail" data-id="{{item.id}}">
+        <view class=' order-title'>
+          <text class='left'>{{item.cretaedTime}}</text>
+          <text class='right' style='color:#8e8e8e;'>{{item.newOrderState}}</text>
+        </view>
+        <view class='order-cont'>
+          <view class='shop' wx:for='{{item.orderDetails}}' wx:for-item="ite" wx:for-index="idx" wx:key="{{ite.id}}">
+            <view class='img'>
+              <image src='{{ite.mainImg}}'></image>
+            </view>
+            <view class='info'>
+              <view class='lft'>
+                <view class='title'>{{ite.goodsName}}</view>
+                <view class='desc'>
+                  {{ite.bookDesc}}
+                </view>
+              </view>
+              <view class="rgt">
+                ￥{{ite.goodsPrice}}元
+              </view>
+            </view>
+          </view>
+          <view class='tip'>
+            共{{ittm.orderDetails.length}}件 应付金额：
+            <text class='price'> ￥{{item.orderPrice}}元</text>
+          </view>
+          <view class='btn-box' wx:if="{{item.orderState == 1}}">
+            <view class='btn btn2' catchtap="orderPre" data-id="{{item.id}}">立即付款</view>
+            <view class='btn1 btn' catchtap="orderCancel" data-id="{{item.id}}" data-index="{{index}}">取消订单</view>
+          </view>
+          <view class='btn-box' wx:if="{{item.orderState == 2}}">
+            <view class='btn btn2' catchtap="msgRmind" data-orderNo="{{item.orderNo}}">提醒发货</view>
+            <!-- <view class='btn1 btn'></view> -->
+          </view>
+          <view class='btn-box' wx:if="{{item.orderState == 3}}">
+            <view class='btn btn2' catchtap="orderReceipt" data-id="{{item.id}}" data-index="{{index}}">确认收获</view>
+            <view class='btn1 btn' catchtap="appReturn" data-id="{{item.id}}" data-index="{{index}}">申请退款</view>
+            <view class='btn1 btn' catchtap="gotoIstics" data-id="{{item.id}}">查看物流</view>
+          </view>
+          <view class='btn-box' wx:if="{{item.orderState == 4}}">
+            <view class='btn btn2' catchtap="gotoShopDetail" data-id="{{item.id}}">评价</view>
+            <!-- <view class='btn1 btn'> </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+  <!-- 待付款 -->
+  <van-tab title="待付款" name="2">
+    <view class='orders'>
+      <view class='order-cont' style='padding-top:15px;' wx:for="{{forpayment}}" wx:key="{{item.id}}">
+        <view class='order-evaluation'>
+          <text class='left'>{{item.cretaedTime}}</text>
+          <text class='right' style='color:#8e8e8e;'>待付款</text>
+        </view>
+        <!-- 商品详情 -->
+        <view class='shop' wx:for='{{item.orderDetails}}' wx:for-item="ite" wx:for-index="idx" bindtap="gotoShopDetail" data-id="{{item.id}}" wx:key="{{item.id}}">
+          <view class='img'>
+            <image src='{{ite.mainImg}}'></image>
+          </view>
+          <view class='info'>
+            <view class='lft'>
+              <view class='title'>{{ite.goodsName}}</view>
+              <view class='desc'>
+                {{ite.bookDesc}}
+              </view>
+            </view>
+            <view class="rgt">
+              ￥{{ite.goodsPrice}}元
+            </view>
+          </view>
+        </view>
+        <!-- 商品详情结束 -->
+        <!-- <view class='tip'>
+            共1件  应付金额：<text class='price'> ￥3000.00元</text>
+          </view> -->
+        <view class='btn-box'>
+          <view class='btn btn2' catchtap="orderPre" data-id="{{item.id}}">立即付款</view>
+          <view class='btn1 btn' catchtap="orderCancel1" data-id="{{item.id}}" data-index="{{index}}">取消订单</view>
+        </view>
+
+      </view>
+    </view>
+  </van-tab>
+  <!-- 待发货 -->
+  <van-tab title="待发货" name="3">
+    <view class='orders'>
+      <!-- <view class='order-evaluation'>
+          2019年9月9日
+        </view> -->
+
+      <view class='order-cont' style='padding-top:15px;' wx:for="{{dfhArr}}" wx:key="{{item.id}}">
+        <view class='order-evaluation'>
+          <text class='left'>{{item.cretaedTime}}</text>
+          <text class='right' style='color:#8e8e8e;'>待发货</text>
+        </view>
+        <view class='shop' wx:for='{{item.orderDetails}}' wx:for-item="ite" wx:key="{{item.id}}" bindtap="gotoShopDetail" data-id="{{item.id}}">
+          <view class='img'>
+            <image src='{{ite.mainImg}}'></image>
+          </view>
+          <view class='info'>
+            <view class='lft'>
+              <view class='title'>{{ite.goodsName}}</view>
+              <view class='desc'>
+                {{ite.bookDesc}}
+              </view>
+            </view>
+            <view class="rgt">
+              ￥{{ite.goodsPrice}}元
+            </view>
+          </view>
+        </view>
+        <!-- <view class='tip'>
+            共1件  应付金额：<text class='price'> ￥3000.00元</text>
+          </view> -->
+        <view class='btn-box'>
+          <!-- <view class='btn btn2'>立即付款</view> -->
+          <view class='btn2 btn' catchtap="msgRmind" data-orderNo="{{item.orderNo}}">提醒发货</view>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+  <!-- 待收货部分 -->
+  <van-tab title="待收货" name="4">
+    <view class='orders'>
+      <!-- <view class='order-evaluation'>
+          2019年9月9日
+        </view> -->
+
+      <view class='order-cont' style='padding-top:15px;' wx:for="{{dshArr}}" wx:key="{{item.id}}">
+        <view class='order-evaluation'>
+          <text class='left'>{{item.cretaedTime}}</text>
+          <text class='right' style='color:#8e8e8e;'>待发货</text>
+        </view>
+        <view class='shop' wx:for='{{item.orderDetails}}' wx:for-item="ite" wx:key="{{item.id}}" bindtap="gotoShopDetail" data-id="{{item.id}}">
+          <view class='img'>
+            <image src='{{ite.mainImg}}'></image>
+          </view>
+          <view class='info'>
+            <view class='lft'>
+              <view class='title'>{{ite.goodsName}}</view>
+              <view class='desc'>
+                {{ite.bookDesc}}
+              </view>
+            </view>
+            <view class="rgt">
+              ￥{{ite.goodsPrice}}元
+            </view>
+          </view>
+        </view>
+        <!-- <view class='tip'>
+            共1件  应付金额：<text class='price'> ￥3000.00元</text>
+          </view> -->
+        <view class='btn-box'>
+          <view class='btn2 btn' catchtap="orderReceipt" data-id="{{item.id}}" data-index="{{index}}">确认收货</view>
+          <view class='btn btn1' catchtap="gotoIstics" data-id="{{item.id}}">查看物流</view>
+          <view class='btn btn1' catchtap="appReturn" data-id="{{item.id}}" data-index="{{index}}">申请退款</view>
+        </view>
+      </view>
+    </view>
+
+
+  </van-tab>
+
+  <!-- 评价部分 -->
+  <van-tab title="评价" name="5">
+
+    <van-tabs bind:click="onChange1" active="{{active1}}">
+      <van-tab title="待评价({{dpjArr.length}})">
+        <view class='orders'>
+          <!-- <view class='order-evaluation'>
+          2019年9月9日
+        </view> -->
+
+          <view class='order-cont' style='padding-top:15px;' wx:for="{{dpjArr}}" wx:key="{{item.id}}">
+            <view class='order-evaluation'>
+              <text class='left'>{{item.cretaedTime}}</text>
+              <text class='right' style='color:#8e8e8e;'>{{item.newOrderState}}</text>
+            </view>
+            <view class='shop' wx:for='{{item.orderDetails}}' wx:for-item="ite" wx:key="{{item.id}}" bindtap="gotoShopDetail" data-id="{{item.id}}">
+              <view class='img'>
+                <image src='{{ite.mainImg}}'></image>
+              </view>
+              <view class='info'>
+                <view class='lft'>
+                  <view class='title'>{{ite.goodsName}}</view>
+                  <view class='desc'>
+                    {{ite.bookDesc}}
+                  </view>
+                </view>
+                <view class="rgt">
+                  ￥{{ite.goodsPrice}}元
+                </view>
+              </view>
+            </view>
+            <!-- <view class='tip'>
+            共1件  应付金额：<text class='price'> ￥3000.00元</text>
+          </view> -->
+            <view class='btn-box'>
+              <!-- <view class='btn btn2'>立即付款</view> -->
+              <view class='btn2 btn' bindtap="gotoShopDetail" data-id="{{item.id}}">评价</view>
+            </view>
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="已评价({{ypjArr.length}})">
+
+
+
+        <view class='order-cont' wx:for="{{ypjArr}}" wx:key="{{item.id}}">
+          <view class='order-evaluation'>
+            <text class='left'>{{item.cretaedTime}}</text>
+            <text class='right' style='color:#8e8e8e;'>{{item.newOrderState}}</text>
+          </view>
+          <view class='shop' wx:for="{{item.orderDetails}}" wx:for-item="ite" wx:key="{{ite.id}}">
+            <view class='img'>
+              <image src='{{ite.mainImg}}'></image>
+            </view>
+            <view class='info'>
+              <view class='lft'>
+                <view class='title'>{{ite.goodsName}}</view>
+                <view class='desc'>
+                  {{ite.bookDesc}}
+                </view>
+              </view>
+              <view class="rgt">
+                ￥{{ite.goodsPrice}}元
+              </view>
+            </view>
+          </view>
+          <!-- <view class='tip'>
+            共1件  应付金额：<text class='price'> ￥3000.00元</text>
+          </view> -->
+          <view class='btn-box'>
+            <!-- <view class='btn btn2'>立即付款</view> -->
+            <view class='btn2 btn' bindtap="gotoShopDetail" data-id="{{item.id}}">评价</view>
+          </view>
+        </view>
+
+      </van-tab>
+
+    </van-tabs>
+
+  </van-tab>
+</van-tabs>
+
+<!-- <van-dialog id="van-dialog" /> -->

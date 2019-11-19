@@ -1,0 +1,27 @@
+<!--pages/arrre_repair/index.wxml-->
+<view class="container">
+  <view class="top">
+    <view class="title" bindtap="gotoRepair">
+      <text>更多修复记录</text>
+      <van-icon name="arrow" size="12"/>
+    </view>
+    <view class="box">
+      <image src="../../images/repair_1.png" style="width:100%;height:180px;"></image>
+      <view class="btn" data-type="1"  bindtap="gotoMore">
+        添加修复
+      </view>
+    </view>
+
+     <view class="title">
+      <text bindtap="gotoMoreAppreciation">更多鉴赏记录</text>
+      <van-icon name="arrow" size="12"/>
+    </view>
+    <view class="box">
+      <image src="../../images/repair_2.png" style="width:100%;height:180px;"></image>
+      <view class="btn" bindtap="gotoMore" data-type="2">
+        添加鉴赏
+      </view>
+    </view>
+  </view>
+ 
+</view>

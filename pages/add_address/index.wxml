@@ -1,0 +1,46 @@
+<!--pages/add_address/index.wxml-->
+<view class="container">
+  <view class='add-address'>
+      <view class='add-item'>
+        <view class='lft'>
+          收货人姓名:
+        </view>
+        <view class='rgt'>
+          <input type='text' bindinput="getUserName"></input>
+        </view>
+      </view>
+      <view class='add-item'>
+        <view class='lft'>
+          手机号码:
+        </view>
+        <view class='rgt'>
+          <input type='number' bindinput="getUserTel"></input>
+        </view>
+      </view>
+      <view class='add-item'>
+        <view class='lft'>
+          所在地区:
+        </view>
+        <view class='rgt'>
+        <picker bindchange="bindPickerChange" mode="region" value="{{address}}" range="{{array}}">
+         <view class="picker">{{address}}</view>
+        </picker>
+        </view>
+      </view>
+      <view class='add-item1 add-item'>
+        <view class='lft'>
+          详细地址:
+        </view>
+        <view class='rgt'>
+         <textarea bindinput="getTextArea">
+         
+         </textarea>
+        </view>
+      </view>
+      <view class='set' bindtap="setDefault">
+        <text class='{{isDefault ? "active txt" : "txt"}}'></text>
+        设为默认地址
+      </view>
+  </view>
+  <view class='btn' bindtap="save">保存</view>
+</view>

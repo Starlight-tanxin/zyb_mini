@@ -1,0 +1,26 @@
+/* pages/arrre_repair/index.wxss */
+.title{
+  line-height: 40px;
+  padding-right: 20px;
+  text-align: right;
+  display: flex;
+  font-size: 14px;
+  justify-content: flex-end;
+  align-items:flex-end;
+}
+.box{
+  position: relative;
+}
+.box>.btn{
+  width: 100px;
+  height: 30px;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  background: #893100;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}

@@ -1,0 +1,76 @@
+<!--pages/add-repair/index.wxml-->
+<!-- 复制的修复鉴赏  上传图片这里有问题 -->
+<view class='container'>
+  <view class='repair-top com-bot-border'>
+    <view class='reoair-item flex-ctr'>
+      <view class='lft'>{{msg}}物品名称：</view>
+      <view class='rgt'>
+        <input type='text' bindinput="setval"></input>
+      </view>
+    </view>
+    <view class='reoair-item flex-ctr'>
+      <view class='lft'>{{msg}}物品分类：</view>
+      <view class='rgt'>
+        <view class='type' bindtap="onshow">
+          {{choseVal}}
+          <view class='dsj'></view>
+        </view>
+      </view>
+    </view>
+    <view class='reoair-item flex-ctr'>
+      <view class='lft'>{{msg}}物品分类：</view>
+      <view class='rgt'>
+        <textarea  placeholder='多行输入' bindinput="setTextArea"></textarea>
+      </view>
+    </view>
+    <view class='ph'>
+      <view>{{msg}}物品图片:(请拍摄需要修复的图片细节)</view>
+      <view class='add-btn imgBox' wx:for='{{tempFilePaths}}' wx:key="*this">
+          <image src='{{item}}' style='width:75px;height:75px;'></image>
+          <van-icon name="cross" size="18" class="close" bind:click="delItm" data-index="{{index}}" />
+      </view>
+      <view class='add-btn' bindtap="uploadImg">
+        <image src='../../images/add_ph.png' style='width:75px;height:75px;'></image>
+        <view class='tip'>
+          请上传jpg格式图片
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='repair-bot'>
+    <view class='top'>
+      寄件方式:(确认添加后等待回复平台地址)
+    </view>
+    <view class='addres flex-ctr'>
+      <view class='lft'>
+        <text class='chose'></text>
+        选择收获地址:
+      </view>
+      <view class='ctr'>
+        收获地址
+        <view class='dsj'></view>
+      </view>
+      <view class='rgt'>
+        没有地址?去添加
+      </view>
+    </view>
+    <view class='bot'>
+      <text class='chose'></text>
+      藏家送货上门
+    </view>
+  </view>          -->
+  <view class='btn-argreen-box'>
+    <view class="cent">
+     <van-checkbox value="{{ checked }}" bind:change="onChange" icon-size="12">我已经阅读并同意《藏一本修复协议》</van-checkbox>
+    </view>
+    <view class='btn' bindtap="gotoNext">下一步</view>
+  </view>
+</view>
+
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ selectAntique }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>
+

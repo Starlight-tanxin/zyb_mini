@@ -1,0 +1,58 @@
+<!--pages/mark_sure_order/index.wxml-->
+<view class="container">
+  <view class="order-top" style="text-align:center;" bindtap="gotoAddress" wx:if="{{JSON.stringify(result.userAddress)=='{}'}}">
+    <van-icon name="plus" size="30"/>
+    <view>还没收获地址？赶紧去添加吧</view>
+  </view>
+  <view class='order-top' wx:else>
+    <view class='top'>
+      <view class='tag'>默认</view>
+      <view class='address'>
+        <text>{{result.userAddress.province}} {{result.userAddress.city}} {{result.userAddress.region}}</text>
+      </view>
+    </view>
+    <view class='area flex-ctr'>
+      {{result.userAddress.addressDetail}}
+      <van-icon name="arrow" size="20" bind:click="gotoAdress"/>
+    </view>
+    <view class='bot'>
+      {{result.userAddress.realname}} {{result.userAddress.mobile}}
+    </view>
+  </view>
+   <view class='bor-img'>
+      <image src='../../images/mark_order.png' style='width:100%;height:4px;'></image>
+    </view>
+
+    <!-- 商品 -->
+    <view class='shop-box'>
+      <view class='shop com-bot-border' wx:for="{{result.orderDetails}}" wx:key="{{item.id}}">
+        <view class='lft'>
+          <image src='{{item.mainImg}}' style='width:80px;height:80px;' ></image>
+        </view>
+        <view class='rgt'>
+          <view class='title'>{{item.goodsName}}</view>
+          <view class='desc'>{{item.bookDesc}}</view>
+          <view class='price'>￥{{item.goodsPrice}}元</view>
+        </view>
+      </view>
+    </view>
+    <!-- 价格区 -->
+    <view class='shop-price'>
+      <view class='info flex-ctr'>
+        <text>商品价格</text>
+        <text>￥{{result.orderPrice}}</text>
+      </view>
+    </view>
+    <view class='shop-price'>
+      <view class='info flex-ctr'>
+        <text>运费</text>
+        <text>￥{{result.expressPrice}}</text>
+      </view>
+    </view>
+
+    <!-- 付款区 -->
+    <view class='pay  flex-ctr'>
+      <view>实付金额:￥{{result.orderPrice + result.expressPrice}}</view>
+      <view class='btn' bindtap="pay">提交订单</view>
+    </view>
+</view>

@@ -1,0 +1,31 @@
+/* pages/appreciation_detail_1/idenx.wxss */
+.top{
+  padding: 25px 20px;
+}
+.p{
+  margin-bottom: 20px;
+}
+.tip{
+  margin-bottom: -10px;
+}
+.cont{
+  padding: 20px 35px;
+}
+.btn-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+}
+
+.btn-box>.btn{
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  font-size: 12px;
+  background-color: #893100;
+  text-align: center;
+  border-radius:12px;
+  margin-right: 30px;
+}

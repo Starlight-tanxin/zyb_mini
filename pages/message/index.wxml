@@ -1,0 +1,17 @@
+<!--pages/message/index.wxml-->
+<view class='container'>
+  <view class='message'>
+    <view class='msg' wx:for="{{list}}" wx:key="{{item}}">
+      <view class='user'>
+        <image src='{{item.headImg}}'></image>
+      </view>
+      <view class='rgt'>
+        <view class='title'>{{item.nickName}}</view>
+        <view class='desc'>
+          这本书看着怎么样的啊？这本书看着怎么样的啊？这本书看着怎么样的啊？这本书看着怎么样的啊？这本书看着怎么样的啊？
+        </view>
+      </view>
+    </view>
+  
+  </view>
+</view>

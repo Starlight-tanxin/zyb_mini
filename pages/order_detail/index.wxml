@@ -1,0 +1,99 @@
+<!--pages/order_detail/index.wxml-->
+<view class="container">
+  <view class='order-top'>
+   <view class='order-tip'>
+    <image src='../../images/order.png' style='width:24px;height:30px;margin-right:15px;'></image>
+    <text>{{result.orderStateText}}</text> 
+   </view>
+   <view class='order-info' bindtap="gotoWL" wx:if="{{result.expressInfoState}}">
+    物流信息：{{result.expressInfoState}}
+   </view>
+   <view class='order-info'> {{result.cretaedTime}}</view>
+  </view>
+  <!-- 地址 -->
+  <view class='user-info com-bot-border'>
+    <view class='name'>
+        <van-icon name="location" color="#893100;" size='18'/>
+        <text style='margin-left:15px;'>{{result.userAddress.realname}} {{result.userAddress.mobile}}</text>
+    </view>
+    <view style='margin-left:33px; line-height:35px;'>
+     {{result.userAddress.province}} {{result.userAddress.city}} {{result.userAddress.region}} {{result.userAddress.addressDetail}}
+    </view>
+  </view>
+  <!-- 头部 -->
+  <view class='title flex-ctr com-bot-border'>
+    <text>藏一本</text>
+    <text style='color:#67c8fd;'>联系客服</text>
+  </view>
+  <!-- 头部 -->
+  <view class='shop-info com-bot-border'>
+    <view class='top' wx:for="{{result.orderDetails}}" wx:key="{{item.id}}">
+      <view><image src='{{item.mainImg}}' style='width:70px;height:55px;'></image></view>
+      <view class='info'>
+        <view class='tit'>{{item.goodsName}}</view>
+        <view class='desc'>{{item.bookDesc}}</view>
+      </view>
+      <view class='price'>￥{{item.goodsPrice}}元</view>
+    </view>
+    <view class='bot'>
+      <view class='bot-item flex-ctr'>
+        <text>订单总价</text>
+        <text style='color:#893100;'>￥{{result.orderPrice}}元</text>
+      </view>
+      <view class='bot-item flex-ctr'>
+        <text>商品总价</text>
+        <text>￥{{result.orderPrice}}元</text>
+      </view>
+      <view class='bot-item flex-ctr'>
+        <text>运费</text>
+        <text>￥{{result.expressPrice}}元</text>
+      </view>
+    </view>
+  </view>
+  <!-- 订单信息 -->
+  <view class='orer-i com-bot-border'>
+    <view class='tit1'>订单信息</view>
+    <view class='tit'>订单编号：{{result.orderNo}}</view>
+    <view class='tit'>创建时间：{{result.cretaedTime}}</view>
+    <view class='tit'>付款时间：{{result.payTime}}</view>
+    <view class='tit'>发货时间：{{result.sendGoodsTime}}</view>
+    <view class='tit'>成交时间：{{result.completeTime}}</view>
+  </view>
+
+  <view class='btn' bindtap="showPopup">评价</view>
+  <van-popup show="{{ show }}"  custom-style="width:80%; border-radius:5px;" bind:close="onClose">
+    <view class='pop-cont'>
+      <van-icon name="cross" class='popclose' bindtap='onClose' size='20px' />
+      <view class='pop-title'>评价</view>
+      <view class='pop-item'>
+        <view class='lft'>满意程度：</view>
+        <view class='rgt'>
+          <view class='checkbox'>
+            {{choseVal}}
+            <view class='dsj' bindtap='popchoseShow'></view>
+            <view class='box' hidden='{{!popChoseShow}}'>
+              <view class='chose-item' bindtap="choseEveal" data-type="1" data-val="满意">满意</view>
+              <view class='chose-item' bindtap="choseEveal" data-type="2" data-val="一般">一般</view>
+              <view class='chose-item' bindtap="choseEveal" data-type="3" data-val="不满意">不满意</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='pop-item {{!popChoseShow?"":"pop-textarea"}}'>
+        <view class='lft'>评价详情：</view>
+        <view class='rgt'>
+          <van-field
+          value="{{ message }}"
+          type="textarea"
+          autosize
+          border="{{ true }}"
+          bind:change="onChange"
+          placeholder-style="font-size:10px;"
+          custom-style=" height:100px; border-style: solid;border-color: #333;border-width: 1px;font-size:10px;color:#8e8e8e; "
+        />
+        </view>
+      </view>
+      <view class='pop-btn' bindtap="orderEveal">确定</view>
+    </view>
+  </van-popup>
+</view>

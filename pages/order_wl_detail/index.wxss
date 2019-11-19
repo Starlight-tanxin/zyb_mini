@@ -1,0 +1,16 @@
+/* pages/order_wl_detail/index.wxss */
+.order-top{
+  padding: 12px;
+  background: #893100;
+  color: #fff;
+}
+.order-tip{
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.order-info{
+  line-height: 30px;
+  padding-left: 39px;
+}

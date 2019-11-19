@@ -1,0 +1,28 @@
+<!--pages/ranking/index.wxml-->
+<!-- 这个页面根据传值去判断 本月百家姓排行  本周百家姓排行 今日百家姓排行-->
+<view class='container'>
+  <view class='ranking'>
+    <view class='rank-head com-bot-border'>
+      <van-row>
+        <van-col span="3">排名</van-col>
+        <van-col span="4">姓氏</van-col>
+        <van-col span="6">累计打卡数量</van-col>
+        <van-col span="6">平均每日打卡</van-col>
+        <van-col span="5"></van-col>
+      </van-row>
+    </view>
+    <view class='rank-cont'>
+    <view class="com-bot-border" wx:for="{{result}}" wx:key="{{item.surnameId}}">
+      <van-row >
+        <van-col span="3">{{index+1}}</van-col>
+        <van-col span="4">{{item.name}}</van-col>
+        <van-col span="6">{{item.count}}</van-col>
+        <van-col span="6">{{item.avg}}</van-col>
+        <van-col span="5">
+          <view class='btn' hover-class='hover' data-id="{{item.surnameId}}" bindtap="gotoDeatil">详情</view>
+        </van-col>
+      </van-row>
+    </view>
+    </view>
+  </view>
+</view>

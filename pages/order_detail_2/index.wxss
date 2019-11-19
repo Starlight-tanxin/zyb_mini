@@ -1,0 +1,2 @@
+/* pages/order_detail_2/index.wxss */
+@import '../repair_sure/index.wxss';

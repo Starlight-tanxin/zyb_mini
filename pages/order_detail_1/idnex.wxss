@@ -1,0 +1,7 @@
+/* pages/order_detail_1/idnex.wxss */
+.cont{
+  padding: 30px 25px;
+}
+.cont>.item{
+  line-height: 35px;
+}

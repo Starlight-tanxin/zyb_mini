@@ -1,0 +1,2 @@
+<!--pages/common_loop/index.wxml-->
+<web-view src="{{url}}"></web-view>

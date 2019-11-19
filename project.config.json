@@ -1,0 +1,364 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"nodeModules": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.3",
+	"appid": "wxc7f2f7a96928c55f",
+	"projectname": "zyb",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 43,
+			"list": [
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/shop_detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "pages/order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "姓氏打卡",
+					"pathName": "pages/clockIn/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "打卡排行",
+					"pathName": "pages/ranking/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "打卡详情",
+					"pathName": "pages/rank_detail/idnex",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息",
+					"pathName": "pages/message/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "李氏打卡",
+					"pathName": "pages/rank/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "确认订单",
+					"pathName": "pages/mark_sure_order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "官方收藏",
+					"pathName": "pages/collection/idnex",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收获地址",
+					"pathName": "pages/address/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新增收获地址",
+					"pathName": "pages/add_address/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "全部书籍",
+					"pathName": "pages/all_book/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/order_detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/profile/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "账户明细",
+					"pathName": "pages/account-detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "充值",
+					"pathName": "pages/top_up/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/withdrawal/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "g个人设置",
+					"pathName": "pages/profile_set/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "退款",
+					"pathName": "pages/after-sales/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "退款详情",
+					"pathName": "pages/after-sales-detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修复",
+					"pathName": "pages/repair/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 23,
+					"name": "添加修复",
+					"pathName": "pages/add-repair/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "选择修复专家",
+					"pathName": "pages/repair-experts/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "等待回复",
+					"pathName": "pages/wait/idnex",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "确认修复",
+					"pathName": "pages/repair_sure/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单详情1",
+					"pathName": "pages/order_detail_1/idnex",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修复记录",
+					"pathName": "pages/repair_records/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 29,
+					"name": "pages/order_detail_2/index",
+					"pathName": "pages/order_detail_2/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单详情2",
+					"pathName": "pages/order_detail_2/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "专家详情",
+					"pathName": "pages/experts_detail/idnex",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "鉴赏记录",
+					"pathName": "pages/appreciation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "鉴赏详情",
+					"pathName": "pages/appreciation_detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "鉴赏详情1",
+					"pathName": "pages/appreciation_detail_1/idenx",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "鉴赏回复",
+					"pathName": "pages/appreciation_res/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "鉴赏与修复",
+					"pathName": "pages/arrre_repair/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "主页",
+					"pathName": "pages/home/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "鉴赏修复",
+					"pathName": "pages/add-repair/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "书籍列表",
+					"pathName": "pages/nav_list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "物流信息",
+					"pathName": "pages/order_wl_detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 41,
+					"name": "pages/password1/index",
+					"pathName": "pages/password1/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/password/idnex",
+					"pathName": "pages/password/idnex",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "设置手机号",
+					"pathName": "pages/set_phone/index",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,5 @@
+/* pages/withdrawal/index.wxss */
+@import "../top_up/index.wxss";
+big-input .tip{
+  font-weight: normal;
+}

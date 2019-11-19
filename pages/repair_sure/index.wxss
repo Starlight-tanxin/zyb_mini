@@ -1,0 +1,50 @@
+/* pages/repair_sure/index.wxss */
+
+.content{
+  padding: 25px 20px;
+}
+.repair>.title{
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+.repair>.desc{
+  margin-top: 15px;
+  min-height: 80px;   
+}
+.detail>.detail-item{
+  line-height: 30px;
+}
+.tip{
+  color: #8e8e8e;
+  font-size: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.btn-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+  margin-top: 42px;
+}
+.btn-box>.btn{
+  padding: 0 10px;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  background-color: #893100;
+  border-radius: 5px;
+}
+.btn-box>.btn1{
+  background: #fff;
+  border: 1px solid #893100;
+  box-sizing: border-box;
+  margin-right: 15px;
+  color: #893100;
+}

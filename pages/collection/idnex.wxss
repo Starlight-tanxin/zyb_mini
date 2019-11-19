@@ -1,0 +1,58 @@
+/* pages/collection/idnex.wxss */
+
+.top{
+  box-sizing: border-box;
+  padding: 15px 13px;
+  background-color:#893100; 
+}
+.search{
+  box-sizing: border-box;
+  padding-left: 15rpx;
+  background: #fff;
+  width: 100%;
+  border-radius: 25rpx;
+  height: 30px;
+  line-height: 30px;
+  color: #adadad;
+  font-size: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.txt{
+  display: inline-block;
+  margin-left: 10rpx;
+}
+
+.com-title{
+  padding:10px 13px;
+  height: 23px;
+  line-height: 23px;
+  font-size: 14px;
+}
+.shop-box{
+  padding: 30px 15px;
+}
+.shop-item{
+  display: flex;
+  margin-bottom: 20px;
+}
+.shop-item > .rgt{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.shop-item > .rgt>.title{
+  color:  #000;
+  font-size: 12px;
+  font-weight: 800;
+}
+.shop-item > .rgt>.desc{
+  margin-top: -5px;
+  color:  #8e8e8e;
+  font-size: 10px;
+}
+.shop-item > .rgt>.price{
+  color:  #893100;
+}

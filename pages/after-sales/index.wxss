@@ -1,0 +1,2 @@
+/* pages/after-sales/index.wxss */
+@import '../order/index.wxss';

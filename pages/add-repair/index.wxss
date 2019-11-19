@@ -1,0 +1,23 @@
+/* pages/add-repair/index.wxss */
+@import "../repair/index.wxss";
+
+.ph{
+  overflow: hidden;
+}
+.ph > .add-btn{
+  float: left;
+  width: 30%;
+}
+.cent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imgBox{
+  position: relative;
+}
+.close{
+  position: absolute;
+  right: 5px;
+  top: -8px;
+}

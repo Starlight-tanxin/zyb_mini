@@ -1,0 +1,116 @@
+/* pages/repair/index.wxss */
+.container{
+  padding-bottom: 80px;
+}
+.repair-top{
+  padding: 15px 55px 20px 25px;
+}
+.reoair-item{
+  line-height: 30px;
+  min-height: 30px;
+  margin-bottom: 20px;
+}
+.reoair-item>.rgt{
+  flex: 1;
+  margin-left: 10px;
+  height: 100%;
+  min-height: 32px;
+}
+.reoair-item>.rgt>input{
+  border: 1px solid #893100;
+  padding-left: 12px;
+  height: 100%;
+}
+.reoair-item>.rgt>.type{
+  border: 1px solid #893100;
+  padding-left: 12px;
+  height: 100%;
+  color: #8e8e8e;
+  position: relative;
+}
+.reoair-item>.rgt>.type>.dsj{
+  top:12px;
+  right: 10px;
+}
+.reoair-item>.rgt>textarea{
+  border: 1px solid #893100;
+  padding: 10px 12px;
+  width: 100%;        
+  box-sizing: border-box;
+  height: 130px;
+}
+
+.add-btn{
+  margin-top:15px; 
+}
+.add-btn .tip{
+  margin-top: 10px;
+  color: #8e8e8e;
+  font-size: 8px;
+}
+
+.repair-bot{
+  padding: 20px 15px 20px 25px;
+}
+.addres{
+  font-size: 10px;
+   margin-top: 8px;
+}
+.addres>.lft>.chose{
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border: 2px solid #893100;
+  border-radius: 6px;
+}
+.addres>.ctr{
+  border: 1px solid #893100;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 12px;
+  box-sizing: border-box;
+  flex: 1;
+  margin: 0 3px; 
+  font-size: 10px;
+  color: #8e8e8e;
+  position: relative;
+}
+.addres>.ctr>.dsj{
+  right: 8px;
+  top: 12px;
+}
+.repair-bot >.bot{
+  margin-top: 15px;
+  font-size: 10px;
+}
+.repair-bot >.bot>.chose{
+   display: inline-block;
+  width: 7px;
+  height: 7px;
+  border: 1px solid #893100;
+  border-radius: 7px;
+}
+
+.btn-argreen-box{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 10px;
+}
+.btn-argreen-box .chose{
+ display: inline-block;
+  width: 6px;
+  height: 6px;
+  border: 2px solid #893100;
+  border-radius: 6px;
+  margin-right: 3px;
+}
+.btn-argreen-box>.btn{
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  background-color: #893100;
+  border-radius: 5px;
+  margin: 10px auto;
+}

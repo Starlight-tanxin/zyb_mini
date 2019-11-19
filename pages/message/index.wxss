@@ -1,0 +1,31 @@
+/* pages/message/index.wxss */
+
+.message{
+
+}
+.msg:nth-of-type(1){
+  border-top:1px solid  #893100;
+}
+.msg{
+  
+  border-bottom: 1px solid  #893100;
+  min-height: 72px;
+  padding: 13px;
+  box-sizing: border-box;
+  display: flex;
+}
+.msg>.user>image{
+  width: 45px;
+  height: 45px;
+}
+.msg>.rgt{
+  flex: 1;
+  margin-left: 16px;
+}
+.msg>.rgt>.title{
+  margin-bottom: 8px;
+  font-weight: 800;
+}
+.msg>.rgt>.desc{
+  color: #8e8e8e;
+}

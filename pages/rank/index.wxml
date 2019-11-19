@@ -1,0 +1,83 @@
+<!--pages/rank/index.wxml-->
+<view class='container'>
+  <view class='rank-top '>
+    <image src='https://hnsxyts.oss-cn-zhangjiakou.aliyuncs.com/icon/dktp.jpg' bindtap="gotoRank"></image>
+    <view class="top-p">{{result.surnameName}}氏已打卡人数: {{result.count}}</view>
+  </view>
+
+  <view class="rank-cont">
+    <view class='top com-bot-border'>
+      <view class="ellipsis">某姓今日最早打卡：{{result.earlyBird}}</view>
+      <view class="ellipsis" style="margin-left:10px;">累计打卡第一名：{{result.topOne}}</view>
+    </view>
+    <view class='rank-bot'>
+      <view class='h2'>
+        <text class='t1'>家族打开排行榜</text>
+        <text class='t2' bindtap='showPopup'>助力打卡>></text>
+      </view>
+      <view class='rank-box'>
+        <view class='head'>
+          <van-row>
+            <van-col span="4">排名</van-col>
+            <van-col span="6">用户名称</van-col>
+            <van-col span="8">累计打卡数量</van-col>
+            <van-col span="6"></van-col>
+          </van-row>
+        </view>
+        <view class='rank-item' wx:for="{{result.columns}}" wx:key="*this">
+          <van-col span="4">{{index+1}}</van-col>
+          <van-col span="8">
+            <view class="ellipsis">
+              {{item.nickname?item.nickname:'未知'}}
+            </view>
+          </van-col>
+          <van-col span="6">{{item.count ? item.count : " "}}</van-col>
+          <van-col span="6">
+            <image wx:if="{{index == 0}}" src="https://hnsxyts.oss-cn-zhangjiakou.aliyuncs.com/icon/jptp.png" style="width:15px;height:20px; margin-top:6px;"></image>
+            <image wx:if="{{index == 1}}" src="https://hnsxyts.oss-cn-zhangjiakou.aliyuncs.com/icon/yptp.png" style="width:15px;height:20px; margin-top:6px;"></image>
+            <image wx:if="{{index == 2}}" src="https://hnsxyts.oss-cn-zhangjiakou.aliyuncs.com/icon/tptp.png" style="width:15px;height:20px; margin-top:6px;"></image>
+          </van-col>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+  <navigator url="../collection/idnex">
+    <view class='gotoclock'>
+
+      <text>查看姓氏源请先进官方收藏</text>
+      <text class='clor'>现在就去  >></text>
+
+
+    </view>
+  </navigator>
+</view>
+<van-popup show="{{ show }}" bind:close="onClose" custom-style="width: 90%; border-radius:5px; padding:15px;">
+  <view class='popup-cont'>
+    <view class='title'>助力打卡</view>
+    <view class='tip'>助力打卡次数是会累加到个人打卡数和您姓氏的打卡数中去的哦</view>
+    <view class='desc'>请选择助力次数：</view>
+    <view class='rank-time'>
+      <block wx:for="{{rankTimes}}" wx:key="{{item.num}}">
+        <view class='{{item.active?"item active" : "item"}}' bindtap="choseActive" data-index="{{index}}" data-num="{{item.num}}">{{item.num}}次</view>
+      </block>
+      
+      <!-- <view class='item' bindtap="choseActive">10次</view>
+      <view class='item' bindtap="choseActive">20次</view>
+      <view class='item' bindtap="choseActive">100次</view> -->
+    </view>
+    <view class='pay'>
+      <text class='txt'>支付金额：</text>
+      <view class='price'>{{rankData*0.5}}元</view>
+    </view>
+    <view class='instructions'>
+      <!-- <text class='circel'></text> -->
+      <van-checkbox value="{{ checked }}" checked-color="#893100" icon-size="12" bind:change="onChange">我已经阅读并同意《藏一本支付协议》</van-checkbox>
+      <!-- <van-radio name="1">我已经阅读并同意《藏一本支付协议》</van-radio> -->
+      <!-- <text></text> -->
+    </view>
+    <view class='btn' bindtap="orderPay">确认支付</view>
+  </view>
+
+</van-popup>

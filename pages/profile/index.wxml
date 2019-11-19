@@ -1,0 +1,81 @@
+<!--pages/profile/index.wxml-->
+<view class='container'>
+  <view class='top flex-ctr'>
+    <view class='user-info flex-ctr'>
+      <view class='lft'>
+        <image src='{{userInfo?userInfo.headImg : "../../images/p4.png"}}' style='height:35px;width:35px;'></image>
+      </view>
+      <view class='rgt' bindtap="popShow" data-userLogin="{{userInfo}}">
+        <view class='name'>{{userInfo?userInfo.nickname:'未登录'}} <text></text> {{userInfo ? result.surnameName :''}}</view>
+        <view>{{userInfo?result.userLevel:''}}</view>
+      </view>
+    </view>
+    <view>
+      <van-icon name="setting" size='20' color="#fff" style='margin-right:15px;' bindtap="gotoSet"/>
+      <van-icon name="chat" size='20' color="#fff"  info="{{result.unReadMsgCount ? unReadMsgCount : ''}}" bindtap="gotoMessage"/>
+    </view>
+  </view>
+  <!--我的订单  -->
+  <view class='order com-bot-border'>
+      <van-cell
+        is-link
+        url="../order/index"
+        title="我的订单"
+      />
+  </view>
+  <!-- 导航 -->
+  <view class='nav com-bot-border'>
+    <van-grid column-num="5" border="{{false}}">
+      <van-grid-item icon="../../images/profile_1.png" data-type="2" bindtap="gotoOrder" text="待付款"  />
+      <van-grid-item icon="../../images/profile_2.png" data-type="3" bindtap="gotoOrder" text="待收货"  />
+      <van-grid-item icon="../../images/profile_3.png" data-type="4" bindtap="gotoOrder" text="待发货"  />
+      <van-grid-item icon="../../images/profile_4.png" data-type="5" bindtap="gotoOrder" text="评价"  />
+      <van-grid-item icon="../../images/profile_5.png"  bindtap="gotoTK" text="售后/退款"  />
+    </van-grid>
+  </view>
+  <view class='account com-bot-border' data-userLogin="{{userInfo}}">
+    <van-cell
+        title="账户金额：￥{{result.actualAmount ? result.actualAmount :0}}"
+        border="{{false}}"
+    >
+    <!-- <view slot="left-icon"><text>账户金额：</text>{{userInfo?userInfo.actualAmount:0}}<text>￥</text></view> -->
+      <view slot="right-icon">
+        <view class="account-btn" >
+        <navigator url="/pages/account-detail/index"> 账户明细</navigator>
+         
+        </view>
+      </view>
+    </van-cell>
+  </view>
+  <view class='com-bot-border'>
+    <van-cell
+        title="其他"
+        border="{{false}}"
+    >
+    </van-cell>
+  </view>
+   <view>
+    <van-grid column-num="5" border="{{false}}">
+      <van-grid-item icon="../../images/profile_6.png" bindtap="gotoAdress"  text="收货地址"  />
+      <van-grid-item icon="../../images/profile_7.png" text="客服留言"  />
+      <van-grid-item icon="" text=""  />
+      <van-grid-item icon="" text=""  />
+      <van-grid-item icon="" text=""  />
+    </van-grid>
+   </view>
+
+   <view class='tip'>
+    <image src='../../images/profile_8.png' style='width:11px;height:11px;margin-right:5px;'></image>
+    <text>联系平台或客服请到公众号中获取电话</text>
+   </view>                          
+</view>
+<van-dialog
+  title="标题"
+  message="藏一本需要获取您的个人信息和头像"
+  show="{{ loginShow }}"
+  show-cancel-button
+  confirm-button-open-type="getUserInfo"
+  bind:close="onClose"
+  bind:getuserinfo="getUserInfo"
+>
+</van-dialog>

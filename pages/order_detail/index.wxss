@@ -1,0 +1,168 @@
+/* pages/order_detail/index.wxss */
+
+.order-top{
+  padding: 12px;
+  background: #893100;
+  color: #fff;
+}
+.order-tip{
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.order-info{
+  line-height: 30px;
+  padding-left: 39px;
+}
+.user-info{
+  padding:20px 12px;
+
+}
+.user-info>.name{
+  display: flex;
+  align-items: center;
+}
+
+.title{
+  padding: 0 40px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.shop-info{
+  padding: 18px 30px;
+}
+
+.shop-info>.top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shop-info>.top>.info{
+  flex: 1;
+  margin: 0 15px;
+}
+.shop-info>.top>.info>.tit{
+  font-weight: 700;
+
+}
+.shop-info>.top>.info>.desc{
+ color: #8e8e8e;
+}
+.bot{
+  margin-top: 20px;
+}
+.bot-item{
+  margin-bottom: 10px;
+}
+
+.orer-i{
+  padding: 18px 0;
+}
+
+.orer-i>.tit1{
+  padding: 0 40px;
+  font-size: 14px;
+  line-height: 30px;
+}
+.orer-i>.tit{
+  padding: 0 45px;
+  line-height: 20px;
+}
+
+.btn{
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  background-color: #893100;
+  border-radius: 15px;
+  margin: 50px auto;
+}
+
+.pop-cont{
+  text-align: center;
+  padding: 15px 20px;
+  position: relative;
+}
+.popclose{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.pop-cont>.pop-title{
+  font-size: 16px;
+}
+.pop-item{
+  display: flex;
+  margin-top: 15px;
+}
+.pop-item .rgt{
+  flex: 1;
+}
+.pop-item .checkbox{
+  box-sizing: border-box;
+  border: 1px solid #333;
+  height: 25px;
+  line-height: 25px;
+  text-align: left;
+  padding-left: 15px;
+  position: relative;
+  color: #8e8e8e;
+}
+.pop-item .checkbox>.dsj{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-top-color: #8e8e8e ;
+}
+
+.pop-item .checkbox>.box{
+  position: absolute;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  border-top: none;
+  left: 0;
+  top: 25px;
+  width: 100%;
+}
+.pop-item .checkbox>.box>.chose-item{
+  box-sizing: border-box;
+  height: 25px;
+  padding-left: 14px;
+}
+.pop-item .checkbox>.box>.chose-item:hover{
+  background: pink;
+}
+.pop-textarea{
+  margin-top: 80px;
+}
+
+.van-cell{
+  padding: 15px !important;
+}
+.van-field__placeholder{
+  color: #8e8e8e !important;
+  font-size: 14px;
+}
+.pop-btn{
+  
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  background-color: #893100;
+  border-radius: 15px;
+  margin: 10px auto;
+
+}
+textarea{
+  height: 65px !important;
+}
+

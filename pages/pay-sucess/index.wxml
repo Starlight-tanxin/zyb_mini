@@ -1,0 +1,8 @@
+<!--pages/pay-sucess/index.wxml-->
+<view class='container'>
+  <van-nav-bar title="支付成功" left-text="返回" left-arrow />
+  <view class='cont'>
+    <image src='../../images/profile_8.png' style='width:12px;height:12px;margin-right:3px;'></image>
+    <text>支付成功</text>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+/* pages/experts_detail/idnex.wxss */
+.exper-top{
+  padding: 25px 50px 30px 17px;
+}
+.exper-info{
+  margin-left: 15px;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.exper-info .name{
+  margin-bottom: 10px;  
+}
+.title{
+  padding: 8px 17px;
+}
+.info{
+  padding:17px;
+  font-size: 10px;
+  color: #8e8e8e;
+  min-height: 100px;
+}

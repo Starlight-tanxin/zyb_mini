@@ -1,0 +1,19 @@
+<!--pages/password/idnex.wxml-->
+<view  style='margin-top:100rpx;'>
+<van-cell-group >
+  <van-field
+    value="{{ sms }}"
+    center
+    clearable
+    label="短信验证码"
+    placeholder="请输入短信验证码"
+    border="{{ false }}"
+    bind:change="chage"
+    use-button-slot
+  >
+    <van-button wx:if="{{codeShow}}" bind:click="getCode" color="#893100;" disabled="{{btnDisable}}"  slot="button" size="small" type="primary">{{btnText}}</van-button>
+  </van-field>
+</van-cell-group>
+</view>
+<view class="btn" bindtap="gotoNext">下一步</view>
+

@@ -1,0 +1,2 @@
+/* pages/rank_detail/idnex.wxss */
+@import "../ranking/index.wxss";

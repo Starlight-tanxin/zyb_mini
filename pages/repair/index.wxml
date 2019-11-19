@@ -1,0 +1,69 @@
+<!--pages/repair/index.wxml-->
+<view class='container'>
+   <van-nav-bar
+    title="修复鉴赏"
+    left-text="返回"
+    left-arrow
+  />
+
+  <view class='repair-top com-bot-border'>
+    <view class='reoair-item flex-ctr'>
+      <view class='lft'>修复物品名称：</view>
+      <view class='rgt'>
+        <input type='text'></input>
+      </view>
+    </view>
+    <view class='reoair-item flex-ctr'>
+      <view class='lft'>修复物品分类：</view>
+      <view class='rgt'>
+        <view class='type'>
+          字画
+          <view class='dsj'></view>
+        </view>
+      </view>
+    </view>
+    <view class='reoair-item flex-ctr'>
+      <view class='lft'>修复物品分类：</view>
+      <view class='rgt'>
+        <textarea  placeholder='多行输入'></textarea>
+      </view>
+    </view>
+    <view class='ph'>
+      <view>修复物品图片:(请拍摄需要修复的图片细节)</view>
+      <view class='add-btn'>
+        <image src='../../images/add_ph.png' style='width:75px;height:75px;'></image>
+        <view class='tip'>
+          请上传jpg格式图片
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='repair-bot'>
+    <view class='top'>
+      寄件方式:(确认添加后等待回复平台地址)
+    </view>
+    <view class='addres flex-ctr'>
+      <view class='lft'>
+        <text class='chose'></text>
+        选择收获地址:
+      </view>
+      <view class='ctr'>
+        收获地址
+        <view class='dsj'></view>
+      </view>
+      <view class='rgt'>
+        没有地址?去添加
+      </view>
+    </view>
+    <view class='bot'>
+      <text class='chose'></text>
+      藏家送货上门
+    </view>
+  </view>         
+  <view class='btn-argreen-box'>
+    <view>
+      <text class='chose'></text>我已经阅读并同意《藏一本修复协议》
+    </view>
+    <view class='btn'>下一步</view>
+  </view>
+</view>

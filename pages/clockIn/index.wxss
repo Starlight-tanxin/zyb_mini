@@ -1,0 +1,24 @@
+/* pages/clockIn/index.wxss */
+.clock-area{
+  color: #8e8e8e;
+  padding: 10px 13px;
+  text-align: center;
+  border-bottom: 1px solid #893100;
+}
+.line{
+  margin-bottom: 10px;
+}
+
+.gotoclock{
+  color: #8e8e8e;
+  margin: 60px 0;
+  text-align: center;
+}
+
+.gotoclock>.clor{
+  margin-left: 13px;
+  color: #009ece;
+}
+.xs{
+  line-height: 25px;
+}

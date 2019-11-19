@@ -1,0 +1,35 @@
+<!--pages/nav_list/index.wxml-->
+<view class="container"> 
+  <view class='top'>
+    <view class='search'>
+      <van-icon name="search" size="15px" custom-style='margin-top:6px;' bindtap="gotoSearch"/>
+     <input class='txt' value="{{inputVal}}" style='margin-top:-4px; height:100%;' type="text" placeholder="搜索书籍名称、作者名称" bindinput="setVal"></input> 
+    </view>
+  </view>
+
+  <view class='com-title com-bot-border' wx:if="{{list.length}}">
+    全部书籍
+  </view>
+  <view class='shop-box'>
+    <van-row gutter="15">
+      <van-col span="12" wx:for="{{list}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="gotoShopDeatil">
+        <view class='shop-item'>
+          <view class='lft'>
+            <image src='{{item.mainImg}}' style='width:70px;height:90px;'></image>
+          </view>
+          <view class='rgt'>
+            <view class='title'>{{item.goodsName}}</view>
+            <view class='desc van-multi-ellipsis--l3'>{{item.bookDesc}}</view>
+            <view class='price'>
+              ￥{{item.goodsPrice}}元
+              <image src='../../images/add.png' style='width:10px;height:10px;' wx:if="{{!item.isCollection}}" data-id="{{item.id}}" catchtap="addCart"></image>
+            </view>
+          </view>
+        </view>
+      </van-col>
+    </van-row>
+  </view>
+  <view class="no-data" wx:if="{{hasSearch && list.length<=0}}">暂无数据</view>
+  
+</view>
+

@@ -1,0 +1,31 @@
+<!--pages/cart/index.wxml-->
+<view class='container'>
+
+  <view class="main" wx:if="{{list.length}}">
+    <van-checkbox-group value="{{ result }}" bind:change="onChange">
+      <view class='shop-item' wx:for="{{list}}" wx:key="{{item.goodsId}}" bindlongtap="delItem" data-id="{{item.goodsId}}">
+        <van-checkbox name="{{index}}">
+        </van-checkbox>
+        <view class='shop-info'>
+          <van-card custom-class desc="描述信息" title="{{item.goodsName}}" thumb="{{ item.mainImg }}">
+            <view slot="footer" class='footer'>
+              <view class='price'>￥{{item.price}}元</view>
+              <van-stepper value="{{item.num}}" data-id="{{item.goodsId}}" data-index="{{index}}" bind:change="stepHandler"/>
+            </view>
+          </van-card>
+        </view>
+
+      </view>
+    </van-checkbox-group>
+  </view>
+  <view wx:else  class="cart-none">
+    <van-icon name="shopping-cart-o" size="60"/>
+    <view>购物车空空如也</view>
+  </view>
+
+  <van-submit-bar price="{{ totalNum }}" button-text="提交订单" wx:if="{{list.length}}"  bind:submit="onSubmit">
+    <view class='checkall'>
+      <van-checkbox value="{{ checked }}" bindtap="checkAll">全选</van-checkbox>
+    </view>
+  </van-submit-bar>
+</view>

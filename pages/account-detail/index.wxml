@@ -1,0 +1,36 @@
+<!--pages/account-detail/index.wxml-->
+<view class="container">
+  <!-- <van-nav-bar
+    class="bg"
+    title="账户明细"
+    left-text="返回"
+    left-arrow
+  /> -->
+  <view class='account-top'>
+    <view class='tip'>账户总金额</view>
+    <view class='price'>
+      ￥{{actualAmount}}
+    </view>
+    <view class='tip'>冻结金额：￥{{freezeAmount}}</view>
+  </view>
+  <view class='btn-box com-bot-border'>
+    <view class='btn'bindtap="gotoUP">
+     充值
+    </view>
+    <view class='btn' bindtap="gotoTX">提现</view>
+  </view>
+  <view class='title com-bot-border'>
+    账单交易记录
+  </view>
+  <view class='account-detail'>
+    <view class='account-item flex-ctr com-bot-border' wx:for="{{list}}" wx:key="{{item}}">
+      <view class="lft">
+        <view>来历:{{item.payType}}</view>
+        <view style='margin-top:8px;'>时间：{{item.payCompleteTime}}</view>
+      </view>
+      <view class='rgt'>
+          ￥{{item.amont}}
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,71 @@
+<!--pages/home/index.wxml-->
+<view class="container">
+  <view class="swiper">
+    <swiper style='width:100%;height:100%;'>
+      <block wx:for="{{loopImgs}}" wx:key="{{item.id}}">
+        <swiper-item>
+            <image src="{{item.mainImg}}" style="width:100%;height:100%;" data-url="{{item.url}}" bindtap="gotoUrl"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="card com-bot-border">
+    <view class='recom-title'>
+      <view class='liner'></view>
+      <view class='title'>姓氏打卡</view>
+      <view class='liner'></view>
+    </view>
+    <view class="card-img">
+      <image src="../../images/content-bg.png" style="width:100%;height:100%;" ></image>
+      <view class="card-btn">
+        <navigator url="../clockIn/index">进入打卡</navigator>
+      </view>
+    </view>
+  </view>
+  <view class="fot">
+    <view class='recom-title'>
+      <view class='liner'></view>
+      <view class='title'>百家姓打卡总数排名</view>
+      <view class='liner'></view>
+    </view>
+    <view class="cont">
+      <van-row gutter="20">
+        <van-col span="8">
+          <view class="fot-item">
+            <!-- <image src="../../images/xs_1.png" style="width:70px;height:70px;"></image>  -->
+            <view class="big-txt ellipsis">{{dayRank}}</view>
+            <view>今日打卡排行</view>
+            <view class="fot-btn" data-type="DAY" bindtap="gotoDetail">查看详情</view>
+          </view>
+        </van-col>
+        <van-col span="8">
+          <view class="fot-item">
+            <!-- <image src="../../images/xs_1.png" style="width:70px;height:70px;"></image>  -->
+            <view class="big-txt ellipsis">{{weekRank}}</view>
+            <view>本周打卡排行</view>
+            <view class="fot-btn" data-type="WEEK" bindtap="gotoDetail">查看详情</view>
+          </view>
+        </van-col>
+        <van-col span="8">
+          <view class="fot-item">
+            <!-- <image src="../../images/xs_1.png" style="width:70px;height:70px;"></image>  -->
+            <view class="big-txt ellipsis">{{monthRank}}</view>
+            <view>本月打卡排行</view>
+            <view class="fot-btn" data-type="MONTH" bindtap="gotoDetail">查看详情</view>
+          </view>
+        </van-col>
+        
+      </van-row>
+    </view>
+  </view>
+</view>
+<van-dialog
+  title="标题"
+  message="藏一本需要获取您的个人信息和头像"
+  show="{{ loginShow }}"
+  show-cancel-button
+  confirm-button-open-type="getUserInfo"
+  bind:close="onClose"
+  bind:getuserinfo="getUserInfo"
+>
+</van-dialog>

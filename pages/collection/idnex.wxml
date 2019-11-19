@@ -1,0 +1,41 @@
+<!--pages/collection/idnex.wxml-->
+<view class="container">
+  <view class='top'>
+    <navigator url="../nav_list/index">
+      <view class='search'>
+        <van-icon name="search" size="15px" custom-style='margin-top:6px;' />
+        <text class='txt' style='margin-top:-3px;'>搜索书籍名称、作者名称</text>
+      </view>
+    </navigator>
+    
+  </view>
+  <view class='com-title com-bot-border'>
+    书籍分类
+  </view>
+  <view class='graid com-bot-border'>
+    <van-grid border="{{false}}" column-num="3">
+      <van-grid-item wx:for="{{navList}}" wx:key="{{item.id}}" icon="../../images/collection4.png" text="{{item.typeName}}" data-id="{{item.id}}" data-title="{{item.typeName}}" bindtap="gotoNavList"/>
+    </van-grid>
+  </view>
+  <view class='com-title com-bot-border'>
+    全部收藏
+  </view>
+  <view class='shop-box'>
+    <van-row gutter="15">
+      <van-col span="12" wx:for="{{list}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="gotoShopDeatil">
+        <view class='shop-item'>
+          <view class='lft'>
+            <image src='{{item.mainImg}}' style='width:70px;height:90px;'></image>
+          </view>
+          <view class='rgt'>
+            <view class='title'>{{item.goodsName}}</view>
+            <view class='desc van-multi-ellipsis--l3'>{{item.bookDesc}}</view>
+             <view class='price' wx:if="{{item.isCollection}}">暂不出售</view>
+            <!-- <view class='price' >{{item.goodsPrice}}元</view> -->
+          </view>
+        </view>
+      </van-col>
+    </van-row>
+  </view>
+  
+</view>

@@ -1,0 +1,36 @@
+<!--pages/appreciation_detail_1/idenx.wxml-->
+<view class="container">
+  <view class="top com-bot-border">
+    <view class="p">鉴赏物品名称:《洗冤录4册》</view>
+    <view class="p">鉴赏发起时间:2019年10月30日</view>
+    <view class="p">鉴赏描述:年代是民国时期的请专家好好看看</view>
+    <view class="tip">鉴赏物品图片</view>
+  </view>
+  <view class="cont">
+    <van-row>
+      <van-col span="8">
+        <image src="../../images/p4.png" style="width:80px;height:80px;"></image>
+      </van-col>
+      <van-col span="8">
+        <image src="../../images/p4.png" style="width:80px;height:80px;"></image>
+      </van-col>
+      <van-col span="8">
+        <image src="../../images/p4.png" style="width:80px;height:80px;"></image>
+      </van-col>
+      <van-col span="8">
+        <image src="../../images/p4.png" style="width:80px;height:80px;"></image>
+      </van-col>
+      <van-col span="8">
+        <image src="../../images/p4.png" style="width:80px;height:80px;"></image>
+      </van-col>
+      <van-col span="8">
+        <image src="../../images/p4.png" style="width:80px;height:80px;"></image>
+      </van-col>
+    </van-row>
+  </view>
+
+  <view class="btn-box">
+    <view class="btn">回复</view>
+    <view class="btn">鉴赏完成</view>
+  </view>
+</view>

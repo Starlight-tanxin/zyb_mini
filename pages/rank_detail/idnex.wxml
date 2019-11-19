@@ -1,0 +1,31 @@
+<!--pages/rank_detail/idnex.wxml-->
+<view class='container'>
+   <van-nav-bar
+    title="打卡详情"
+    left-text="返回"
+    left-arrow
+  />
+  
+  <view class='ranking'>
+    <view class='rank-head com-bot-border'>
+      <van-row>
+        <van-col span="3">排名</van-col>
+        <van-col span="4">用户名称</van-col>
+        <van-col span="6">累计打卡数量</van-col>
+        <van-col span="6">称号</van-col>
+        <van-col span="5"></van-col>
+      </van-row>
+    </view>
+    <view class='rank-cont com-bot-border'>
+      <van-row>
+        <van-col span="3">1</van-col>
+        <van-col span="4">周</van-col>
+        <van-col span="6">2560</van-col>
+        <van-col span="6">族长</van-col>
+        <van-col span="5">
+          <!-- <view class='btn' hover-class='hover'>详情</view> -->
+        </van-col>
+      </van-row>
+    </view>
+  </view>
+</view>

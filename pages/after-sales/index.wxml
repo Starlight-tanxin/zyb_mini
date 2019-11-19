@@ -1,0 +1,35 @@
+<!--pages/after-sales/index.wxml-->
+<view class='container'>
+  <view class='orders' wx:for="{{list}}" wx:key="{{item.id}}">
+    <view class='order-title flex-ctr'>
+      <text class='left'>{{item.cretaedTime}}</text>
+      <text class='right' style='color:#8e8e8e;'>退款中</text>
+    </view>
+    <view class='order-cont'>
+      <view class='shop' wx:for="{{item.orderDetails}}" wx:for-item="ite" wx:for-index="idx"  wx:key="{{ite.goodsBookId}}">
+        <view class='img'>
+          <image src='{{ite.mainImg}}'></image>
+        </view>
+        <view class='info'>
+          <view class='lft'>
+            <view class='title'>{{ite.goodsName}}</view>
+            <view class='desc'>
+              {{ite.bookDesc}}
+            </view>
+          </view>
+          <view class="rgt">
+            ￥{{ite.goodsPrice}}元
+          </view>
+        </view>
+      </view>
+      <!-- <view class='tip'>
+        共1件 应付金额：
+        <text class='price'> ￥3000.00元</text>
+      </view> -->
+      <view class='btn-box'>
+        <view class='btn btn2' bindtap="gotoDetail" data-id="{{item.id}}">订单详情</view>
+        <view class='btn1 btn'>联系客服</view>
+      </view>
+    </view>
+  </view>
+</view>

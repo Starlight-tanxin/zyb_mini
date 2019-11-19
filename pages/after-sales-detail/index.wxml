@@ -1,0 +1,33 @@
+<!--pages/after-sales-detail/index.wxml-->
+<view class='container'>
+  <!-- <van-nav-bar title="退款详情" left-text="返回" left-arrow /> -->
+  <view class='com-bot-border pad-com'>
+    <view style='font-weight:700;'>{{result.newOrderState}}</view>
+    <view style='font-size:10px;color:#8e8e8e;margin-top:6px;'>{{result.cretaedTime}}</view>
+  </view>
+  <view class='com-bot-border pad-com'>
+    <view style='font-weight:700;'>退款信息</view>
+  </view>
+  <view class='shop-info pad-com com-bot-border' wx:for="{{result.orderDetails}}" wx:key="{{item.id}}">
+    <view class='top'>
+      <view>
+        <image src='{{item.mainImg}}' style=' width:90px;height:65px; '></image>
+      </view>
+      <view class='info'>
+        <view class='tit'>{{item.goodsName}}</view>
+        <view class='desc'>{{item.bookDesc}}</view>
+      </view>
+    </view>
+    <view class='bot '>
+      <view class='lft '>
+        <!-- <view>退款原因：书籍有损坏</view> -->
+        <view>退款金额：￥{{result.orderPrice}}</view>
+        <view>申请时间：{{result.cretaedTime}}</view>
+        <view>退款编号：{{result.orderNo}}</view>
+      </view>
+      <view class='rgt '>
+        <view class='btn '>联系客服</view>
+      </view>
+    </view>
+  </view>
+</view>

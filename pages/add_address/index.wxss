@@ -1,0 +1,74 @@
+/* pages/add_address/index.wxss */
+.add-address{
+  padding: 15px 30px;
+  border-top:1px solid #893100;
+  border-bottom: 1px solid #893100;
+}
+.add-item{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.add-item1{
+  align-items: flex-start; 
+}
+.add-item>.lft{
+  color: #333;
+  flex-basis: 80px;
+  
+}
+.add-item>.rgt{
+  flex: 1;
+}
+.add-item>.rgt>input{
+     width: 210px;
+     height: 30px;
+     box-sizing: border-box;
+     border: 1px solid #893100;
+     padding-left: 12px;
+}
+.add-item>.rgt>textarea{
+    
+     width: 210px;
+     height: 80px;
+     box-sizing: border-box;
+     border: 1px solid #893100;
+     padding: 12px;
+}
+
+.set{
+  text-align: center;
+  margin: 20px 0;
+}
+.set>.txt{
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border: 2px solid #893100;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+.btn{
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  background-color: #893100;
+  border-radius: 5px;
+  margin: 50px auto;
+}
+
+.picker{
+  width: 210px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid #893100;
+  padding-left: 12px;
+  line-height: 30px;
+  
+}
+.active{
+  background: #893100;
+}

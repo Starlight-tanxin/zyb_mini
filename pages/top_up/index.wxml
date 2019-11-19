@@ -1,0 +1,27 @@
+<!--pages/top_up/index.wxml-->
+<view class='container'>
+  <view class='top pad-com com-bot-border'>
+    充值通道
+  </view>
+  <view class='pad-com flex-ctr check com-bot-border'>
+    <view class='flex-c'>
+      <image src='../../images/top_up.png' style='width:25px;height:25px;margin-right:15px;'></image>
+      <text>微信支付</text>
+    </view>
+     <view class='flex-c'>
+      微信单笔最高充值5000元
+    </view>
+    <!-- <van-checkbox value="{{ checked }}" bind:change="onChange"></van-checkbox> -->
+  </view>
+  <view class='big-input pad-com com-bot-border'>
+    <view class='title'>充值金额</view>
+    <input type='text' value='{{inputVal}}'  bindchange="setval"></input>
+    <view class='tip'>目前余额：￥{{money}}</view>
+  </view> 
+
+  <view class='fot pad-com'>
+   <van-checkbox value="{{ checked }}"  icon-size="12px" bind:change="onChange"></van-checkbox>
+   <view style="margin-left:5px;"> 我已经阅读并同意《藏一本服务协议》</view>
+  </view>
+  <view class='btn' bindtap="save">确认支付</view> 
+</view>

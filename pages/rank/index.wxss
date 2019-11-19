@@ -1,0 +1,159 @@
+/* pages/rank/index.wxss */
+.rank-top{
+  position: relative;
+}
+.rank-top .top-p{
+  position: absolute;
+  left: 8%;
+  top: 70%;
+  font-size: 12px;
+  color: #333;
+  font-weight: 700;
+}
+.rank-top>image{
+  width: 100%;
+  height: 160px;
+}
+.container{
+  padding-bottom: 30px;
+}
+.rank-cont > .top{
+  padding:0 25px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 10px;
+}
+.rank-cont > .top .txt{
+  color: #8e8e8e;
+  
+}
+.rank-bot{
+  padding:0 35px;
+}
+.rank-bot > .h2{
+  line-height: 50px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.rank-bot > .h2>.t1{
+  font-size: 15px;
+  font-weight: 800;
+}
+.rank-bot > .h2>.t2{
+  font-size: 12px;
+  color: #8e8e8e;
+}
+.rank-box{
+  text-align: center;
+  border: 1px solid #893100;
+  min-height: 180px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.rank-box .head{
+  height: 35px;
+  background: #893100;
+  color: #fff;
+  line-height: 35px;
+}
+.rank-box .rank-item{
+  border-bottom:1px solid #893100;
+  height: 32px;
+  line-height: 32px;
+}
+
+.gotoclock{
+  color: #8e8e8e;
+  margin: 50px 0;
+  text-align: center;
+}
+
+.gotoclock>.clor{
+  margin-left: 13px;
+  color: #009ece;
+}
+
+/* 弹出层 */
+.popup-cont{
+  
+  min-height: 200px;
+}
+.popup-cont>.title{
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+.popup-cont > .tip{
+  font-weight: 700;
+  font-size: 12px;
+  margin: 10px 0;
+}
+.popup-cont > .desc{
+  color: #8e8e8e;
+}
+.popup-cont > .rank-time{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.popup-cont > .rank-time > .item{
+  height: 25px;
+  width: 60px;
+  border: 1px solid #893100;
+  box-sizing: border-box;
+  color: #893100;
+  font-weight: 700;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 5px;
+}
+.popup-cont > .rank-time > .active{
+  background: #893100;
+  color: #fff;
+}
+.popup-cont>.pay{
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+.popup-cont>.pay>.txt{
+  color: #8e8e8e;
+}
+.popup-cont>.pay>.price{
+  width: 75px;
+  height: 25px;
+  padding-left: 8px;
+  border: 1px solid #893100;
+  box-sizing: border-box;
+  font-weight: 700;
+  line-height: 25px;
+  border-radius: 5px;
+}
+.popup-cont>.instructions{
+  text-align: center;
+}
+.popup-cont>.instructions>.circel{
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border: 2px solid #893100;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.popup-cont>.btn{
+  background: #893100;
+  color: #fff;
+  font-weight:700;
+  width: 90px;
+  margin: 15px auto;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+}

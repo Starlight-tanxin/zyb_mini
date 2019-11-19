@@ -1,0 +1,49 @@
+/* pages/account-detail/index.wxss */
+.container{
+  padding-bottom: 25px;
+}
+.account-top{
+  font-size: 10px;
+  color: #fff;
+  background: #893100;
+  padding:15px 18px;
+}
+.account-top > .price{
+  font-size: 18px;
+  margin: 10px 0;
+}
+.btn-box{
+  padding: 15px 0; 
+  display: flex;
+  justify-content: center;
+}
+.btn-box>.btn:nth-of-type(1){
+  margin-right: 15px;
+}
+.btn-box>.btn{
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  background-color: #893100;
+  border-radius: 15px;
+  }
+
+  .title{
+    padding-left:20px;
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: 700;
+  }
+  .account-detail{
+    
+  }
+  .account-item{
+    padding:10px 20px; 
+    color: #8e8e8e;
+  }
+  .account-item>.rgt{
+    color: #333;
+    font-weight: 700;
+  }
