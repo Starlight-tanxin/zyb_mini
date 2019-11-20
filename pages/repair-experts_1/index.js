@@ -16,7 +16,7 @@ Page({
     this.getList(this.data.page);
   },
   getList:function(page){
-    api.userProIndex({
+    api.maintainPro({
         page,
         pageSize:this.data.pageSize
     },res=>{
@@ -32,28 +32,28 @@ Page({
     })
   },
   save:function(){
-    if(wx.getStorageSync("pageData")){
-      var obj = wx.getStorageSync("pageData");
+    if(wx.getStorageSync("pageData1")){
+      var obj = wx.getStorageSync("pageData1");
       console.log(this.data.radio)
 
-      api.identifyAdd({
-        amount: this.data.list[this.data.radio - 1].price,
-        antiqueDetail :obj.textArea,
+      api.maintainAdd({
         antiqueName: obj.goodsName,
-        identify:1,
-        userProId: this.data.list[this.data.radio - 1].id,
-        imgAryStr: obj.tempFilePaths.toString()
+        antiqueTypeId:obj.choseId,
+        maintainDetail:obj.textArea,
+        maintainProId: this.data.list[this.data.radio - 1].id,
+        maintainState:1,
+        userAddressId:obj.choseAddressId,
+        isSelfTake: obj.isSelfTake
       },res=>{
-        api.orderPay({
-          orderId : res.body,
-          orderType:1
+        wx.navigateTo({
+          url: '../wait/idnex',
         })
       })
     }
     
   },
   onReachBottom: function () {
-    if (this.data.last) return;
+    if(this.data.last) return;
     this.getList(++this.data.page)
   },
   onShareAppMessage: function () {

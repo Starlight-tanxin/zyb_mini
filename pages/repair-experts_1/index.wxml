@@ -13,7 +13,7 @@
           </view>
         </view>
         <view >
-          <text>￥{{item.price}}</text>
+          <!-- <text>￥{{item.price}}</text> -->
           <!-- <image wx:if="{{index == 0}}" src='../../images/fire.png'  style='width:20px;height:30px;'></image> -->
         </view>
       </view>
@@ -22,5 +22,5 @@
       
 
   </view>
-  <view class='btn' bindtap="save">发起鉴赏申请</view>
+  <view class='btn' bindtap="save">发起修复申请</view>
 </view>

@@ -1,65 +1,63 @@
 <!--pages/order_detail_2/index.wxml-->
 <view class='container'>
-  <van-nav-bar title="订单详情" left-text="返回" left-arrow />
-
   <view class='content'>
     <view class='repair'>
       <view class='title'>修复后样式:</view>
       <view class='repair-imgs'>
         <van-row gutter="20">
-          <van-col span="8" wx:for="{{3}}" wx:key="*this">
-            <image src='../../images/p4.png' style='width:100px;height:100px;'></image>
+          <van-col span="8" wx:for="{{result.maintainState==2?result.preMaintainMsgImgs:result.maintainMsgImgs}}" wx:key="*this">
+            <image src='{{item}}' style='width:100px;height:100px;'></image>
           </van-col>
         </van-row>
       </view>
       <view class='desc'>
-        <text>修复描述：修复详情...</text>
+        <text>修复描述：{{result.preMaintainMsg.cmMaintainMsg}}</text>
       </view>
       <view class='detail'>
         <view class='detail-item'>
-          修复后金额：￥300.00(元)
+          修复后金额：￥{{result.cmMaintainAmount}}(元)
         </view>
         <view class='detail-item'>
-          修复天数：15(天)
+          修复天数：{{result.cmMaintainDay}}(天)
         </view>
         <view class='detail-item'>
-          寄送地址：湖南省长沙市
+          寄送地址：{{result.cmAddress}}
         </view>
         <view class='detail-item'>
-          收件人：相约图书有限公司
+          收件人：{{result.cmName}}
         </view>
         <view class='detail-item'>
-         电话：0371-xxxx-xxx
+         电话：{{result.cmMobile}}
         </view>
-        <view class='detail-item'>
+        <view class='detail-item' wx:if="{{result.maintainState !=2}}">
          订单号：17224745
         </view>
-        <view class='detail-item'>
+        <view class='detail-item' wx:if="{{result.maintainState !=2}}">
          订单状态：修复中
         </view>
-        <view class='detail-item'>
+        <view class='detail-item' wx:if="{{result.maintainState !=2}}">
          支付状态:已支付定金
         </view>
-        <view class='detail-item'>
+        <view class='detail-item' wx:if="{{result.maintainState !=2}}">
          修复开始时间：2019-10-23
         </view>
-        <view class='detail-item'>
+        <view class='detail-item' wx:if="{{result.maintainState !=2}}">
           修复结束时间：2019-11-23
         </view>
       </view>
 
-      <!-- <view class='tip'>
+      <view class='tip'>
        <image src='../../images/profile_8.png' style='width:12px;height:12px;margin-right:3px;'></image>
-        <text>藏一本将在48小时内回复您的申请</text>
-      </view> -->
+        <text>时间从平台收到物品开始计算，支付完成后请尽快发货或送货上门</text>
+      </view>
     </view>
   </view>
   <view class='btn-box'>
-    <!-- <view class='btn btn1'>继续沟通</view> -->
+    <view class='btn btn1'>继续沟通</view>
     <!-- 支付尾款的情况 -->
-    <!-- <view class='btn btn2'>支付尾款(￥1500.00)</view> -->
-    <!-- 评价的情况 -->
-    <view class='btn btn2' style="width:70px;">评价</view>
+    <view class='btn btn2' bindtap="pay">支付{{result.maintainState==2?'首款':'尾款'}}(￥1500.00)</view>
+    <!-- 评价的情况
+    <!-- <view class='btn btn2' style="width:70px;">评价</view> -->
   </view>
 </view>
 

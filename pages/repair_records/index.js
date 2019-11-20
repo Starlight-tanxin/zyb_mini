@@ -33,9 +33,18 @@ Page({
     this.getList(this.data.page)
   },
   gotoDetail:function(e){
-    wx.navigateTo({
-      // url: '../appreciation_detail_1/idenx?id=' + e.currentTarget.dataset.id + '&type=2',
-      url: '../appreciation_detail/index?id=' + e.currentTarget.dataset.id+'&type=2',
-    })
+    var type = e.currentTarget.dataset.type;
+    if(type == 1){
+      wx.navigateTo({
+        // url: '../appreciation_detail_1/idenx?id=' + e.currentTarget.dataset.id + '&type=2',
+        url: '../appreciation_detail/index?id=' + e.currentTarget.dataset.id + '&type=2',
+      })
+    }else if(type == 2){
+      wx.navigateTo({
+        url: '../order_detail_2/index?id=' + e.currentTarget.dataset.id,
+      })
+    }
+
+    
   }
 })

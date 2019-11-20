@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 43,
+			"current": 30,
 			"list": [
 				{
 					"id": -1,
@@ -261,8 +261,8 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "订单详情2",
+					"id": 30,
+					"name": "修复详情",
 					"pathName": "pages/order_detail_2/index",
 					"query": "",
 					"scene": null
@@ -355,6 +355,13 @@
 					"id": -1,
 					"name": "设置手机号",
 					"pathName": "pages/set_phone/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修复专家列表",
+					"pathName": "pages/repair-experts_1/index",
 					"query": "",
 					"scene": null
 				}

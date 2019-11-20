@@ -5,12 +5,15 @@ Page({
     msg:"修复",
     selectAntique:[],
     show:false,
+    show1:false,
     choseVal:"请选择类型",
     checked: false, 
     goodsName:'',
     tempFilePaths:[],
     textArea:'',
-    radio: '1'
+    radio: '1',
+    choseAddress:'',
+    choseAddressId:''
   },
   onLoad: function (options) {
     console.log(options)
@@ -74,7 +77,15 @@ Page({
     })
     if(this.data.pageType == 1){
       api.getAddress(res=>{
-        
+        var data = res.body;
+        for (var i in data) {
+          data[i].name = data[i].province + " " + data[i].city + data[i].region + data[i].addressDetail;
+          data[i].newAddress = data[i].province + " " + data[i].city + " " + data[i].region + " "+ data[i].addressDetail;
+        }
+        console.log(data)
+        this.setData({
+          selectAntique1: data
+        })
       })
     }
   },
@@ -84,11 +95,24 @@ Page({
   onshow(){
     this.setData({ show: true });
   },
+  onClose1() {
+    this.setData({ show1: false });
+  },
+  onshow1() {
+    this.setData({ show1: true });
+  },
   onSelect(event) {
     console.log(event.detail);
     this.setData({
       choseVal: event.detail.typeName,
       choseId: event.detail.id
+    })
+  },
+  onSelect1(event) {
+    console.log(event.detail);
+    this.setData({
+      choseAddress: event.detail.newAddress,
+      choseAddressId: event.detail.id
     })
   },
   onChange(event) {
@@ -97,6 +121,7 @@ Page({
     });
   },
   onChange1(event) {
+    console.log(event)
     this.setData({
       radio: event.detail
     });
@@ -113,6 +138,15 @@ Page({
   },
   gotoNext:function(){
     if (this.data.goodsName && this.data.choseVal && this.data.choseId && this.data.checked){
+      if(this.data.pageType == 1){
+        if(this.data.choseAddressId == ''){
+          wx.showToast({
+            title: '请补全信息',
+            icon: 'none'
+          });
+          return;
+        }
+      }
       var obj={
         goodsName: this.data.goodsName,
         choseVal: this.data.choseVal,
@@ -120,8 +154,25 @@ Page({
         tempFilePaths: this.data.tempFilePaths,
         textArea: this.data.textArea,
       }
-      console.log(obj)
-      wx.setStorageSync("pageData", obj);
+      if (this.data.pageType == 1){
+        if(this.data.radio == 2){
+          obj.isSelfTake  = true;
+        }else{
+          obj.isSelfTake = false;
+        }
+        obj.choseAddressId = this.data.choseAddressId;
+        wx.setStorageSync("pageData1", obj);
+        wx.navigateTo({
+          url: '../repair-experts_1/index',
+        })
+      }else{
+        wx.setStorageSync("pageData", obj);
+        wx.navigateTo({
+          url: '../repair-experts/index',
+        })
+      }
+     
+      
     }else{
       wx.showToast({
         title: '请补全信息',

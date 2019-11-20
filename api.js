@@ -242,6 +242,16 @@ module.exports = {
       cb(res);
     })
   },
+  // 修复专家
+  maintainPro: function (option, cb) {
+    console.log(option)
+    service.fetch({
+      url: 'maintain-pro/index',
+      data: option
+    }, res => {
+      cb(res);
+    })
+  },
   // 收获地址
   getAddress:function(cb){
     service.fetch({
@@ -260,4 +270,14 @@ module.exports = {
       cb(res)
     })
   },
+  // 添加修复
+  maintainAdd:function(option,cb){
+    service.fetch({
+      url:'maintain/add',
+      type:'post',
+      data:option
+    },res=>{
+      cb(res)
+    })
+  }
 }
