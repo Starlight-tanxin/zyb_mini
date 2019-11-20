@@ -42,7 +42,7 @@ Page({
     var inputVal = this.data.inputVal;
     var money = this.data.money;
     console.log(inputVal)
-    if (inputVal==0 || inputVal>money){
+    if (inputVal<=0 || inputVal>money){
       wx.showToast({
         title: '提现金额不足',
         icon: "none"
@@ -63,6 +63,9 @@ Page({
       },res=>{
         wx.showToast({
           title: "提现申请发送成功",
+        });
+        wx.redirectTo({
+          url: '../account-detail/index',
         })
       })
     }

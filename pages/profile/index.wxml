@@ -7,7 +7,7 @@
       </view>
       <view class='rgt' bindtap="popShow" data-userLogin="{{userInfo}}">
         <view class='name'>{{userInfo?userInfo.nickname:'未登录'}} <text></text> {{userInfo ? result.surnameName :''}}</view>
-        <view>{{userInfo?result.userLevel:''}}</view>
+        <view>{{result.topOne? '族长' : '成员' }}</view>
       </view>
     </view>
     <view>
