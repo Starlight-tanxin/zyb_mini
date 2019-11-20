@@ -37,14 +37,17 @@
       </view>
     </view>
   </view>
-  <!-- <view class='repair-bot'>
+  <view class='repair-bot' wx:if="{{pageType == 1}}">
     <view class='top'>
       寄件方式:(确认添加后等待回复平台地址)
     </view>
+    <van-radio-group value="{{ radio }}" bind:change="onChange1">
     <view class='addres flex-ctr'>
       <view class='lft'>
-        <text class='chose'></text>
-        选择收获地址:
+        <!-- <text class='chose'></text> -->
+        <van-radio name="1" icon-size="12">
+          选择收获地址:
+        </van-radio>
       </view>
       <view class='ctr'>
         收获地址
@@ -55,10 +58,13 @@
       </view>
     </view>
     <view class='bot'>
-      <text class='chose'></text>
-      藏家送货上门
+      <!-- <text class='chose'></text> -->
+      <van-radio name="2" icon-size="12">
+        藏家送货上门
+      </van-radio>
     </view>
-  </view>          -->
+    </van-radio-group>
+  </view>         
   <view class='btn-argreen-box'>
     <view class="cent">
      <van-checkbox value="{{ checked }}" bind:change="onChange" icon-size="12">我已经阅读并同意《藏一本修复协议》</van-checkbox>

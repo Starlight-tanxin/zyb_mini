@@ -3,7 +3,9 @@
     "van-nav-bar": "../../dist/nav-bar/index",
     "van-action-sheet": "../../dist/action-sheet/index",
     "van-checkbox": "../../dist/checkbox/index",
-    "van-icon": "../../dist/icon/index"
+    "van-icon": "../../dist/icon/index",
+    "van-radio": "../../dist/radio/index",
+    "van-radio-group": "../../dist/radio-group/index"
   },
   "navigationBarTitleText": "修复 鉴赏"
 }
