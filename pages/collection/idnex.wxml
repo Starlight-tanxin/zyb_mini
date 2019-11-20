@@ -14,7 +14,7 @@
   </view>
   <view class='graid com-bot-border'>
     <van-grid border="{{false}}" column-num="3">
-      <van-grid-item wx:for="{{navList}}" wx:key="{{item.id}}" icon="../../images/collection4.png" text="{{item.typeName}}" data-id="{{item.id}}" data-title="{{item.typeName}}" bindtap="gotoNavList"/>
+      <van-grid-item wx:for="{{navList}}" wx:key="{{item.id}}" icon= "{{item.typeIcon}}" text="{{item.typeName}}" data-id="{{item.id}}" data-title="{{item.typeName}}" bindtap="gotoNavList"/>
     </van-grid>
   </view>
   <view class='com-title com-bot-border'>

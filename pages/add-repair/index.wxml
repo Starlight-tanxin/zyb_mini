@@ -18,7 +18,7 @@
       </view>
     </view>
     <view class='reoair-item flex-ctr'>
-      <view class='lft'>{{msg}}物品分类：</view>
+      <view class='lft'>{{msg}}物品描述：</view>
       <view class='rgt'>
         <textarea  placeholder='多行输入' bindinput="setTextArea"></textarea>
       </view>
