@@ -242,6 +242,14 @@ module.exports = {
       cb(res);
     })
   },
+  // 收获地址
+  getAddress:function(cb){
+    service.fetch({
+      url:'receive-address/list'
+    },res=>{
+      cb(res);
+    })
+  },
   // 添加鉴赏
   identifyAdd:function(option,cb){
     service.fetch({
@@ -251,5 +259,5 @@ module.exports = {
     },res=>{
       cb(res)
     })
-  }
+  },
 }

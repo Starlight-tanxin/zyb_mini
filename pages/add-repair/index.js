@@ -9,18 +9,21 @@ Page({
     checked: false, 
     goodsName:'',
     tempFilePaths:[],
-    textArea:''
+    textArea:'',
+    radio: '1'
   },
   onLoad: function (options) {
     console.log(options)
     if(options && options.type){
       if (options.type == 1){
         this.setData({
-          msg:'修复'
+          msg:'修复',
+          pageType: options.type
         })
       } else if (options.type == 2){
         this.setData({
-          msg: '鉴赏'
+          msg: '鉴赏',
+          pageType: options.type
         })
       }
     }
@@ -69,6 +72,11 @@ Page({
         selectAntique: data
       })
     })
+    if(this.data.pageType == 1){
+      api.getAddress(res=>{
+        
+      })
+    }
   },
   onClose() {
     this.setData({ show: false });
@@ -86,6 +94,11 @@ Page({
   onChange(event) {
     this.setData({
       checked: event.detail
+    });
+  },
+  onChange1(event) {
+    this.setData({
+      radio: event.detail
     });
   },
   setval:function(e){
