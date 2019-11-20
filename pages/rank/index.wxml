@@ -12,7 +12,7 @@
     </view>
     <view class='rank-bot'>
       <view class='h2'>
-        <text class='t1'>家族打开排行榜</text>
+        <text class='t1'>家族打卡排行榜</text>
         <text class='t2' bindtap='showPopup'>助力打卡>></text>
       </view>
       <view class='rank-box'>

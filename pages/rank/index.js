@@ -51,7 +51,11 @@ Page({
       url,
       type:"post"
     },res=>{
-      console.log(res)
+      console.log(res);
+      wx.showToast({
+        title: '打卡成功',
+        duration : 2000,
+      });
     })
   },
   choseActive:function(e){
