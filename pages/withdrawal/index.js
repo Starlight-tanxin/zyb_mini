@@ -65,12 +65,12 @@ Page({
           title: "提现申请发送成功",
           duration: 2000,
           complete: function () {
-            // wx.navigateBack({
-            //   delta: 1  // 返回上一级页面。
-            // });
-            wx.redirectTo({
-              url: '../account-detail/index',
-            })
+            wx.navigateBack({
+              delta: 1  // 返回上一级页面。
+            });
+            // wx.redirectTo({
+            //   url: '../account-detail/index',
+            // })
           }
         });
       })
