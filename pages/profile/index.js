@@ -92,5 +92,11 @@ Page({
         loginShow:true
       })
     }
-  }
+  },
+  // 拨打电话
+  callMobile:function () {
+    wx.makePhoneCall({
+      phoneNumber: '0731-84121691',
+    })
+  },
 })

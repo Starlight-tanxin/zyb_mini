@@ -57,7 +57,7 @@
    <view>
     <van-grid column-num="5" border="{{false}}">
       <van-grid-item icon="../../images/profile_6.png" bindtap="gotoAdress"  text="收货地址"  />
-      <van-grid-item icon="../../images/profile_7.png" text="客服留言"  />
+      <van-grid-item icon="../../images/profile_7.png" bindtap="callMobile" text="客服留言"  />
       <van-grid-item icon="" text=""  />
       <van-grid-item icon="" text=""  />
       <van-grid-item icon="" text=""  />
