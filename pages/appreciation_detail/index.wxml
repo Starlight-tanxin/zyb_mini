@@ -35,6 +35,11 @@
   <!-- <view class="com-btn" bindtap="showPopup">评价</view> -->
 
 </view>
+<view class="btn-view {{showBtn ? 'show' : 'hide'}}">
+  <view class="account-btn" >
+      <navigator url="/pages/appreciation_res/index"> 回复</navigator> 
+  </view>
+</view>  
 <van-popup show="{{ show }}" bind:close="onClose">
   <view class="pop">
     <view class="pop-title">满意程度</view>

@@ -9,7 +9,8 @@ Page({
     show: false,
     show1:false,
     evaType:1,
-    evaMsg:''
+    evaMsg:'',
+    showBtn : false
   },
   showPopup() {
     this.setData({ show: true });
@@ -29,6 +30,13 @@ Page({
       wx.setNavigationBarTitle({
         title: '鉴赏详情',
       })
+      var userType = wx.getStorageSync("userType");
+      userType = userType ? userType : 1;
+      console.log('userType :' + userType);
+      // pro 是不是专家的页面来的 state = 2 才显示这个回复按钮
+      if(userType == 2 && options.pro == 1 && options.state == 2){
+        this.setData({'showBtn':true});
+      }
       this.initData(options.id);
     } else if (options.type == 2){
       wx.setNavigationBarTitle({

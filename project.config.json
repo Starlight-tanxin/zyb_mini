@@ -290,8 +290,15 @@
 				},
         {
           "id": -1,
-          "name": "鉴赏记录",
+          "name": "更多鉴赏记录",
           "pathName": "pages/appreciation_all/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "鉴赏记录专家",
+          "pathName": "pages/appreciation_pro/index",
           "query": "",
           "scene": null
         },
