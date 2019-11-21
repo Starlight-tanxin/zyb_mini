@@ -44,6 +44,7 @@
     "pages/order_wl_detail/index",
     "pages/password/idnex",
     "pages/password1/index",
+    "pages/we-chat-ui/index",
     "pages/set_phone/index"
   ],
   "window": {
