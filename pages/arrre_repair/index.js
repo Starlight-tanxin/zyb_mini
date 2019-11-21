@@ -23,12 +23,12 @@ Page({
   },
   gotoMoreAppreciation:function(){
     wx.navigateTo({
-      url: '../appreciation/index',
+      url: '../appreciation_all/index',
     })
   },
   gotoRepair:function(){
     wx.navigateTo({
-      url: '../repair_records/index',
+      url: '../repair_records_all/index',
     })
   }
 })

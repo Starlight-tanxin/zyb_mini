@@ -1,0 +1,26 @@
+<!--pages/repair_records/index.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="header com-bot-border">
+      <van-row>
+        <van-col span="3">序号</van-col>
+        <van-col span="6">日期</van-col>
+        <van-col span="4">专家</van-col>
+        <van-col span="7">专家回复</van-col>
+        <van-col span="4"></van-col>
+      </van-row>
+    </view>
+    <view class="records">
+      <van-row wx:for="{{list}}" wx:key="{{item.id}}">
+        <van-col span="3" custom-class="records-item">{{index+1}}</van-col>
+        <van-col span="6" custom-class="records-item">{{item.createdTime}}</van-col>
+        <van-col span="4" custom-class="records-item">{{item.maintainPro}}</van-col>
+        <van-col span="7" custom-class="records-item">{{item.preMaintainMsgStr ? item.preMaintainMsgStr : ''}}</van-col>
+        <van-col span="4" custom-class="records-item">
+          <view class="btn" bindtap="gotoDetail" data-type="{{item.maintainState}}" data-id="{{item.id}}">详情</view>
+        </van-col>
+      </van-row>
+    </view>
+    
+  </view>
+</view>

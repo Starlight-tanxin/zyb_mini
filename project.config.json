@@ -253,6 +253,13 @@
 					"query": "",
 					"scene": null
 				},
+        {
+          "id": -1,
+          "name": "更多修复记录",
+          "pathName": "pages/repair_records_all/index",
+          "query": "",
+          "scene": null
+        },
 				{
 					"id": 29,
 					"name": "pages/order_detail_2/index",
@@ -281,6 +288,13 @@
 					"query": "",
 					"scene": null
 				},
+        {
+          "id": -1,
+          "name": "鉴赏记录",
+          "pathName": "pages/appreciation_all/index",
+          "query": "",
+          "scene": null
+        },
 				{
 					"id": -1,
 					"name": "鉴赏详情",
