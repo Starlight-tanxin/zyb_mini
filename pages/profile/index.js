@@ -6,6 +6,7 @@ Page({
   data: {
     loginShow: false,
     userInfo:null,
+    userType : 1,
   },
   onLoad: function () {
     if (!wx.getStorageSync("userInfo")) {
@@ -17,6 +18,8 @@ Page({
         userInfo: wx.getStorageSync("userInfo")
       })
     }
+  },
+  onShow:function(){
     this.initData();
   },
   initData: function () {
@@ -30,7 +33,8 @@ Page({
         userInfo.headImg = res.body.headImg;
         userInfo.nickname = res.body.nickname;
         this.setData({
-          userInfo
+          userInfo,
+          userType:res.body.userType
         })
       }
       
@@ -99,4 +103,30 @@ Page({
       phoneNumber: '0731-84121691',
     })
   },
+  gotoXFZX:function(){
+    wx.navigateTo({
+      url: '../repair_records/index',
+    })
+  },
+  gotoJSZX: function () {
+    wx.navigateTo({
+      url: '../appreciation/index',
+    })
+  },
+  gotoJSJL: function () {
+    var userType = this.data.userType;
+    userType = userType ? userType : 1;
+    if(userType == 2){
+      // 需要跳转到专家专门得回复列表页面
+      wx.navigateTo({
+        url: '../appreciation_res/index',
+      });
+    }else{
+      wx.showToast({
+        title:'您还不是专家',
+        icon:'none',
+        duration : 2000
+      })
+    }
+  }
 })

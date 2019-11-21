@@ -1,20 +1,36 @@
 <!--pages/experts_detail/idnex.wxml-->
 <view class="container">
-  <van-nav-bar class="bg" title="专家详情" left-text="返回" left-arrow />
   <view class="experts">
     <view class="exper-top flex-ctr">
-      <image src="../../images/p4.png" style="width:72px;height:72px;border-radius:50%;"></image>
+      <image src="{{result.proImg}}" style="width:72px;height:72px;border-radius:50%;"></image>
       <view class="exper-info">
         <view class="lft">
-          <view class="name">简称：古方</view>
-          <view>类别：古代书籍</view>
+          <view class="name">简称：{{result.realname}}</view>
+          <view>类别：{{result.typeName}}</view>
         </view>
-        <view>鉴赏次数：100次</view>
+        <view wx:if="{{type==1}}">修复次数：{{result.identifyNum}}次</view>
+        <view wx:if="{{type==2}}">修复好评：{{result.evaTypeCount}}</view>
       </view>
     </view>
     <view class="title com-bot-border">简介：</view>
     <view class="info com-bot-border">
-      古方老师为....
+      {{result.proDetail}}
+    </view>
+    <view class="title com-bot-border" wx:if="{{type==2}}">修复前：</view>
+    <view class="info com-bot-border" wx:if="{{type==2}}">
+      <van-row gutter="20">
+        <van-col span="8" wx:for="{{result.maintainStrImgAry}}" wx:key="index">
+          <image src="{{item}}" style="width:70px;height:70px;"></image>
+        </van-col>
+      </van-row>
+    </view>
+    <view class="title com-bot-border" wx:if="{{type==2}}">修复后：</view>
+    <view class="info" wx:if="{{type==2}}">
+      <van-row gutter="20">
+        <van-col span="8" wx:for="{{result.maintainCompanyStrImgAry}}" wx:key="index">
+          <image src="{{item}}" style="width:70px;height:70px;"></image>
+        </van-col>
+      </van-row>
     </view>
   </view>
 </view>

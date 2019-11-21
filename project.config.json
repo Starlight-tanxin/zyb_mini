@@ -47,7 +47,6 @@
 			"currentL": -1,
 			"list": []
 		},
-
 		"miniprogram": {
 			"current": 43,
 			"list": [
@@ -357,12 +356,6 @@
 					"name": "设置手机号",
 					"pathName": "pages/set_phone/index",
 					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/we-chat-ui/index",
-					"pathName": "pages/we-chat-ui/index",
 					"scene": null
 				}
 			]

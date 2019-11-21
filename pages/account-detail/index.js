@@ -12,7 +12,7 @@ Page({
     load:true
   },
 
-  onLoad: function (options) {
+  onShow: function (options) {
     this.initData(this.data.searchData)
   },
   onReachBottom: function () {

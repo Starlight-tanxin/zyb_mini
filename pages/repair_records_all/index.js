@@ -7,12 +7,13 @@ Page({
     list: [],
     loadAll: false
   },
-  onShow: function (options) {
+  onLoad: function (options) {
     this.initData(this.data.page);
   },
   getList: function (page) {
     app.func.fetch({
-      url: 'maintain/index',
+      url: 'open/identify-maintain/showAllMaintain',
+      type: 'post',
       data: {
         page,
         pageSize: this.data.pageSize,
@@ -39,7 +40,7 @@ Page({
         // url: '../appreciation_detail_1/idenx?id=' + e.currentTarget.dataset.id + '&type=2',
         url: '../appreciation_detail/index?id=' + e.currentTarget.dataset.id + '&type=2',
       })
-    } else if (type == 2 || type == 4 || type == 3 ){
+    }else if(type == 2 || type == 4){
       wx.navigateTo({
         url: '../order_detail_2/index?id=' + e.currentTarget.dataset.id,
       })

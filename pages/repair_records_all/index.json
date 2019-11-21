@@ -4,5 +4,5 @@
     "van-row": "../../dist/row/index",
     "van-col": "../../dist/col/index"
   },
-  "navigationBarTitleText": "订单详情"
+  "navigationBarTitleText": "修复记录"
 }

@@ -6,7 +6,7 @@
       <van-icon name="arrow" size="12"/>
     </view>
     <view class="box">
-      <image src="../../images/repair_1.png" style="width:100%;height:180px;"></image>
+      <image src="https://hnsxyts.oss-cn-zhangjiakou.aliyuncs.com/icon/repair_1.png" style="width:100%;height:180px;"></image>
       <view class="btn" data-type="1"  bindtap="gotoMore">
         添加修复
       </view>
@@ -17,7 +17,7 @@
       <van-icon name="arrow" size="12"/>
     </view>
     <view class="box">
-      <image src="../../images/repair_2.png" style="width:100%;height:180px;"></image>
+      <image src="https://hnsxyts.oss-cn-zhangjiakou.aliyuncs.com/icon/repair_2.png" style="width:100%;height:180px;"></image>
       <view class="btn" bindtap="gotoMore" data-type="2">
         添加鉴赏
       </view>

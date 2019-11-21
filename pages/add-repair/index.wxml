@@ -49,18 +49,19 @@
           选择收获地址:
         </van-radio>
       </view>
-      <view class='ctr'>
-        收获地址
+      <view class='ctr ellipsis' bindtap="onshow1">
+        {{choseAddress?choseAddress:'收获地址'}}
         <view class='dsj'></view>
       </view>
       <view class='rgt'>
-        没有地址?去添加
+        <navigator url="../address/index">没有地址?去添加</navigator>
+        
       </view>
     </view>
-    <view class='bot'>
+    <view class='bot' >
       <!-- <text class='chose'></text> -->
-      <van-radio name="2" icon-size="12">
-        藏家送货上门
+      <van-radio name="2" icon-size="12" >
+        <text style="font-size:11px;">藏家送货上门</text>  
       </van-radio>
     </view>
     </van-radio-group>
@@ -79,4 +80,9 @@
   bind:close="onClose"
   bind:select="onSelect"
 />
-
+<van-action-sheet
+  show="{{ show1 }}"
+  actions="{{ selectAntique1 }}"
+  bind:close="onClose1"
+  bind:select="onSelect1"
+/>

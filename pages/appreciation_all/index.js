@@ -15,7 +15,8 @@ Page({
   },
   getList:function(page){
     app.func.fetch({
-      url: 'identify/index',
+      url: 'open/identify-maintain/showAllIdentify',
+      type: 'post',
       data: {
       //  isReplay: true,
         page,

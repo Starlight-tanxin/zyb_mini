@@ -33,7 +33,7 @@ Page({
   },
   initData:function(){
     app.func.fetch({
-      url:"open/surname/index "
+      url:"open/surname/index"
     },res=>{
       console.log(res)
       var data = res.body;
