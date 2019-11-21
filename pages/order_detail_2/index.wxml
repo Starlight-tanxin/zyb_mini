@@ -38,7 +38,7 @@
          
         </view>
         <view class='detail-item' wx:if="{{result.maintainState !=2}}">
-         支付状态:{{result.maintainState==3?'已支付定金':result.maintainState==4?'已支付定金':'已支付尾款'}}
+         支付状态: {{result.maintainState==3?'已支付定金':result.maintainState==4?'已支付定金':'已支付尾款'}}
         </view>
         <view class='detail-item' wx:if="{{result.maintainState !=2}}">
          修复开始时间：2019-10-23
