@@ -13,7 +13,8 @@ Page({
       { num: 10,active:false },
       { num: 20, active: false},
       { num: 100, active: false},
-    ]
+    ],
+    isPunch : false,
   },
   showPopup() {
     this.setData({ show: true });
@@ -45,18 +46,42 @@ Page({
       })
     })
   },
-  gotoRank:function(){
-    var url = "surname/" + this.data.id+"/punch";
+  gotoPunch:function(){
+    var url = "surname/" + this.data.id + "/punch";
     app.func.fetch({
       url,
-      type:"post"
-    },res=>{
+      type: "post"
+    }, res => {
       console.log(res);
       wx.showToast({
         title: '打卡成功',
-        duration : 2000,
+        duration: 2000,
       });
-    })
+    });
+  },
+  gotoRank:function(){ 
+    var id = this.data.id;
+    wx.showModal({
+      title: '提示',
+      content: '是否确认打卡',
+      success: function (res) {
+        if (res.confirm) {
+          var url = "surname/" + id + "/punch";
+          app.func.fetch({
+            url,
+            type: "post"
+          }, res => {
+            console.log(res);
+            wx.showToast({
+              title: '打卡成功',
+              duration: 2000,
+            });
+          });
+        } else if (res.cancel) {
+          console.log("用户放弃打卡");
+        }
+      }
+    });
   },
   choseActive:function(e){
     var index = e.currentTarget.dataset.index;

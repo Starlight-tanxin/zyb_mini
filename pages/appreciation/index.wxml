@@ -15,7 +15,7 @@
       <van-row wx:for="{{list}}" wx:key="{{item.id}}">
         <van-col span="2" custom-class="records-item">{{index+1}}</van-col>
         <van-col span="5" custom-class="records-item">{{item.createdTime}}</van-col>
-        <van-col span="4" custom-class="records-item">{{item.userProId}}</van-col>
+        <van-col span="4" custom-class="records-item">{{item.userProName}}</van-col>
         <van-col span="5" custom-class="records-item">{{item.proReplyMsg ? item.proReplyMsg : ''}}</van-col>
          <van-col span="4" custom-class="records-item">
           {{item.identify == 1 ? '创建鉴赏' : item.identify == 2? '提交鉴赏' : item.identify == 3?'鉴赏完成':item.identify == 4?'退回鉴赏':'未知'}}

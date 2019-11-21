@@ -2,13 +2,13 @@
 <view class='container'>
   <view class='rank-top '>
     <image src='https://hnsxyts.oss-cn-zhangjiakou.aliyuncs.com/icon/dktp.jpg' bindtap="gotoRank"></image>
-    <view class="top-p">{{result.surnameName}}氏已打卡人数: {{result.count}}</view>
+    <view class="top-p">{{result.surnameName}}氏已打卡人数: {{result.count?result.count : 0}}</view>
   </view>
 
   <view class="rank-cont">
     <view class='top com-bot-border'>
-      <view class="ellipsis">某姓今日最早打卡：{{result.earlyBird}}</view>
-      <view class="ellipsis" style="margin-left:10px;">累计打卡第一名：{{result.topOne}}</view>
+      <view class="ellipsis">某姓今日最早打卡：{{result.earlyBird?result.earlyBird:''}}</view>
+      <view class="ellipsis" style="margin-left:10px;">累计打卡第一名：{{result.topOne?result.topOne:''}}</view>
     </view>
     <view class='rank-bot'>
       <view class='h2'>
