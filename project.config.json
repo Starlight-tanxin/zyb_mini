@@ -290,7 +290,7 @@
         },
         {
           "id": -1,
-          "name": "鉴赏记录专家",
+          "name": "鉴赏记录列表专家",
           "pathName": "pages/appreciation_pro/index",
           "query": "",
           "scene": null

@@ -6,15 +6,15 @@
       <view class="exper-info">
         <view class="lft">
           <view class="name">简称：{{result.realname}}</view>
-          <view>类别：{{result.typeName}}</view>
+          <view>类别：{{result.typeName ? result.typeName : ''}}</view>
         </view>
-        <view wx:if="{{type==1}}">修复次数：{{result.identifyNum}}次</view>
-        <view wx:if="{{type==2}}">修复好评：{{result.evaTypeCount}}</view>
+        <view wx:if="{{type==1}}">修复次数：{{result.identifyNum ? result.identifyNum : 0 }}次</view>
+        <view wx:if="{{type==2}}">修复好评：{{result.evaTypeCount ? result.evaTypeCount : 0}}</view>
       </view>
     </view>
     <view class="title com-bot-border">简介：</view>
     <view class="info com-bot-border">
-      {{result.proDetail}}
+      {{result.proDetail ? result.proDetail : '' }}
     </view>
     <view class="title com-bot-border" wx:if="{{type==2}}">修复前：</view>
     <view class="info com-bot-border" wx:if="{{type==2}}">
