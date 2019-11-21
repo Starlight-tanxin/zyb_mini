@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 24,
+			"current": 43,
 			"list": [
 				{
 					"id": -1,
@@ -219,8 +219,8 @@
 					"scene": null
 				},
 				{
-					"id": 24,
-					"name": "选择鉴赏专家",
+					"id": -1,
+					"name": "选择修复专家",
 					"pathName": "pages/repair-experts/index",
 					"query": "",
 					"scene": null
@@ -253,13 +253,6 @@
 					"query": "",
 					"scene": null
 				},
-        {
-          "id": -1,
-          "name": "更多修复记录",
-          "pathName": "pages/repair_records_all/index",
-          "query": "",
-          "scene": null
-        },
 				{
 					"id": 29,
 					"name": "pages/order_detail_2/index",
@@ -268,8 +261,8 @@
 					"scene": null
 				},
 				{
-					"id": 30,
-					"name": "修复详情",
+					"id": -1,
+					"name": "订单详情2",
 					"pathName": "pages/order_detail_2/index",
 					"query": "",
 					"scene": null
@@ -376,20 +369,6 @@
 					"id": -1,
 					"name": "设置手机号",
 					"pathName": "pages/set_phone/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "修复专家列表",
-					"pathName": "pages/repair-experts_1/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 45,
-					"name": "pages/pay-sucess/index",
-					"pathName": "pages/pay-sucess/index",
 					"query": "",
 					"scene": null
 				}
