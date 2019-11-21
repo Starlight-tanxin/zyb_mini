@@ -25,5 +25,11 @@ Page({
       orderType:2,
       repairType: this.data.result.maintainState==2?0:1
     })
-  }
+  },
+  // 拨打电话
+  callMobile: function () {
+    wx.makePhoneCall({
+      phoneNumber: '0731-84121691',
+    })
+  },
 })
