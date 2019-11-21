@@ -18,6 +18,8 @@ Page({
         userInfo: wx.getStorageSync("userInfo")
       })
     }
+  },
+  onShow:function(){
     this.initData();
   },
   initData: function () {
@@ -117,7 +119,7 @@ Page({
     if(userType == 2){
       // 需要跳转到专家专门得回复列表页面
       wx.navigateTo({
-        url: '../appreciation/index',
+        url: '../appreciation_res/index',
       });
     }else{
       wx.showToast({

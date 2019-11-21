@@ -9,8 +9,11 @@ Page({
     this.setData({
       id:options.id
     })
-    this.initData(options.id);
+    
     // this.initData(1);
+  },
+  onShow:function(){
+    this.initData(this.data.id);
   },
   initData:function(id){
     api.appreciaDetail1(id,res=>{
@@ -24,6 +27,10 @@ Page({
       orderId : this.data.id,
       orderType:2,
       repairType: this.data.result.maintainState==2?0:1
+    },res=>{
+      wx.navigateTo({
+        url: '../pay-sucess/index?type=2',
+      })
     })
   }
 })

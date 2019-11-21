@@ -36,21 +36,6 @@
           </view>
         </view>
       </van-col>
-      <!-- <van-col span="12" >
-        <view class='shop-item'>
-          <view class='lft'>
-            <image src='../../images/p4.png' style='width:70px;height:90px;'></image>
-          </view>
-          <view class='rgt'>
-            <view class='title'>洗冤集录4册(全)</view>
-            <view class='desc'>洗冤集录集录洗冤集录洗冤集录洗冤集洗冤集录</view>
-            <view class='price'>
-              ￥5000.00元
-              <image src='../../images/add.png' style='width:10px;height:10px;'></image>
-            </view>
-          </view>
-        </view>
-      </van-col> -->
     </van-row>
   </view>
   

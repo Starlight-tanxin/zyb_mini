@@ -5,13 +5,13 @@
       <view class='title'>修复后样式:</view>
       <view class='repair-imgs'>
         <van-row gutter="20">
-          <van-col span="8" wx:for="{{result.maintainState==2?result.preMaintainMsgImgs:result.maintainMsgImgs}}" wx:key="*this">
+          <van-col span="8" wx:for="{{result.maintainState<=3?result.preMaintainMsgImgs:result.maintainMsgImgs}}" wx:key="*this">
             <image src='{{item}}' style='width:100px;height:100px;'></image>
           </van-col>
         </van-row>
       </view>
       <view class='desc'>
-        <text>修复描述：{{result.maintainState==2?result.preMaintainMsg.cmMaintainMsg:result.maintainMsg.cmMaintainMsg}}</text>
+        <text>修复描述：{{result.maintainState<=3?result.preMaintainMsg.cmMaintainMsg:result.maintainMsg.cmMaintainMsg}}</text>
 
       </view>
       <view class='detail'>
@@ -48,7 +48,7 @@
         </view>
       </view>
 
-      <view class='tip'>
+      <view class='tip' wx:if="{{result.maintainState!=3}}">
        <image src='../../images/profile_8.png' style='width:12px;height:12px;margin-right:3px;'></image>
         <text>时间从平台收到物品开始计算，支付完成后请尽快发货或送货上门</text>
       </view>

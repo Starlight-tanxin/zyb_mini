@@ -1,6 +1,5 @@
 <!--pages/appreciation_res/index.wxml-->
 <view class="container">
-  <van-nav-bar class="bg" title="鉴赏回复" left-text="返回" left-arrow />
 
   <view class="content">
     <view class="cont">

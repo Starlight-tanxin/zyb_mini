@@ -7,13 +7,16 @@
     <view class="p">{{pageType==1?'鉴赏':'修复'}}描述:{{pageType==1?result.antiqueDetail:result.maintainDetail }}</view>
     <view class="tip">{{pageType==1?'鉴赏':'修复'}}物品图片:(最多上传九张)</view>
     <view class="cont">
-      <van-row>
-        <van-col span="8">
-          <view class="add-btn" wx:for="{{result.identifyImgs}}" wx:key="{{item.id}}" wx:if="{{pageType==1}}">
+      <van-row gutter="20">
+        <van-col span="8" wx:for="{{result.identifyImgs}}" wx:key="{{item.id}}" wx:if="{{pageType==1}}">
+          <view class="add-btn">
             <image src="{{item.imgUrl}}" style="width:72px;height:72px;"></image>
             <!-- <view class="ti">请上传jpg格式图片</view> -->
           </view>
-          <view class="add-btn" wx:for="{{result.userMaintainImgs}}" wx:key="{{item.id}}" wx:if="{{pageType==2}}">
+          
+        </van-col>
+        <van-col wx:for="{{result.userMaintainImgs}}" wx:key="{{item.id}}" wx:if="{{pageType==2}}">
+          <view class="add-btn" >
             <image src="{{item.imgUrl}}" style="width:72px;height:72px;"></image>
             <!-- <view class="ti">请上传jpg格式图片</view> -->
           </view>

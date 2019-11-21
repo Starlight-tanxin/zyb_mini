@@ -3,5 +3,6 @@
     "van-nav-bar": "../../dist/nav-bar/index",
     "van-radio": "../../dist/radio/index",
     "van-radio-group": "../../dist/radio-group/index"
-  }
+  },
+  "navigationBarTitleText": "鉴赏回复"
 }

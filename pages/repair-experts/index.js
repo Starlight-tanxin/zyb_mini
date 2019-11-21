@@ -44,13 +44,23 @@ Page({
         userProId: this.data.list[this.data.radio - 1].id,
         imgAryStr: obj.tempFilePaths.toString()
       },res=>{
+        var id = res.body;
         api.orderPay({
           orderId : res.body,
           orderType:1
+        },res=>{
+          wx.navigateTo({
+            url: '../pay-sucess/index?type=3&id='+id,
+          })
         })
       })
     }
     
+  },
+  gotoExpers:function(e){
+    wx.navigateTo({
+      url: '../experts_detail/idnex?id=' + e.currentTarget.dataset.id + '&type=1',
+    })
   },
   onReachBottom: function () {
     if (this.data.last) return;

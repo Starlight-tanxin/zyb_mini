@@ -23,7 +23,24 @@ module.exports = {
       cb(res);
     })
   },
-
+  // 鉴赏专家详情
+  uersProDetail:function(option,cb){
+    service.fetch({
+      url:'userPro/getInfo',
+      data:option
+    },res=>{
+      cb(res);
+    })
+  },
+  // 修复专家详情
+  maintainProDetail:function(option,cb){
+    service.fetch({
+      url: 'maintain-pro/getInfo',
+      data: option
+    }, res => {
+      cb(res);
+    })
+  },
   // 鉴赏详情
   appreciaDetail:function(id,cb){
     service.fetch({
@@ -104,11 +121,13 @@ module.exports = {
         signType: res.body.signType,
         paySign: res.body.paySign,
         success(res) {
-          wx.showToast({
-            title: '支付成功',
-          })
+          // wx.showToast({
+          //   title: '支付成功',
+          // })
+          cb(res);
          },
         fail(res){
+          cb(res);
           console.log("拉起支付失败")
         }
       })

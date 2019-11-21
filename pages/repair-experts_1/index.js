@@ -43,7 +43,8 @@ Page({
         maintainProId: this.data.list[this.data.radio - 1].id,
         maintainState:1,
         userAddressId:obj.choseAddressId,
-        isSelfTake: obj.isSelfTake
+        isSelfTake: obj.isSelfTake,
+        imgAryStr: obj.tempFilePaths.toString()
       },res=>{
         wx.navigateTo({
           url: '../wait/idnex',
@@ -51,6 +52,11 @@ Page({
       })
     }
     
+  },
+  gotoExpers:function(e){
+    wx.navigateTo({
+      url: '../experts_detail/idnex?id=' + e.currentTarget.dataset.id + '&type=2',
+    })
   },
   onReachBottom: function () {
     if(this.data.last) return;

@@ -7,7 +7,7 @@ Page({
     list: [],
     loadAll: false
   },
-  onLoad: function (options) {
+  onShow: function (options) {
     this.initData(this.data.page);
   },
   getList: function (page) {
@@ -39,7 +39,7 @@ Page({
         // url: '../appreciation_detail_1/idenx?id=' + e.currentTarget.dataset.id + '&type=2',
         url: '../appreciation_detail/index?id=' + e.currentTarget.dataset.id + '&type=2',
       })
-    }else if(type == 2 || type == 4){
+    } else if (type == 2 || type == 4 || type == 3 ){
       wx.navigateTo({
         url: '../order_detail_2/index?id=' + e.currentTarget.dataset.id,
       })
