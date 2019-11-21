@@ -55,9 +55,9 @@
     <view class='tit1'>订单信息</view>
     <view class='tit'>订单编号：{{result.orderNo}}</view>
     <view class='tit'>创建时间：{{result.cretaedTime}}</view>
-    <view class='tit'>付款时间：{{result.payTime}}</view>
-    <view class='tit'>发货时间：{{result.sendGoodsTime}}</view>
-    <view class='tit'>成交时间：{{result.completeTime}}</view>
+    <view class='tit'>付款时间：{{result.payTime ? result.payTime : ''}}</view>
+    <view class='tit'>发货时间：{{result.sendGoodsTime ? result.sendGoodsTime : ''}}</view>
+    <view class='tit'>成交时间：{{result.completeTime ? result.completeTime : ''}}</view>
   </view>
 
   <view class='btn' bindtap="showPopup">评价</view>

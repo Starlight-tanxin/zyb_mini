@@ -27,8 +27,8 @@
   <view class='nav com-bot-border'>
     <van-grid column-num="5" border="{{false}}">
       <van-grid-item icon="../../images/profile_1.png" data-type="2" bindtap="gotoOrder" text="待付款"  />
-      <van-grid-item icon="../../images/profile_2.png" data-type="3" bindtap="gotoOrder" text="待收货"  />
-      <van-grid-item icon="../../images/profile_3.png" data-type="4" bindtap="gotoOrder" text="待发货"  />
+      <van-grid-item icon="../../images/profile_2.png" data-type="3" bindtap="gotoOrder" text="待发货"  />
+      <van-grid-item icon="../../images/profile_3.png" data-type="4" bindtap="gotoOrder" text="待收货"  />
       <van-grid-item icon="../../images/profile_4.png" data-type="5" bindtap="gotoOrder" text="评价"  />
       <van-grid-item icon="../../images/profile_5.png"  bindtap="gotoTK" text="售后/退款"  />
     </van-grid>

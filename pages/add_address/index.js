@@ -10,7 +10,7 @@ Page({
     realname:"",
     addressDetail:"",
     cityNo:"",
-    isDefault:false,
+    isDefault:0,
     mobile:"",
     provinceNo:"",
     regionNo:"",
@@ -33,7 +33,7 @@ Page({
           provinceNo: data.code[0],
           cityNo:data.code[1],
           regionNo: data.code[2],
-          isDefault: data.isDefault
+          isDefault: data.isDefault?1:0
         },
         type:"post"
       },res=>{

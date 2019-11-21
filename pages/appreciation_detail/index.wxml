@@ -25,7 +25,7 @@
   <view class="top">
     <view class="p" bindtap="gotoPfoDetail" wx:if="{{pageType==1}}">专家名称:{{result.proName}}</view>
     <view class="p" bindtap="gotoPfoDetail" wx:if="{{pageType==2}}">专家名称:{{result.maintainPro}}</view>
-    <view class="p" style="margin-bottom:0px;" wx:if="{{pageType==1}}">专家回复：{{result.proReplyMsg}}</view>
+    <view class="p" style="margin-bottom:0px;" wx:if="{{pageType==1}}">专家回复：{{result.proReplyMsg ? result.proReplyMsg : ''}}</view>
     <view class="p" style="margin-bottom:0px;" wx:if="{{pageType==2}}">专家回复：{{result.preMaintainMsg ? result.preMaintainMsg : ''}}</view>
   </view>
 

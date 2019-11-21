@@ -17,7 +17,7 @@ Page({
     app.func.fetch({
       url: 'identify/index',
       data: {
-        isReplay: true,
+      //  isReplay: true,
         page,
         pageSize: this.data.pageSize,
       }

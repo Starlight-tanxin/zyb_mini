@@ -30,7 +30,8 @@ Page({
   },
   save:function(){
     if(this.data.checked){
-      if(this.data.inputVal > 5000 || this.data.inputVal == 0){
+      var inputVal = this.data.inputVal;
+      if (inputVal > 5000 || inputVal <= 0){
         wx.showToast({
           title: '充值金额为0-5000',
           icon: "none"
@@ -39,11 +40,20 @@ Page({
         api.orderPay({
           orderId:0,
           orderType : 5,
-          amount:5
+          amount: inputVal
         },res=>{
-          wx.navigateBack({
-            detail:1
-          })
+          wx.showToast({
+            title: "充值成功",
+            duration: 2000,
+            complete: function () {
+              wx.navigateBack({
+                delta: 1  // 返回上一级页面。
+              });
+              // wx.redirectTo({
+              //   url: '../account-detail/index',
+              // })
+            }
+          });
         })
       }
     }else{
