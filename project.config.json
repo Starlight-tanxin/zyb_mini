@@ -185,7 +185,7 @@
 				},
 				{
 					"id": -1,
-					"name": "g个人设置",
+					"name": "个人设置",
 					"pathName": "pages/profile_set/index",
 					"query": "",
 					"scene": null
@@ -281,20 +281,20 @@
 					"query": "",
 					"scene": null
 				},
-        {
-          "id": -1,
-          "name": "更多鉴赏记录",
-          "pathName": "pages/appreciation_all/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "鉴赏记录列表专家",
-          "pathName": "pages/appreciation_pro/index",
-          "query": "",
-          "scene": null
-        },
+				{
+					"id": -1,
+					"name": "更多鉴赏记录",
+					"pathName": "pages/appreciation_all/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "鉴赏记录列表专家",
+					"pathName": "pages/appreciation_pro/index",
+					"query": "",
+					"scene": null
+				},
 				{
 					"id": -1,
 					"name": "鉴赏详情",

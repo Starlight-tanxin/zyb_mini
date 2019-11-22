@@ -30,6 +30,11 @@ Page({
     })
   },
   initData: function () {
+    this.setData({
+      page: 1,
+      pageSize: 20,
+      list: [],
+    });
     this.getList(this.data.page)
   },
   gotoDetail:function(e){

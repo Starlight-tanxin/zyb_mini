@@ -4,6 +4,11 @@
     <view class='search'>
       <van-icon name="search" size="15px" custom-style='margin-top:6px;' bindtap="gotoSearch"/>
      <input class='txt' value="{{inputVal}}" style='margin-top:-4px; height:100%;' type="text" placeholder="搜索书籍名称、作者名称" bindinput="setVal"></input> 
+     <!-- <view class="search"> -->
+      <view class="search account-btn" bindtap="gotoSearch">
+        搜索
+      </view>
+      <!-- </view> -->
     </view>
   </view>
 
@@ -20,10 +25,11 @@
           <view class='rgt'>
             <view class='title'>{{item.goodsName}}</view>
             <view class='desc van-multi-ellipsis--l3'>{{item.bookDesc}}</view>
-            <view class='price'>
+            <view class='price' wx:if='{{!item.isCollection}}'>
               ￥{{item.goodsPrice}}元
               <image src='../../images/add.png' style='width:10px;height:10px;' wx:if="{{!item.isCollection}}" data-id="{{item.id}}" catchtap="addCart"></image>
             </view>
+             <view class='price' wx:if="{{item.isCollection}}">暂不出售</view>
           </view>
         </view>
       </van-col>

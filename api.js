@@ -298,5 +298,5 @@ module.exports = {
     },res=>{
       cb(res)
     })
-  }
+  },
 }

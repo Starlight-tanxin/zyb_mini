@@ -79,8 +79,32 @@
       <view class='name'>{{result.createdTime}}</view>
     </view>
   </view>
+  <view class='shop-box'>
+    <view class='lft'>
+      尺寸
+    </view>
+    <view class='rgt'>
+      <view class='name'>{{result.bookSize}}</view>
+    </view>
+  </view>
+   <view class='shop-box'>
+    <view class='lft'>
+      纸张
+    </view>
+    <view class='rgt'>
+      <view class='name'>{{result.bookPaper}}</view>
+    </view>
+  </view>
+     <view class='shop-box'>
+    <view class='lft'>
+      品相
+    </view>
+    <view class='rgt'>
+      <view class='name'>{{result.phaseTypeName}}</view>
+    </view>
+  </view>
 
-  <view class="btn" wx:if="{{result.isCollection}}">
+  <view class="btn" wx:if="{{result.isCollection}}" bindtap="callMobile">
       联系客服
   </view>
   <view class='footer' wx:if="{{!result.isCollection}}">

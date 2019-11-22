@@ -23,7 +23,7 @@
   <!-- 头部 -->
   <view class='title flex-ctr com-bot-border'>
     <text>藏一本</text>
-    <text style='color:#67c8fd;'>联系客服</text>
+    <text style='color:#67c8fd;' bindtap="callMobile">联系客服</text>
   </view>
   <!-- 头部 -->
   <view class='shop-info com-bot-border'>

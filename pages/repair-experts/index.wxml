@@ -8,6 +8,7 @@
         <view class='ctr'>
           <image src='{{item.proImg}}' style='width:70px;height:70px ;margin-right:20px; margin-left:3px;'></image>
           <view class='cont'>
+            <view>{{item.typeName}}</view>
             <view>{{item.realname}}</view>
             <view>{{item.proDetail}}</view>
           </view>
