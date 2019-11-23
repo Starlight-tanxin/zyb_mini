@@ -297,5 +297,15 @@ module.exports = {
     },res=>{
       cb(res)
     })
+  },
+  // 鉴赏回复
+  identifyProReply:function(option,cb){
+    service.fetch({
+      url:'identify/pro-reply',
+      data:option,
+      type:'post'
+    },res=>{
+      cb(res);
+    })
   }
 }

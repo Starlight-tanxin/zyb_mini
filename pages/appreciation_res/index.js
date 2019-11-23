@@ -1,11 +1,18 @@
 // pages/appreciation_res/index.js
+var app = getApp();
+var api = require('../../api.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    radio: '1'
+    radio: '1',
+    actions:[],
+    show:false,
+    choseVal:'',
+    choseId:'',
+    textVal:''
   },
   onChange(event) {
     this.setData({
@@ -16,55 +23,57 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (options.id){
+      this.setData({
+        id: options.id
+      })
+    }
+    this.initData();
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  initData:function(){
+    app.func.fetch({
+      url:'common/selectYearTypeBox',
+    },res=>{
+      console.log(res);
+      var arr = res.body;
+      for (var i in arr){
+        arr[i].name = arr[i].typeName;
+      }
+      this.setData({
+        actions:arr
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onClose() {
+    this.setData({ show: false });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  onSelect(event) {
+    console.log(event.detail);
+    this.setData({
+      choseVal: event.detail.name,
+      choseId: event.detail.id
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  choseYear:function(){
+    this.setData({ show: true });
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  setVal:function(e){
+    this.setData({
+      textVal:e.detail.value
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  save:function(){
+    if(this.data.choseId){
+      api.identifyProReply({
+        checkState : this.data.radio - 1,
+        id:this.data.id,
+        proReplyMsg : this.data.textVal,
+        proYearId: this.data.choseId
+      },res=>{
+        wx.showToast({
+          title: '回复成功',
+        })
+      })
+    }
   }
 })

@@ -2,7 +2,8 @@
   "usingComponents": {
     "van-nav-bar": "../../dist/nav-bar/index",
     "van-radio": "../../dist/radio/index",
-    "van-radio-group": "../../dist/radio-group/index"
+    "van-radio-group": "../../dist/radio-group/index",
+    "van-action-sheet": "../../dist/action-sheet/index"
   },
   "navigationBarTitleText": "鉴赏回复"
 }

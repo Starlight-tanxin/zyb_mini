@@ -15,19 +15,30 @@
     <view class="cont">
       <view class="lft">鉴赏详情:</view>
       <view class="rgt">
-        <textarea>
-          好
+        <textarea bindinput="setVal">
+          {{textVal}}
         </textarea>
       </view>
     </view>
     <view class="cont">
       <view class="lft">鉴赏朝代:</view>
-      <view class="rgt">
+      <view class="rgt" bindtap="choseYear">
         <view class="chose">
-          明朝
+          {{choseVal}}
           <view class="dsj"></view>
         </view>
       </view>
     </view>
   </view>
+</view>
+<view class="account-btn" bindtap="save">
+  回复
+</view>
+<view style="height：100px;">
+  <van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>
 </view>

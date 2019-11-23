@@ -32,6 +32,7 @@ Page({
         var userInfo = {};
         userInfo.headImg = res.body.headImg;
         userInfo.nickname = res.body.nickname;
+        wx.setStorageSync('userType', res.body.userType);
         this.setData({
           userInfo,
           userType:res.body.userType
@@ -119,7 +120,7 @@ Page({
     if(userType == 2){
       // 需要跳转到专家专门得回复列表页面
       wx.navigateTo({
-        url: '../appreciation_res/index',
+        url: '../appreciation_pro/index',
       });
     }else{
       wx.showToast({

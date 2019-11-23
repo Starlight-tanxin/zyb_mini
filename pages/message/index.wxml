@@ -8,7 +8,7 @@
       <view class='rgt'>
         <view class='title'>{{item.nickName}}</view>
         <view class='desc'>
-          这本书看着怎么样的啊？这本书看着怎么样的啊？这本书看着怎么样的啊？这本书看着怎么样的啊？这本书看着怎么样的啊？
+          点击查看消息
         </view>
       </view>
     </view>

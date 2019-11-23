@@ -9,7 +9,9 @@ Page({
     show: false,
     show1:false,
     evaType:1,
-    evaMsg:''
+    evaMsg:'',
+    showBtn : false,
+    id:''
   },
   showPopup() {
     this.setData({ show: true });
@@ -28,19 +30,36 @@ Page({
     if (options.type == 1){
       wx.setNavigationBarTitle({
         title: '鉴赏详情',
+        id: options.id
       })
-      this.initData(options.id);
+      var userType = wx.getStorageSync("userType");
+      userType = userType ? userType : 1;
+      console.log('userType :' + userType);
+      // pro 是不是专家的页面来的 state = 2 才显示这个回复按钮
+      if(userType == 2 && options.pro == 1 && options.state == 2){
+        this.setData({'showBtn':true});
+      }
+     
     } else if (options.type == 2){
       wx.setNavigationBarTitle({
         title: '修复详情',
+        id: options.id
       })
-      this.initData1(options.id);
+      // this.initData1(options.id);
     }
     this.setData({
       id:options.id,
       pageType: options.type
     });
    
+  },
+  onShow:function(){
+    if (this.data.pageType == 1){
+      this.initData(this.data.id);
+    }else{
+      this.initData1(this.data.id);
+    }
+    
   },
   initData:function(id){
     api.appreciaDetail(id,res=>{
@@ -88,6 +107,11 @@ Page({
       maintainId :this.data.id,
       proId: this.data.result.userProId,
       userId:this.data.result.userId
+    })
+  },
+  gotoRepate:function(){
+    wx.navigateTo({
+      url: '../appreciation_res/index?id='+this.data.id,
     })
   }
 })

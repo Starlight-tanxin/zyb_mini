@@ -24,9 +24,12 @@
         <view>退款金额：￥{{result.orderPrice}}</view>
         <view>申请时间：{{result.cretaedTime}}</view>
         <view>退款编号：{{result.orderNo}}</view>
+        <view>退货地址：湖南省长沙市芙蓉区韭菜园街道文艺路16号融都公寓1幢A单元16层16018</view>
+        <view>收货人：湘阅图书</view>
+        <view>收货电话：0731-84121691</view>
       </view>
       <view class='rgt '>
-        <view class='btn '>联系客服</view>
+        <view class='btn ' bindtap="callMobile">联系客服</view>
       </view>
     </view>
   </view>

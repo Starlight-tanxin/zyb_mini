@@ -30,16 +30,23 @@ Page({
     })
   },
   initData: function () {
+    this.setData({
+      page: 1,
+      pageSize: 20,
+      list: [],
+    });
     this.getList(this.data.page)
   },
   gotoDetail:function(e){
+    var detail = e.currentTarget.dataset.detail;
     var type = e.currentTarget.dataset.type;
+    console.log("detail : " + detail)
     if(type == 1){
       wx.navigateTo({
         // url: '../appreciation_detail_1/idenx?id=' + e.currentTarget.dataset.id + '&type=2',
         url: '../appreciation_detail/index?id=' + e.currentTarget.dataset.id + '&type=2',
       })
-    } else if (type == 2 || type == 4 || type == 3 ){
+    } else if ((type == 2 || type == 4 || type == 3 || type == 5 || type == 6) || detail == 2 ){
       wx.navigateTo({
         url: '../order_detail_2/index?id=' + e.currentTarget.dataset.id,
       })
