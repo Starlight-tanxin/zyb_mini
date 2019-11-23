@@ -29,7 +29,7 @@
         <view>收货电话：0731-84121691</view>
       </view>
       <view class='rgt '>
-        <view class='btn ' bindtap="api.callMobile">联系客服</view>
+        <view class='btn ' bindtap="callMobile">联系客服</view>
       </view>
     </view>
   </view>
