@@ -3,42 +3,34 @@
 
 <view class="content">
 
-  <view class="dialogue">
-    <view class="headimgLeft" style="background: url(../../images/profile_7.png)"></view>
+  <view class="dialogue" wx:for="{{result}}" wx:key="*this">
+  <block wx:if="{{item.isCompany}}">
+    <view class="headimgLeft">
+      <image src="{{item.headImg}}" style="width:30px;height:30px;border-radius:50%;"></image>
+    </view>
     <view class="dialogue-left">
-      <view class="dialogue-show">赶紧发货，老子等着卖钱呢</view>
+      <view class="dialogue-show">{{item.msg}}</view>
     </view>
-
-    <view class="headimgRight" style="background: url(../../images/profile_8.png)"></view>
+  </block>
+  <block wx:else> 
+    <view class="headimgRight">
+      <image src="{{item.headImg}}" style="width:30px;height:30px;border-radius:50%;"></image>
+    </view>
     <view class="dialogue-right">
-      <view class="dialogue-show">操你妈，先交保护费</view>
+      <view class="dialogue-show">{{item.msg}}</view>
     </view>
-  </view>
-
-  <view class="dialogue">
-
-    <view class="headimgLeft" style="background: url(../../images/profile_7.png)"></view>
-    <view class="dialogue-left">
-      <view class="dialogue-show">滚犊子，老子报警</view>
-    </view>
-
-    <view class="headimgRight" style="background: url(../../images/profile_8.png)"></view>
-    <view class="dialogue-right">
-      <view class="dialogue-show">日你先人，老子招人弄死你个瘪犊子</view>
-    </view>
-
-
+  </block> 
   </view>
 
   <view class="down">
 
-    <view class="img-voice">
+    <!-- <view class="img-voice">
       <a href="javascript:;">
 
       </a>
-    </view>
+    </view> -->
 
-    <input class="line-input" value="老子在河边等你" />
-    <view class="add-icon">发送</view>
+    <input class="line-input" value="{{inputVal}}" placeholder="请输入内容" bindchange="setVal"/>
+    <view class="add-icon" bindtap="send">发送</view>
   </view>
 </view>

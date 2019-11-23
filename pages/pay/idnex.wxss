@@ -1,0 +1,18 @@
+/* pages/pay/idnex.wxss */
+.fot{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  color: #999;
+}
+.btn{
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  background-color: #893100;
+  border-radius: 5px;
+  margin: 50px auto;
+}

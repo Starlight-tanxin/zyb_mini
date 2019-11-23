@@ -1,66 +1,49 @@
 // pages/we-chat-ui/index.js
+var app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    inputVal:'',
+    id:"KLvCWk7--SwInmMBwi"
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    if (options.id){
+      // this.setData({
+      //   id:options.id
+      // });
+    }
+   
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onShow:function(){
+    this.initData();
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  initData:function(){
+    app.func.fetch({
+      url:'msg/msgDetail',
+      data:{
+        sessionId : this.data.id
+      }
+    },res=>{
+      this.setData({
+        result:res.body
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  setVal:function(e){
+    this.setData({
+      inputVal:e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  send:function(){
+    if(this.data.inputVal){
+      app.func.fetch({
+        url:'msg/sendMsg',
+        data:{
+          msg : this.data.inputVal,
+          sessionId: this.data.id
+        }
+      },res=>{
+        this.initData();
+      })
+    }
   }
 })

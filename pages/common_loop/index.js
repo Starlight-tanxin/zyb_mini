@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    url:""
+    url:"https://zyb.hnsxyts.com/template/open-source/agreement"
   },
   onLoad: function (options) {
     if(options.url){

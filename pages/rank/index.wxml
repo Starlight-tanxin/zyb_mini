@@ -73,7 +73,7 @@
     </view>
     <view class='instructions'>
       <!-- <text class='circel'></text> -->
-      <van-checkbox value="{{ checked }}" checked-color="#893100" icon-size="12" bind:change="onChange">我已经阅读并同意《藏一本服务协议》</van-checkbox>
+      <van-checkbox value="{{ checked }}" checked-color="#893100" icon-size="12" bind:change="onChange"><text catchtap="gotoPage">我已经阅读并同意《藏一本服务协议》</text></van-checkbox>
       <!-- <van-radio name="1">我已经阅读并同意《藏一本服务协议》</van-radio> -->
       <!-- <text></text> -->
     </view>

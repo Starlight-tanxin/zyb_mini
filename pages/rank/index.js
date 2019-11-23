@@ -118,6 +118,11 @@ Page({
         icon:'none'
       })
     }
+  },
+  gotoPage: function () {
+    wx.navigateTo({
+      url: '../common_loop/index',
+    })
   }
 
 

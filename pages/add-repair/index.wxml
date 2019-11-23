@@ -68,7 +68,9 @@
   </view>         
   <view class='btn-argreen-box'>
     <view class="cent">
-     <van-checkbox value="{{ checked }}" bind:change="onChange" icon-size="12">我已经阅读并同意《藏一本服务协议》</van-checkbox>
+     <van-checkbox value="{{ checked }}" bind:change="onChange" icon-size="12">
+     <text catchtap="gotoPage">我已经阅读并同意《藏一本服务协议》</text>
+     </van-checkbox>
     </view>
     <view class='btn' bindtap="gotoNext">下一步</view>
   </view>

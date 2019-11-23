@@ -1,13 +1,13 @@
 <!--pages/message/index.wxml-->
 <view class='container'>
   <view class='message'>
-    <view class='msg' wx:for="{{list}}" wx:key="{{item}}">
+    <view class='msg' wx:for="{{list}}" wx:key="{{item.sessionId}}">
       <view class='user'>
         <image src='{{item.headImg}}'></image>
       </view>
       <view class='rgt'>
         <view class='title'>{{item.nickName}}</view>
-        <view class='desc'>
+        <view class='desc' bindtap="gotoDetail" data-id="{{item.sessionId}}">
           点击查看消息
         </view>
       </view>
