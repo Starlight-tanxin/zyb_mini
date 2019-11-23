@@ -199,19 +199,29 @@ Page({
   },
   // 申请退款
   appReturn:function(e){
-    var type = this.data.type;
-    var index = e.currentTarget.dataset.index;
-    api.applyRefund({ orderId: e.currentTarget.dataset.id},res=>{
-      if(type == 3){
-        var dshArr = this.data.dshArr;
-        dshArr.splice(index,1);
-        this.setData({dshArr});
-      }else{
-        var allpayment = this.data.allpayment;
-        allpayment.splice(index, 1);
-        this.setData({ allpayment });
+    var that = this;
+    wx.showModal({
+      title: '提示',
+      content: '你确定退款退货吗?',
+      success:function(res){
+        if(res.confirm){
+          var type = that.data.type;
+          var index = e.currentTarget.dataset.index;
+          api.applyRefund({ orderId: e.currentTarget.dataset.id }, res => {
+            if (type == 3) {
+              var dshArr = that.data.dshArr;
+              dshArr.splice(index, 1);
+              that.setData({ dshArr });
+            } else {
+              var allpayment = that.data.allpayment;
+              allpayment.splice(index, 1);
+              that.setData({ allpayment });
+            }
+          })
+        }
       }
     })
+   
   },
   //确认收获
   orderReceipt:function(e){

@@ -62,7 +62,7 @@
   </view>         
   <view class='btn-argreen-box'>
     <view>
-      <text class='chose'></text>我已经阅读并同意《藏一本修复协议》
+      <text class='chose'></text>我已经阅读并同意《藏一本服务协议》
     </view>
     <view class='btn'>下一步</view>
   </view>

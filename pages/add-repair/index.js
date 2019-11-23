@@ -138,15 +138,7 @@ Page({
   },
   gotoNext:function(){
     if (this.data.goodsName && this.data.choseVal && this.data.choseId && this.data.checked){
-      if(this.data.pageType == 1){
-        if(this.data.choseAddressId == ''){
-          wx.showToast({
-            title: '请补全信息',
-            icon: 'none'
-          });
-          return;
-        }
-      }
+      
       var obj={
         goodsName: this.data.goodsName,
         choseVal: this.data.choseVal,
@@ -157,10 +149,19 @@ Page({
       if (this.data.pageType == 1){
         if(this.data.radio == 2){
           obj.isSelfTake  = true;
+          obj.choseAddressId = 0;
         }else{
+          if (this.data.choseAddressId == '') {
+            wx.showToast({
+              title: '请补全信息',
+              icon: 'none'
+            });
+            return;
+          }
           obj.isSelfTake = false;
+          obj.choseAddressId = this.data.choseAddressId;
         }
-        obj.choseAddressId = this.data.choseAddressId;
+        
         wx.setStorageSync("pageData1", obj);
         wx.navigateTo({
           url: '../repair-experts_1/index',
@@ -175,7 +176,7 @@ Page({
       
     }else{
       wx.showToast({
-        title: '请补全信息',
+        title: '请补全信息1',
         icon:'none'
       })
     }

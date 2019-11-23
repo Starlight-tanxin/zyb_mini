@@ -73,8 +73,8 @@
     </view>
     <view class='instructions'>
       <!-- <text class='circel'></text> -->
-      <van-checkbox value="{{ checked }}" checked-color="#893100" icon-size="12" bind:change="onChange">我已经阅读并同意《藏一本支付协议》</van-checkbox>
-      <!-- <van-radio name="1">我已经阅读并同意《藏一本支付协议》</van-radio> -->
+      <van-checkbox value="{{ checked }}" checked-color="#893100" icon-size="12" bind:change="onChange">我已经阅读并同意《藏一本服务协议》</van-checkbox>
+      <!-- <van-radio name="1">我已经阅读并同意《藏一本服务协议》</van-radio> -->
       <!-- <text></text> -->
     </view>
     <view class='btn' bindtap="orderPay">确认支付</view>

@@ -4,6 +4,7 @@
     <swiper style='width:100%;height:100%;'
       ndicator-dots="{{indicatorDots}}"
       indicator-color="rgb(142,142,140)"
+      autoplay="{{true}}"
     >
       <block wx:for="{{swiper}}" wx:key="*this">
         <swiper-item>

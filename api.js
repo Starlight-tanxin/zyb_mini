@@ -127,7 +127,6 @@ module.exports = {
           cb(res);
          },
         fail(res){
-          cb(res);
           console.log("拉起支付失败")
         }
       })
