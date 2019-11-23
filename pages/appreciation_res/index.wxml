@@ -6,8 +6,8 @@
       <view class="lft">鉴赏真假:</view>
       <view class="rgt">
         <van-radio-group class="radio" value="{{ radio }}" bind:change="onChange" >
-          <van-radio class="rad" name="1" icon-size="15px">真</van-radio>
-          <van-radio class="rad" name="2" icon-size="15px">假</van-radio>
+          <van-radio class="rad" name="1" icon-size="15px">假</van-radio>
+          <van-radio class="rad" name="2" icon-size="15px">真</van-radio>
           <van-radio class="rad" name="3" icon-size="15px">存疑</van-radio>
         </van-radio-group>
       </view>
