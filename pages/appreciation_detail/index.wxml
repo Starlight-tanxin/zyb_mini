@@ -28,10 +28,16 @@
   <view class="top">
     <view class="p" bindtap="gotoPfoDetail" wx:if="{{pageType==1}}">专家名称： {{result.proName}}</view>
     <view class="p" bindtap="gotoPfoDetail" wx:if="{{pageType==2}}">专家名称： {{result.maintainPro}}</view>
+    <view class="p" wx:if="{{pageType==1}}">鉴赏年代： {{result.proYear ? result.proYear : ''}}</view>
+    <view class="p" wx:if="{{pageType==1}}">鉴赏真假： {{result.checkState == 0 ? '假' :result.checkState == 1 ? '真' : result.checkState == 2 ? '存疑' : ''}}</view>
     <view class="p" style="margin-bottom:0px;" wx:if="{{pageType==1}}">专家回复： {{result.proReplyMsg ? result.proReplyMsg : ''}}</view>
     <view class="p" style="margin-bottom:0px;" wx:if="{{pageType==2}}">专家回复： {{result.preMaintainMsg ? result.preMaintainMsg : ''}}</view>
   </view>
 
+  <view class="top " style="border-top: 1px solid #893100">
+     <view class="p"  wx:if="{{pageType==1}}">用户满意程度： {{ result.maintainEvaluate.evaType ==1 ? '满意' : result.maintainEvaluate.evaType ==2 ? '一般' : result.maintainEvaluate.evaType ==3 ? '不满意' : ''}}</view>
+    <view class="p"  wx:if="{{pageType==1}}">用户评价： {{ result.maintainEvaluate.evaMsg ? result.maintainEvaluate.evaMsg : ''}}</view>
+  </view>
   <!-- <view class="com-btn" bindtap="showPopup">评价</view> -->
 
 </view>
