@@ -132,6 +132,17 @@ module.exports = {
       })
     })
   },
+  // 账户支付
+  // order/accountPay
+  orderAccountPay:function(option,cb){
+    service.fetch({
+      url:'order/accountPay',
+      data:option,
+      type:'post'
+    },res=>{
+      cb(res);
+    })
+  },
   // 订单列表
   orderList:function(option,cb){
     // console.log(option)

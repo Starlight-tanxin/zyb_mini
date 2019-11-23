@@ -98,5 +98,5 @@
  display: none;
 }
 .show{ 
- display: flex;
+ /* display: flex; */
 }

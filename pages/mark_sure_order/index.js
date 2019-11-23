@@ -34,11 +34,11 @@ Page({
       })
       return;
     }
-    api.orderPay({
-      orderId:this.data.orderId,
-      orderType:3,
-      userAddressId: this.data.result.userAddress.id
-    })
+    // api.orderPay({
+    //   orderId:this.data.orderId,
+    //   orderType:3,
+    //   userAddressId: this.data.result.userAddress.id
+    // })
   },
   gotoAddress:function(){
     wx.navigateTo({
