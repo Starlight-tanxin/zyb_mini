@@ -19,7 +19,7 @@
         <van-col span="3" custom-class="records-item">{{item.maintainPro}}</van-col>
         <van-col span="5" custom-class="records-item">{{item.preMaintainMsgStr ? item.preMaintainMsgStr : ''}}</van-col>
         <van-col span="4" custom-class="records-item">
-          <view class="btn" bindtap="gotoDetail" data-type="{{item.maintainState}}" data-id="{{item.id}}">详情</view>
+          <view class="btn" bindtap="gotoDetail" data-detail="2" data-type="{{item.maintainState}}" data-id="{{item.id}}">详情</view>
         </van-col>
       </van-row>
     </view>
