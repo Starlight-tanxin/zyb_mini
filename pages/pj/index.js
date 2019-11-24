@@ -62,34 +62,48 @@ Page({
         console.log(res)
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths;
-        api.fileUpload({
-          file: tempFilePaths[0]
-        },res=>{
-
-        })
-        that.setData({
-          tempFilePaths: imgArr.concat(tempFilePaths)
-        });
-        // api.fileUpload({
-        //   file: tempFilePaths
-        // },res=>{
-
-        // })
+        for (var i = 0; i < tempFilePaths.length; i++){
+          var arr = that.uploadFile(tempFilePaths,2);
+          console.log(arr)
+          // api.fileUpload({
+          //   file: tempFilePaths[i],
+          //   name:'file'
+          // }, res => {
+          //   res = JSON.parse(res.data);
+          //   console.log(res)
+          //   that.setData({
+          //     tempFilePaths: arr.concat(res.body)
+          //   });
+          // })
+        }
+        
+        
       }
     })
+  },
+  uploadFile: function (file,len) {
+    var arr = [];
+    if(len){
+      len--;
+      api.fileUpload({
+        file:file[len],
+        name: 'file'
+      }, res => {
+        res = JSON.parse(res.data);
+        console.log(res.body)
+        arr.push(res.body);
+      });
+    }else{
+      return arr;
+    }
+    
   },
   setTextArea:function(e){
     this.setData({
       message:e.detail
     })
   },
-  uploadFile:function(){
-    wx.uploadFile({
-      url: '',
-      filePath: '',
-      name: '',
-    })
-  },
+  
   save:function(){
 
     

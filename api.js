@@ -349,9 +349,13 @@ fileUpload:function(option,cb){
   wx.uploadFile({
     url: 'https://zyb.hnsxyts.com/zyb/resource/file-upload',
     filePath: option.file,
-    name:'file',
+    header: {
+      "Content-Type": "multipart/form-data",
+      'accept': 'application/json'
+    },
+    name: option.name,
     success(res){
-      console.log(res)
+      cb(res)
     }
   })
 },
