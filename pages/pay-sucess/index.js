@@ -27,18 +27,21 @@ Page({
     }
   },
   goBack:function(){
-    if (this.data.type == 2) {
-      wx.navigateBack({
-        delta: 2
-      })
-    } else if (this.data.type == 3) {
-      wx.navigateTo({
-        url: '../appreciation/index',
-      })
-    }else{
-      wx.navigateBack({
-        delta: 1
-      })
-    }
+    // if (this.data.type == 2) {
+    //   wx.navigateBack({
+    //     delta: 2
+    //   })
+    // } else if (this.data.type == 3) {
+    //   wx.navigateTo({
+    //     url: '../appreciation/index',
+    //   })
+    // }else{
+    //   wx.navigateBack({
+    //     delta: 1
+    //   })
+    // }
+    wx.switchTab({
+      url: '../profile/index',   //确认按钮统一跳转到我的
+    })
   }
 })
