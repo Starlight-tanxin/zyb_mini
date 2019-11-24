@@ -24,7 +24,8 @@ App({
     
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    password:''
   },
   func:{
     fetch: service.fetch

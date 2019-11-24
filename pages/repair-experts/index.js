@@ -44,15 +44,24 @@ Page({
         userProId: this.data.list[this.data.radio - 1].id,
         imgAryStr: obj.tempFilePaths.toString()
       },res=>{
-        var id = res.body;
-        api.orderPay({
-          orderId : res.body,
-          orderType:1
-        },res=>{
-          wx.navigateTo({
-            url: '../pay-sucess/index?type=3&id='+id,
-          })
+        // var id = res.body;
+        var obj = {
+          orderId: res.body.id,
+          orderType: 1,
+          price: res.body.amount
+        }
+        wx.setStorageSync('payObj', obj);
+        wx.navigateTo({
+          url: '../pay/idnex?type=4'
         })
+        // api.orderPay({
+        //   orderId : res.body,
+        //   orderType:1
+        // },res=>{
+        //   wx.navigateTo({
+        //     url: '../pay-sucess/index?type=3&id='+id,
+        //   })
+        // })
       })
     }
     

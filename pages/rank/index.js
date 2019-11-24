@@ -28,8 +28,14 @@ Page({
       this.setData({
         id: options.id
       })
-      this.initData(options.id);
+      
     }
+  },
+  onShow:function(){
+    this.setData({
+      show:false
+    });
+    this.initData(this.data.id);
   },
   initData:function(id){
     var url = 'surname/'+id+'/top';
@@ -102,16 +108,25 @@ Page({
   },
   orderPay:function(){
     if(this.data.checked){
-      api.orderPay({
-        orderId :0,
-        amount:4,
-        orderType :4,
-      },res=>{
-        wx.showToast({
-          title: '助力打卡成功',
-        });
-        this.initData(this.data.orderId);
+      var obj = {
+        orderId: 0,
+        orderType: 4,
+        price: this.data.rankData*0.5,
+      }
+      wx.setStorageSync('payObj', obj);
+      wx.navigateTo({
+        url: '../pay/idnex?type=4'
       })
+      // api.orderPay({
+      //   orderId :0,
+      //   amount:4,
+      //   orderType :4,
+      // },res=>{
+      //   wx.showToast({
+      //     title: '助力打卡成功',
+      //   });
+      //   this.initData(this.data.orderId);
+      // })
     }else{
       wx.showToast({
         title: '请勾选协议',

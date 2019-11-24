@@ -5,7 +5,8 @@
     "van-cell": "../../dist/cell/index",
     "van-cell-group": "../../dist/cell-group/index",
     "van-checkbox": "../../dist/checkbox/index",
-    "van-checkbox-group": "../../dist/checkbox-group/index"
+    "van-checkbox-group": "../../dist/checkbox-group/index",
+    "van-popup": "../../dist/popup/index"
   },
   "navigationBarTitleText": "订单支付"
 }

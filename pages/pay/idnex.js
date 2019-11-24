@@ -1,12 +1,28 @@
 // pages/pay/idnex.js
 var api = require("../../api.js");
+var app = getApp();
 Page({
   data: {
     radio: '1',
-    checked:false
+    type:1,
+    checked:false,
+    result:'',
+    show:false,
+    focus: true,
+    Length: 6,        //输入框个数  
+    isFocus: true,    //聚焦  
+    Value: "",        //输入的内容  
+    ispassword: false, //是否密文显示 true为密文， false为明文。
   },
   onLoad: function (options) {
-
+    var result = wx.getStorageSync('payObj')
+    this.setData({
+      result,
+      type: options.type
+    })
+  },
+  onShow:function(){
+    
   },
   onChange(event) {
     this.setData({
@@ -33,8 +49,47 @@ Page({
     if (this.data.checked){
       if(this.data.radio == 1){
         //微信支付
+      api.orderPay({
+        orderId:this.data.result.orderId,
+        orderType: this.data.result.orderType,
+        userAddressId: this.data.result.userAddressId,
+        repairType: this.data.result.repairType>=0 ? this.data.result.repairType:'',
+        amount: this.data.result.price
+      },res=>[
+        wx.navigateTo({
+          url: '../pay-sucess/index?type='+this.data.type,
+        })
+      ])
       }else{
         // 余额支付
+        if (app.globalData.password){
+          api.orderAccountPay({
+            orderId: this.data.result.orderId,
+            orderType: this.data.result.orderType,
+            userAddressId: this.data.result.userAddressId ? this.data.result.userAddressId : '',
+            repairType: this.data.result.repairType >= 0 ? this.data.result.repairType : '',
+            userPayPwd: app.globalData.password,
+            amount: this.data.result.price
+          },res=>{
+            app.globalData.password = '';
+            wx.navigateTo({
+              url: '../pay-sucess/index?type=' + this.data.type,
+            })
+          })
+        }else{
+          wx.navigateTo({
+            url: "../password1/index?type=6"
+          })
+        }
+        
+        // this.setData({
+        //   show:true
+        // })
+        // api.orderAccountPay({
+        //   orderId: this.data.result.orderId,
+        //   orderType: this.data.result.orderType,
+        //   userAddressId: this.data.result.userAddressId
+        // })
       }
     }else{
       wx.showToast({
@@ -42,5 +97,36 @@ Page({
         icon:'none'
       })
     }
+  },
+  accountPay:function(){
+    console.log(this.data.Value)
+  },
+  onClose:function(){
+    this.setData({
+      show:false
+    })
+  },
+  password_input: function (e) {
+    var that = this;
+    console.log(e.detail.value);
+    var inputValue = e.detail.value;
+    that.setData({
+      Value: inputValue
+    })
+  },
+
+  Tap() {
+    console.log(2)
+    var that = this;
+    that.setData({
+      isFocus: true,
+    })
+  },
+
+  getFocus: function () {
+    console.log(1)
+    this.setData({
+      isFocus: true,
+    })
   }
 })

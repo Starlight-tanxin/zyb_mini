@@ -23,15 +23,25 @@ Page({
     })
   },
   pay:function(){
-    api.orderPay({
-      orderId : this.data.id,
-      orderType:2,
-      repairType: this.data.result.maintainState==2?0:1
-    },res=>{
-      wx.navigateTo({
-        url: '../pay-sucess/index?type=2',
-      })
+    var obj = {
+      orderId: this.data.id,
+      orderType: 2,
+      price: this.data.result.cmMaintainAmount,
+      repairType: this.data.result.maintainState == 2 ? 0 : 1
+    }
+    wx.setStorageSync('payObj', obj);
+    wx.navigateTo({
+      url: '../pay/idnex?type=2'
     })
+    // api.orderPay({
+    //   orderId : this.data.id,
+    //   orderType:2,
+    //   repairType: this.data.result.maintainState==2?0:1
+    // },res=>{
+    //   wx.navigateTo({
+    //     url: '../pay-sucess/index?type=2',
+    //   })
+    // })
   },
   // 拨打电话
   callMobile: function () {

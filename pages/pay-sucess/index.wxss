@@ -31,3 +31,13 @@
   color: #fff;
   background: #893100;
 }
+.btn33{
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  background-color: #893100;
+  border-radius: 5px;
+  margin: 50px auto;
+}

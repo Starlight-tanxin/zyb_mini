@@ -35,7 +35,7 @@
           <van-col span="6">
             <image wx:if="{{index == 0}}" src="https://hnsxyts.oss-cn-zhangjiakou.aliyuncs.com/icon/jptp.png" style="width:15px;height:20px; margin-top:6px;"></image>
             <image wx:if="{{index == 1}}" src="https://hnsxyts.oss-cn-zhangjiakou.aliyuncs.com/icon/yptp.png" style="width:15px;height:20px; margin-top:6px;"></image>
-            <image wx:if="{{index == 2}}" src="https://hnsxyts.oss-cn-zhangjiakou.aliyuncs.com/icon/tptp.png" style="width:15px;height:20px; margin-top:6px;"></image>
+            <image wx:if="{{index == 2}}" src="https://hnsxyts.oss-cn-zhangjiakou.aliyuncs.com/icon/tptp.png" style="width:15px;height:20px; margin-top:3px;"></image>
           </van-col>
         </view>
 

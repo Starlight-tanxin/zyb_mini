@@ -1,7 +1,7 @@
 <!--pages/pay/idnex.wxml-->
 <view class="container">
   <van-cell-group title="支付详情">
-  <van-cell title="金额" value="￥30" />
+  <van-cell title="金额" value="￥{{result.price}}" />
 </van-cell-group>
 
   <van-radio-group value="{{ radio }}" bind:change="onChange">
@@ -31,3 +31,16 @@
 
   <view class='btn' bindtap="save">确定</view>
 </view>
+
+<!-- <van-popup show="{{ show }}" bind:close="onClose"  position="top" custom-style="height: 35%;">
+  <view class='password-input-box' style='margin-top:30rpx;'>
+  <view class='input' bindtap='getFocus'>
+    <view wx:for="{{Length}}" wx:key="item" class='input-content'>
+      <input value="{{Value.length>=index+1?Value[index]:''}}" 
+      disabled password='{{ispassword}}' catchtap='Tap'></input>
+    </view>
+  </view>
+
+  <input name="password" password="{{true}}" class='password-input' maxlength="{{Length}}" focus="{{isFocus}}"   bindinput="password_input"></input></view>
+  <view class='btn' bindtap="accountPay">确定密码</view>
+</van-popup> -->

@@ -39,6 +39,16 @@ Page({
     //   orderType:3,
     //   userAddressId: this.data.result.userAddress.id
     // })
+    var obj={
+      orderId:this.data.orderId,
+      orderType:3,
+      userAddressId: this.data.result.userAddress.id,
+      price: this.data.result.orderPrice + this.data.result.expressPrice
+    }
+    wx.setStorageSync('payObj',obj)
+    wx.navigateTo({
+      url: '../pay/idnex?type=1'
+    })
   },
   gotoAddress:function(){
     wx.navigateTo({
