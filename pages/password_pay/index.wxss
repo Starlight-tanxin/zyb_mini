@@ -1,0 +1,2 @@
+/* pages/password1/index.wxss */
+@import '../password/idnex.wxss';
