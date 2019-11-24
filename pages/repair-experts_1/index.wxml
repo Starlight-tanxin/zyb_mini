@@ -3,9 +3,9 @@
   <view class='repair-cont'>
     <van-radio-group value="{{ radio }}" bind:change="onChange">
       <!-- <van-radio name="1">单选框 1</van-radio> -->
-      <view class='repair-item flex-ctr com-bot-border' wx:for="{{list}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="gotoExpers">
+      <view class='repair-item flex-ctr com-bot-border' wx:for="{{list}}">
         <van-radio name="{{index+1}}"></van-radio>
-        <view class='ctr'>
+        <view class='ctr'  wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="gotoExpers">
           <image src='{{item.proImg}}' style='width:70px;height:70px ;margin-right:20px; margin-left:3px;'></image>
           <view class='cont'>
             <view>{{item.typeName}}</view>
