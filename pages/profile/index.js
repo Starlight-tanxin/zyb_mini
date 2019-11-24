@@ -80,12 +80,12 @@ Page({
       url: '../message/index',
     })
   },
-  gotoOrder:function(e){
-
-    wx.navigateTo({
-      url:"../order/index?active="+e.currentTarget.dataset.type
-    })
-  },
+  // gotoOrder:function(e){
+  //   var url = ''
+  //   wx.navigateTo({
+  //     url:"../order/index?active="+e.currentTarget.dataset.type
+  //   })
+  // },
   gotoTK:function(){
     wx.navigateTo({
       url: '../after-sales/index',

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-tabs": "../../dist/tabs/index",
+    "van-tab": "../../dist/tab/index"
+     },
+  "navigationBarTitleText": "我的订单"
+}

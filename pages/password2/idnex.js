@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    id:'',
     focus: true,
     Length: 6,        //输入框个数  
     isFocus: true,    //聚焦  
@@ -20,6 +21,7 @@ Page({
     console.log('type :' +  options.type);
     this.setData({
       type: options.type,
+      id: options.id ? options.id:''
     })
   },
   password_input: function (e) {
@@ -61,7 +63,7 @@ Page({
       });
       wx.removeStorageSync('accountPay');
       wx.navigateTo({
-        url: '../pay-sucess/index?type=' + this.data.type,
+        url: '../pay-sucess/index?type=' + this.data.type + '&id=' + this.data.id,
       })
     });
 

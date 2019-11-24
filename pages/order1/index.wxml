@@ -1,0 +1,2 @@
+<!--pages/order1/index.wxml-->
+<include src="../order/index" />

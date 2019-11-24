@@ -53,5 +53,8 @@ Page({
     wx.navigateTo({
       url: '../pj/index?id=' + this.data.id + '&type=1' + '&proId=' + this.data.result.maintainProId ,
     })
+  },
+  prewvImg: function (e) {
+    api.previewImage(e.currentTarget.dataset.imgs, e.currentTarget.dataset.index)
   }
 })

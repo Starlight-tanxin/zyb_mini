@@ -89,7 +89,7 @@ Page({
             amount: this.data.result.price
           });
           wx.navigateTo({
-            url: '../password2/idnex?type=' + this.data.type,
+            url: '../password2/idnex?type=' + this.data.type+'&id='+this.data.id,
           });
         // }
         

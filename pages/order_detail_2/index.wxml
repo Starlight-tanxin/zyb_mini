@@ -5,7 +5,7 @@
       <view class='title'>修复后样式:</view>
       <view class='repair-imgs'>
         <van-row gutter="20">
-          <van-col span="8" wx:for="{{result.maintainState<=3?result.preMaintainMsgImgs:result.maintainMsgImgs}}" wx:key="*this">
+          <van-col span="8" wx:for="{{result.maintainState<=3?result.preMaintainMsgImgs:result.maintainMsgImgs}}" wx:key="*this" data-index="{{index}}" data-imgs="{{result.maintainState<=3?result.preMaintainMsgImgs:result.maintainMsgImgs}}" bindtap="prewvImg">
             <image src='{{item}}' style='width:100px;height:100px;'></image>
           </van-col>
         </van-row>
