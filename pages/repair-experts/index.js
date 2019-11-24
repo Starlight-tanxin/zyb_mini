@@ -5,6 +5,7 @@ Page({
     radio: '1',
     page:1,
     pageSize:10,
+    proType:'',
     list:[]
   },
   onChange(event) {
@@ -13,12 +14,17 @@ Page({
     });
   },
   onLoad: function (options) {
+    console.log("proType ="+options.proType);
+    this.setData({
+      proType: options.proType
+    });
     this.getList(this.data.page);
   },
   getList:function(page){
     api.userProIndex({
         page,
-        pageSize:this.data.pageSize
+        pageSize:this.data.pageSize,
+        antiqueTypeId:this.data.proType
     },res=>{
       var list = res.body.records;
       var last = false;

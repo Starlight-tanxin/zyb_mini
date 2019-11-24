@@ -164,12 +164,12 @@ Page({
         
         wx.setStorageSync("pageData1", obj);
         wx.navigateTo({
-          url: '../repair-experts_1/index',
+          url: '../repair-experts_1/index?proType='+obj.choseId,
         })
       }else{
         wx.setStorageSync("pageData", obj);
         wx.navigateTo({
-          url: '../repair-experts/index',
+          url: '../repair-experts/index?proType=' + obj.choseId,
         })
       }
      
