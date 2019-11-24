@@ -113,5 +113,10 @@ Page({
     wx.navigateTo({
       url: '../appreciation_res/index?id='+this.data.id,
     })
+  },
+  gotoPj:function(){
+    wx.navigateTo({
+      url: '../pj/index?id=' + this.data.id + '&type=2' + '&proId=' + this.data.result.userProId,
+    })
   }
 })

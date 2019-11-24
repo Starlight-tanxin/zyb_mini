@@ -7,7 +7,7 @@ Page({
     list:[],
     loadAll:false
   },
-  onLoad: function (options) {
+  onShow: function (options) {
     this.initData();
   },
   initData: function () {

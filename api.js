@@ -318,5 +318,15 @@ module.exports = {
     },res=>{
       cb(res);
     })
+  },
+  // 新增评价啊
+  evaAdd:function(option,cb){
+    service.fetch({
+      url:'eva/add',
+      data:option,
+      type:'post'
+    },res=>{
+      cb(res);
+    })
   }
 }

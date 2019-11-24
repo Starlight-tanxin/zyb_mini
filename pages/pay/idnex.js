@@ -5,6 +5,7 @@ Page({
   data: {
     radio: '1',
     type:1,
+    id:'',
     checked:false,
     result:'',
     show:false,
@@ -19,7 +20,8 @@ Page({
     console.log('支付选择页 ： type =' +options.type);
     this.setData({
       result,
-      type: options.type
+      type: options.type,
+      id: options.id ? options.id:''
     })
   },
   onShow:function(){
@@ -58,7 +60,7 @@ Page({
         amount: this.data.result.price
       },res=>[
         wx.navigateTo({
-          url: '../pay-sucess/index?type='+this.data.type,
+          url: '../pay-sucess/index?type=' + this.data.type + '&id=' + this.data.id,
         })
       ])
       }else{

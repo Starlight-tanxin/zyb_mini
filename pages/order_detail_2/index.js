@@ -49,4 +49,9 @@ Page({
       phoneNumber: '0731-84121691',
     })
   },
+  gotoPj:function(){
+    wx.navigateTo({
+      url: '../pj/index?id=' + this.data.id + '&type=1' + '&proId=' + this.data.result.maintainProId ,
+    })
+  }
 })

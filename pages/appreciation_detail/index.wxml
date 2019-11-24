@@ -38,7 +38,8 @@
      <view class="p"  wx:if="{{pageType==1}}">用户满意程度： {{ result.maintainEvaluate.evaType ==1 ? '满意' : result.maintainEvaluate.evaType ==2 ? '一般' : result.maintainEvaluate.evaType ==3 ? '不满意' : ''}}</view>
     <view class="p"  wx:if="{{pageType==1}}">用户评价： {{ result.maintainEvaluate.evaMsg ? result.maintainEvaluate.evaMsg : ''}}</view>
   </view> 
-  <view class="com-btn" bindtap="showPopup" wx:if="{{result.maintainState == 5}}">评价</view>
+  <view class="com-btn" bindtap="showPopup" wx:if="{{result.maintainState == 5 && pageType==2}}">评价</view>
+  <view class="com-btn" bindtap="gotoPj" wx:if="{{result.identify == 3 && pageType==1}}">评价</view>
 
 </view>
 <view class="btn-view {{showBtn ? 'show' : 'hide'}}">

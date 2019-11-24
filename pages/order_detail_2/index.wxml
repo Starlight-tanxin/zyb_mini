@@ -62,7 +62,7 @@
    
   </view>
   <view  class='btn-box'>
-     <view class='btn btn2' style="width:70px;" wx:if="{{result.maintainState == 5}}" bindtap="showPopup">评价</view>
+     <view class='btn btn2' style="width:70px;" wx:if="{{result.maintainState == 5}}" bindtap="gotoPj">评价</view>
   </view>
   
 </view>

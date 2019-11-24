@@ -5,6 +5,7 @@
     <view class="rgt">
       <view class="textarea">
         <van-field
+          bind:change='setTextArea'
           value="{{ message }}"
           type="textarea"
           placeholder="请输入评价"
@@ -18,12 +19,25 @@
     <view class="lft">评价图片:</view>
     <view class="rgt">
       <view class="ph">
-        <view class='add-btn'>
-          <image src='../../images/add_ph.png' style='width:75px;height:75px;'></image>
-          <!-- <view class='tip'>
-            请上传jpg格式图片
-          </view> -->
-        </view>
+          <view class='add-btn' wx:for="{{tempFilePaths}}" wx:key="*this">
+            <image src='{{item}}' style='width:75px;height:75px;'></image>
+            <!-- <image src='../../images/add_ph.png' style='width:75px;height:75px;'></image> -->
+            <!-- <view class='tip'>
+              请上传jpg格式图片
+            </view> -->
+          </view>
+          
+            <view class='add-btn' bindtap="uploadImg">
+              <image src='../../images/add_ph.png' style='width:75px;height:75px;'></image>
+            </view>
+        
+        <!-- <van-row wx:if="{{tempFilePaths.length<2}}">
+          <van-col span="8" >
+            <view class='add-btn' bindtap="uploadImg">
+              <image src='../../images/add_ph.png' style='width:75px;height:75px;'></image>
+            </view>
+          </van-col>
+        </van-row> -->
       </view>
       
     </view>
@@ -31,12 +45,19 @@
   <view class="box">
     <view class="lft">满意度:</view>
     <view class="rgt">
-      <view class="chose">
-        不满意
-        <view class="dsj" bindtap="showPopup1"></view>
+      <view class="chose" bindtap="showPopup">
+        {{choseVal}}
+        <view class="dsj" ></view>
       </view>
     </view>
   </view>
-  <view class="btn">确定</view>
+  <view class="btn" bindtap="save">确定</view>
   
 </view>
+
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>

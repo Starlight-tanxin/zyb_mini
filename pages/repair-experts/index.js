@@ -52,7 +52,7 @@ Page({
         }
         wx.setStorageSync('payObj', obj);
         wx.navigateTo({
-          url: '../pay/idnex?type=3'
+          url: '../pay/idnex?type=3&id=' + res.body.id
         })
         // api.orderPay({
         //   orderId : res.body,
