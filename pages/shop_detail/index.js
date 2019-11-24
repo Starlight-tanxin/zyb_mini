@@ -83,4 +83,18 @@ Page({
       phoneNumber: '0731-84121691',
     })
   },
+  kefu:function(){
+    app.func.fetch({
+      url:'msg/addMsgSession',
+      data:{
+        msg: '有问题咨询'
+      }
+      
+    },res=>{
+      console.log(res)
+      wx.navigateTo({
+        url: '../we-chat-ui/index?id=' + res.body[0].sessionId,
+      })
+    })
+  }
 })

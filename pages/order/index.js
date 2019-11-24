@@ -41,6 +41,9 @@ Page({
   // },
   onShow:function(){
     this.change();
+    setTimeout(()=>{
+     this.onChange1();
+    },300)
   },
   onReachBottom:function(){
     if(this.data['last'+this.data.type]) return;
@@ -115,12 +118,13 @@ Page({
     this.getList(this.data['page' + this.data.type])
   },
   onChange1:function(e){
-    if(e.detail.name == 1){
+    console.log(e)
+   
       this.setData({
         type:5
       });
-      this.initData();
-    }
+     this.initData(); 
+    
   },
   change:function(e){
     // console.log(e,this.data.actived);

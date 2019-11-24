@@ -110,7 +110,7 @@
       联系客服
   </view>
   <view class='footer' wx:if="{{!result.isCollection}}">
-    <view class='cor'>
+    <view class='cor' bindtap="kefu">
       <van-icon name="../../images/kefu.png" custom-style="width:25px;height:25px;"/>
       <view class='title'>客服</view>
     </view>

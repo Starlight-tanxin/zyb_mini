@@ -354,6 +354,6 @@ fileUpload:function(option,cb){
       console.log(res)
     }
   })
-}
+},
   
 }
