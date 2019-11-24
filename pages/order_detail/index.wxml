@@ -68,9 +68,9 @@
       <view class='pop-item'>
         <view class='lft'>满意程度：</view>
         <view class='rgt'>
-          <view class='checkbox'>
+          <view class='checkbox' bindtap='popchoseShow'>
             {{choseVal}}
-            <view class='dsj' bindtap='popchoseShow'></view>
+            <view class='dsj' ></view>
             <view class='box' hidden='{{!popChoseShow}}'>
               <view class='chose-item' bindtap="choseEveal" data-type="1" data-val="满意">满意</view>
               <view class='chose-item' bindtap="choseEveal" data-type="2" data-val="一般">一般</view>
@@ -81,16 +81,19 @@
       </view>
       <view class='pop-item {{!popChoseShow?"":"pop-textarea"}}'>
         <view class='lft'>评价详情：</view>
-        <view class='rgt'>
+        <view class='rgt' bindtap="setFocus">
           <van-field
           value="{{ message }}"
           type="textarea"
           autosize
+          focus="{{focus}}"
           border="{{ true }}"
           bind:change="onChange"
           placeholder-style="font-size:10px;"
           custom-style=" height:100px; border-style: solid;border-color: #333;border-width: 1px;font-size:10px;color:#8e8e8e; "
         />
+        
+        <!-- <textarea  value="{{ message }}"></textarea> -->
         </view>
       </view>
       <view class='pop-btn' bindtap="orderEveal">确定</view>

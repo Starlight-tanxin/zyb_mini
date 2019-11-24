@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    active:"1",
+    active:"5",
     active1:0,
     page:1,
     page1:1,

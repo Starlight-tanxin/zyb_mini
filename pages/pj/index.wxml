@@ -21,6 +21,7 @@
       <view class="ph">
           <view class='add-btn' wx:for="{{tempFilePaths}}" wx:key="*this">
             <image src='{{item}}' style='width:75px;height:75px;'></image>
+             <van-icon name="cross" size="18" class="close" bind:click="delItm" data-index="{{index}}" />
             <!-- <image src='../../images/add_ph.png' style='width:75px;height:75px;'></image> -->
             <!-- <view class='tip'>
               请上传jpg格式图片

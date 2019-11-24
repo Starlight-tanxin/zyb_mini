@@ -4,6 +4,7 @@ Page({
   data: {
     popChoseShow:false,
     show: false,
+    focus:false,
     message:'',
     orderId:"",
     result:"",
@@ -15,7 +16,11 @@ Page({
   showPopup() {
     this.setData({ show: true });
   },
-
+  setFocus:function(){
+    this.setData({
+      focus:true
+    })
+  },
   onClose() {
     this.setData({ show: false });
   },
@@ -55,9 +60,8 @@ Page({
   },
   choseEveal:function(e){
     this.setData({
-      popChoseShow:false,
       eavType: e.currentTarget.dataset.type,
-      choseVal: e.currentTarget.dataset.val
+      choseVal: e.currentTarget.dataset.val,
     })
   },
   // 评价

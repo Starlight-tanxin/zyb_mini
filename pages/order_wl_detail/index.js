@@ -28,11 +28,11 @@ Page({
     ]
   },
   onLoad: function (options) {
-    // if(options.id){
-    //   this.initData(options.id);
-    // }
+    if(options.id){
+      this.initData(options.id);
+    }
     // console.log(options)
-    this.initData(45);
+    // this.initData(45);
   },
   initData:function(id){
     api.orderQuery({

@@ -100,6 +100,7 @@
   margin-top: 15px;
 }
 .pop-item .rgt{
+  padding: 5px;
   flex: 1;
 }
 .pop-item .checkbox{
@@ -137,10 +138,10 @@
   padding-left: 14px;
 }
 .pop-item .checkbox>.box>.chose-item:hover{
-  background: pink;
+  background: #893100;
 }
 .pop-textarea{
-  margin-top: 80px;
+  margin-top: 85px;
 }
 
 .van-cell{

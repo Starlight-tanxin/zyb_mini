@@ -1,0 +1,92 @@
+/* pages/order/index.wxss */
+page{
+  padding-bottom: 15px;
+}
+.orders{
+
+}
+.order-title{
+  padding: 0 25px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #000;
+  border-bottom: 1px solid #893100;
+}
+.order-evaluation{
+  overflow: hidden;
+   font-weight: 700;
+  height: 35px;
+  line-height: 35px;
+  border-bottom: none;
+}
+.order-cont{
+  padding: 25px 30px 15px 30px;
+   border-bottom: 1px solid #893100;
+}
+.shop{
+  display: flex;
+  align-items: center;
+}
+.shop>.img image{
+  width: 80px;
+  height: 70px;
+}
+.shop>.info{
+  flex: 1;
+  display: flex;
+   align-items: center;
+}
+.shop>.info>.lft{
+  margin-left: 12px;
+  margin-right: 20px;
+  flex: 1;
+}
+.shop>.info>.lft>.title{
+  font-size: 12px;
+  color: #000;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.shop>.info>.lft>.desc{
+  color: #969696;
+  font-size: 10px;
+}
+.shop>.info>.rgt{
+  color: #000;
+  font-weight: 800;
+  text-align: right;
+}
+
+.tip{
+  color: #8e8e8e;
+  text-align: right;
+  line-height: 50px;
+}
+.price{
+  color: #8f0100;
+}
+.btn-box{
+ overflow: hidden;
+margin-top: 8px;
+}
+.btn-box .btn{
+  box-sizing: border-box;
+  font-size: 10px;
+  float: right;
+  width: 62px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius:30px;
+}
+.btn-box .btn1{
+  border: 1px solid #893100;
+  color: #893100;
+  margin-right: 15px;
+}
+.btn-box .btn2{
+  background-color:#893100;
+  color: #fff;
+}

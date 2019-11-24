@@ -118,5 +118,8 @@ Page({
     wx.navigateTo({
       url: '../pj/index?id=' + this.data.id + '&type=2' + '&proId=' + this.data.result.userProId,
     })
+  },
+  prewvImg:function(e){
+    api.previewImage(e.currentTarget.dataset.imgs, e.currentTarget.dataset.index)
   }
 })

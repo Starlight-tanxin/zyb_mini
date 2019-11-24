@@ -20,7 +20,7 @@ module.exports = {
       data: option.data,
       method: type,
       header: {
-        'content-type': 'application/x-www-form-urlencoded',
+        'content-type': option.contentType ? option.contentType :'application/x-www-form-urlencoded',
         'Authorization': wx.getStorageSync('openId')
       },
       success: function (res) {

@@ -328,5 +328,32 @@ module.exports = {
     },res=>{
       cb(res);
     })
-  }
+  },
+  // 查看大图
+  previewImage(arr,index){
+    wx.previewImage({
+      current: index, // 当前显示图片的http链接
+      urls: arr // 需要预览的图片http链接列表
+    })
+  },
+// 上传文件
+fileUpload:function(option,cb){
+  // service.fetch({
+  //   url:'resource/file-upload',
+  //   data:option,
+  //   type:'post',
+  //   contentType: 'multipart/form-data'
+  // },res=>{
+
+  // })
+  wx.uploadFile({
+    url: 'https://zyb.hnsxyts.com/zyb/resource/file-upload',
+    filePath: option.file,
+    name:'file',
+    success(res){
+      console.log(res)
+    }
+  })
+}
+  
 }

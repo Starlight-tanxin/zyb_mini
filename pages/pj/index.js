@@ -36,6 +36,14 @@ Page({
       choseId: event.detail.id
     })
   },
+  delItm: function (e) {
+    var index = e.currentTarget.dataset.index;
+    var tempFilePaths = this.data.tempFilePaths;
+    tempFilePaths.splice(index, 1);
+    this.setData({
+      tempFilePaths
+    })
+  },
   uploadImg: function () {
     var that = this;
     var imgArr = this.data.tempFilePaths;
@@ -54,10 +62,19 @@ Page({
         console.log(res)
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths;
+        api.fileUpload({
+          file: tempFilePaths[0]
+        },res=>{
 
+        })
         that.setData({
           tempFilePaths: imgArr.concat(tempFilePaths)
-        })
+        });
+        // api.fileUpload({
+        //   file: tempFilePaths
+        // },res=>{
+
+        // })
       }
     })
   },
@@ -66,7 +83,17 @@ Page({
       message:e.detail
     })
   },
+  uploadFile:function(){
+    wx.uploadFile({
+      url: '',
+      filePath: '',
+      name: '',
+    })
+  },
   save:function(){
+
+    
+
     if(this.data.message && this.data.choseId){
       api.evaAdd({
         businessType : this.data.type - 1,
