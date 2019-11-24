@@ -30,6 +30,8 @@
 		"hidedInDevtools": []
 	},
 	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -184,7 +186,7 @@
 				},
 				{
 					"id": -1,
-					"name": "g个人设置",
+					"name": "个人设置",
 					"pathName": "pages/profile_set/index",
 					"query": "",
 					"scene": null
@@ -405,14 +407,7 @@
 					"pathName": "pages/pay/idnex",
 					"query": "",
 					"scene": null
-				},
-        {
-            "id": -1,
-            "name": "账户支付-密码输入页",
-            "pathName": "pages/password_pay/index",
-            "query": "",
-            "scene": null
-        }
+				}
 			]
 		}
 	}

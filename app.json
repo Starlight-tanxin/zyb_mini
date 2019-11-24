@@ -47,7 +47,8 @@
     "pages/password1/index",
     "pages/we-chat-ui/index",
     "pages/set_phone/index",
-    "pages/pay/idnex"
+    "pages/pay/idnex",
+    "pages/password2/idnex"
   ],
   "window": {
     "backgroundTextStyle": "dark",

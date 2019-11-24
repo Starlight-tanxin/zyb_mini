@@ -62,25 +62,33 @@ Page({
       ])
       }else{
         // 余额支付
-        if (app.globalData.password){
-          api.orderAccountPay({
+        // if (app.globalData.password){
+        //   api.orderAccountPay({
+        //     orderId: this.data.result.orderId,
+        //     orderType: this.data.result.orderType,
+        //     userAddressId: this.data.result.userAddressId ? this.data.result.userAddressId : '',
+        //     repairType: this.data.result.repairType >= 0 ? this.data.result.repairType : '',
+        //     userPayPwd: app.globalData.password,
+        //     amount: this.data.result.price
+        //   },res=>{
+        //     app.globalData.password = '';
+        //     wx.navigateTo({
+        //       url: '../pay-sucess/index?type=' + this.data.type,
+        //     })
+        //   })
+        // }else{
+          wx.setStorageSync('accountPay', {
             orderId: this.data.result.orderId,
             orderType: this.data.result.orderType,
             userAddressId: this.data.result.userAddressId ? this.data.result.userAddressId : '',
             repairType: this.data.result.repairType >= 0 ? this.data.result.repairType : '',
             userPayPwd: app.globalData.password,
             amount: this.data.result.price
-          },res=>{
-            app.globalData.password = '';
-            wx.navigateTo({
-              url: '../pay-sucess/index?type=' + this.data.type,
-            })
-          })
-        }else{
+          });
           wx.navigateTo({
-            url: "../password1/index?type=6"
-          })
-        }
+            url: '../password2/index?type=6'
+          });
+        // }
         
         // this.setData({
         //   show:true
