@@ -18,7 +18,7 @@
         <van-col span="4" custom-class="records-item">{{item.userProName}}</van-col>
         <van-col span="5" custom-class="records-item">{{item.proReplyMsg ? item.proReplyMsg : ''}}</van-col>
          <van-col span="4" custom-class="records-item">
-          {{item.identify == 1 ? '创建鉴赏' : item.identify == 2? '提交鉴赏' : item.identify == 3?'鉴赏完成':item.identify == 4?'退回鉴赏':'未知'}}
+          {{item.identify == 1 ? '创建鉴赏' : item.identify == 2? '提交鉴赏' : item.identify == 3?'鉴赏完成':item.identify == 4?'评价完成':item.identify == 5?'退回鉴赏':'未知'}}
          </van-col>
         <van-col span="4" custom-class="records-item">
           <view class="btn" data-id="{{item.id}}" bindtap="gotoDetail">详情</view>
