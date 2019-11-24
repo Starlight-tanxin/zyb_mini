@@ -55,6 +55,11 @@ Page({
     })
   },
   prewvImg: function (e) {
-    api.previewImage(e.currentTarget.dataset.imgs, e.currentTarget.dataset.index)
+    var imgs = [];
+    var eImgs = e.currentTarget.dataset.imgs;
+    for (var i in eImgs) {
+      imgs.push(eImgs[i].imgUrl)
+    }
+    api.previewImage(imgs, e.currentTarget.dataset.index)
   }
 })
