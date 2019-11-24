@@ -9,7 +9,9 @@
     <view class="btn1 btn" bindtap="goBack">确定</view>
     <view class="btn2 btn" bindtap="gotopage">{{type==1?'前往查看购买订单':type==2?'前往查看修复订单':type==3?'前往查看鉴赏订单':''}}</view>
   </view>
-  <view class="btn33" wx:if="{{type==4}}"   bindtap="goBack"> 确定 </view>
+  <view class="btn33" wx:if="{{type==4}}" bindtap="goBack"> 确定 </view>
     
   </view>
 </view>
+
+
