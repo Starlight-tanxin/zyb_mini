@@ -2,29 +2,29 @@
 var api = require('../../api.js');
 Page({
   data: {
-    message:'',
-    show:false,
+    message: '',
+    show: false,
     choseVal: "",
-    proId:'',
-    tempFilePaths:[],
-    imgStrAry:'',
-    actions:[
+    proId: '',
+    tempFilePaths: [],
+    imgStrAry: '',
+    actions: [
       { name: '满意', id: 1 },
       { name: '不满意', id: 2 },
-      {name:'一般',id:3},
+      { name: '一般', id: 3 },
     ]
   },
   onLoad: function (options) {
     console.log(options)
     this.setData({
-      id:options.id,
-      type:options.type,
+      id: options.id,
+      type: options.type,
       proId: options.proId
     })
   },
-  showPopup:function(){
+  showPopup: function () {
     this.setData({
-      show:true
+      show: true
     })
   },
   onClose() {
@@ -62,78 +62,68 @@ Page({
       success(res) {
         console.log(res)
         // tempFilePath可以作为img标签的src属性显示图片
-        //const tempFilePaths = res.tempFilePaths;
-        // var arr = that.uploadFile(tempFilePaths, tempFilePaths.length);
-        var arr = [];
-        // var len = tempFilePaths.length;
-        for (var i = 0; i < tempFilePaths.length; i++){
+        var tempFilePaths = res.tempFilePaths;
+        var arr = that.data.tempFilePaths;
+        for (var i = 0; i < tempFilePaths.length; i++) {
           api.fileUpload({
             file: tempFilePaths[i],
             name: 'file'
           }, res => {
             res = JSON.parse(res.data);
-           // console.log(res.body, 123, arr)
-           // arr.push(res.body);
-          //  console.log(arr)
+            arr.push(res.body);
             that.setData({
-              tempFilePaths: that.data.tempFilePaths.push(res.body)
+              tempFilePaths: arr
             });
           });
-         
         }
-        // console.log("112",arr)
-        //   that.setData({
-        //     tempFilePaths: arr
-        //   });
-        
-          
 
-        
+
+
       }
     })
   },
-  uploadFile: function (file,len) {
+  uploadFile: function (file, len) {
     var arr = [];
-    while(len>0){
+    while (len > 0) {
       api.fileUpload({
-        file:file[len-1],
+        file: file[len - 1],
         name: 'file'
       }, res => {
         res = JSON.parse(res.data);
-        console.log(res.body,123,arr)
+        console.log(res.body, 123, arr)
         arr.push(res.body);
         console.log(arr)
       });
       len--;
     }
     return arr;
-    
+
   },
-  setTextArea:function(e){
+  setTextArea: function (e) {
     this.setData({
-      message:e.detail
+      message: e.detail
     })
   },
-  
-  save:function(){
 
-    
+  save: function () {
 
-    if(this.data.message && this.data.choseId){
+
+
+    if (this.data.message && this.data.choseId) {
       api.evaAdd({
-        businessType : this.data.type - 1,
-        maintainId : this.data.id,
-        evaType : this.data.choseId,
-        evaMsg : this.data.message,
+        businessType: this.data.type - 1,
+        maintainId: this.data.id,
+        evaType: this.data.choseId,
+        evaMsg: this.data.message,
         evaImg_1: this.data.tempFilePaths.length > 0 ? this.data.tempFilePaths[0] : '',
         evaImg_2: this.data.tempFilePaths.length > 1 ? this.data.tempFilePaths[1] : '',
-        proId: this.data.proId 
-      },res=>{
+        proId: this.data.proId
+      }, res => {
         wx.showToast({
           title: '评价成功',
         });
         wx.navigateBack({
-          delta:2
+          delta: 2
         })
       })
     }
