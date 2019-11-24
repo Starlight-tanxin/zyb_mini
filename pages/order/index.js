@@ -256,8 +256,11 @@ Page({
   },
   //提醒发货
   msgRmind:function(e){
+    console.log(e.currentTarget.dataset);
+    var orderNo = e.currentTarget.dataset.orderno;
+    console.log('orderNo:'+orderNo);
     api.msgRmind({
-      orderNo: e.currentTarget.dataset.orderNo
+      orderNo: orderNo
     })
   }
 
