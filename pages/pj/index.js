@@ -7,6 +7,7 @@ Page({
     choseVal: "",
     proId:'',
     tempFilePaths:[],
+    imgStrAry:'',
     actions:[
       { name: '满意', id: 1 },
       { name: '不满意', id: 2 },
@@ -62,21 +63,27 @@ Page({
         console.log(res)
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths;
+       // var imgStrAry = '';
         for (var i = 0; i < tempFilePaths.length; i++){
-          var arr = that.uploadFile(tempFilePaths,2);
-          console.log(arr)
-          // api.fileUpload({
-          //   file: tempFilePaths[i],
-          //   name:'file'
-          // }, res => {
-          //   res = JSON.parse(res.data);
-          //   console.log(res)
-          //   that.setData({
-          //     tempFilePaths: arr.concat(res.body)
-          //   });
-          // })
+          //var arr = that.uploadFile(tempFilePaths,2);
+          //console.log(arr)
+          api.fileUpload({
+            file: tempFilePaths[i],
+            name:'file'
+          }, res => {
+            res = JSON.parse(res.data);
+            console.log(res)
+            //imgStrAry += res.body+",";
+            that.setData({
+              imgStrAry: that.data.imgStrAry + "," + res.body
+            })
+            console.log("imgArray :" + that.data.imgStrAry); 
+            // that.setData({
+            //   tempFilePaths: arr.concat(res.body)
+            // });
+          })
         }
-        
+          
         
       }
     })
