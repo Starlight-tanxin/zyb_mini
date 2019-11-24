@@ -50,7 +50,7 @@ Page({
         console.log(res)
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths;
-        var arr = this.data.tempFilePaths;
+        var arr = that.data.tempFilePaths;
         for (var i = 0; i < tempFilePaths.length; i++) {
           api.fileUpload({
             file: tempFilePaths[i],
