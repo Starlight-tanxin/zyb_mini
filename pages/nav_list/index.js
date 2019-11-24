@@ -10,7 +10,8 @@ Page({
     loadLast: false,
     navList: [],
     id:"",
-    hasSearch:false
+    hasSearch:false,
+    categoryList:[]
   },
   onLoad: function (options) {
     console.log(options)
@@ -24,6 +25,8 @@ Page({
         title: options.title,
       })
     }
+    this.animation = wx.createAnimation()
+    this.getCategoryList();
   },
   onReachBottom: function () {
     if (!this.data.loadLast) {
@@ -45,15 +48,23 @@ Page({
       page:this.data.page
     })
   },
+  getCategoryList: function(option){
+    app.func.fetch({
+      url:"common/selectBookOtherTypeBox",
+    },res=>{
+      this.setData({ categoryList: res.body})
+    })
+  },
   getList: function (option) {
     app.func.fetch({
       url: "goods/searchGoods",
       data: {
-        bookTypeId:option.id,
-        isCollection: option.isCollection,
+        bookTypeId:option.id || '',
+        isCollection: option.isCollection ||'',
         page: option.page,
         name:option.name,
-        pageSize: this.data.pageSize
+        pageSize: this.data.pageSize,
+        bookOtherTypeId: option.bookOtherTypeId || ''
       }
     }, res => {
       console.log(res)
@@ -63,12 +74,10 @@ Page({
         if(this.data.hasSearch){
           var searchLast = true;
         }
-        
       }
-      // 处理搜索的情况
-      if(this.data.hasSearch && searchLast){
+      if(option.page==1){
         this.setData({
-          list:res.body.records,
+          list: res.body.records,
           loadLast: last
         })
       }else{
@@ -77,6 +86,12 @@ Page({
           loadLast: last
         })
       }
+      // 处理搜索的情况
+      // if(this.data.hasSearch && searchLast){
+        
+      // }else{
+        
+      // }
       
     })
   },
@@ -111,7 +126,8 @@ Page({
   },
   gotoSearch:function(){
     this.setData({
-      hasSearch:true
+      hasSearch:true,
+      page:1
     })
     this.getList({
       id: this.data.id,
@@ -124,5 +140,27 @@ Page({
     this.setData({
       inputVal:e.detail.value
     })
+  },
+  translate: function () {
+    this.animation.translate('-100%').step()
+    this.setData({ animation: this.animation.export() })
+  },
+  translateBack:function (){
+    this.animation.translate(0).step()
+    this.setData({ animation: this.animation.export() })
+  },
+  handleClickCate: function (event){
+    let id = event.currentTarget.dataset.id;
+    this.translateBack();
+    this.setData({
+      hasSearch: true,
+      page:1,
+    })
+    this.getList({
+      name: this.data.inputVal,
+      pageSize: this.data.pageSize,
+      page: this.data.page,
+      bookOtherTypeId:id
+    });
   }
 })

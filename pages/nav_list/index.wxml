@@ -14,6 +14,9 @@
 
   <view class='com-title com-bot-border' wx:if="{{list.length}}">
     全部书籍
+     <view class="search account-btn translate-btn" bindtap="translate">
+        分类
+      </view>
   </view>
   <view class='shop-box'>
     <van-row gutter="15">
@@ -36,6 +39,16 @@
     </van-row>
   </view>
   <view class="no-data" wx:if="{{hasSearch && list.length<=0}}">暂无数据</view>
-  
+
+  <view class="animation-element-wrapper category">
+    <view class="animation-element" animation="{{animation}}">
+      <view class="animation-element-bg" bindtap="translateBack"></view>
+      <view class="animation-element-content">
+        <view class="category-item" wx:for="{{categoryList}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="handleClickCate">
+          {{item.typeName}}
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
 
