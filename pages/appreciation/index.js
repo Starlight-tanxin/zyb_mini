@@ -28,7 +28,7 @@ Page({
         last = true;
       }
       this.setData({
-        list: res.body.records,
+        list: this.data.list.concat(res.body.records),
         loadAll:last
       })
     })
