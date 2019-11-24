@@ -62,7 +62,7 @@ Page({
       success(res) {
         console.log(res)
         // tempFilePath可以作为img标签的src属性显示图片
-        const tempFilePaths = res.tempFilePaths;
+        //const tempFilePaths = res.tempFilePaths;
         // var arr = that.uploadFile(tempFilePaths, tempFilePaths.length);
         var arr = [];
         // var len = tempFilePaths.length;
@@ -72,16 +72,19 @@ Page({
             name: 'file'
           }, res => {
             res = JSON.parse(res.data);
-            console.log(res.body, 123, arr)
-            arr.push(res.body);
-            console.log(arr)
+           // console.log(res.body, 123, arr)
+           // arr.push(res.body);
+          //  console.log(arr)
+            that.setData({
+              tempFilePaths: that.data.tempFilePaths.push(res.body)
+            });
           });
          
         }
-        console.log("112",arr)
-          that.setData({
-            tempFilePaths: arr
-          });
+        // console.log("112",arr)
+        //   that.setData({
+        //     tempFilePaths: arr
+        //   });
         
           
 
