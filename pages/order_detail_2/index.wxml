@@ -56,7 +56,7 @@
   <view class='btn-box' wx:if="{{result.maintainState==2 || result.maintainState==4}}">
     <view class='btn btn1' wx:if="{{result.maintainState==2}}" bindtap="callMobile">继续沟通</view>
     <!-- 支付尾款的情况 -->
-    <view class='btn btn2' bindtap="pay" >支付{{result.maintainState==2?'首款':'尾款'}}(￥{{result.cmMaintainAmount}})</view>
+    <view class='btn btn2' bindtap="pay" >支付{{result.maintainState==2?'首款':'尾款'}}(￥{{result.payAmount}})</view>
     <!-- 评价的情况
     <!-- <view class='btn btn2' style="width:70px;">评价</view> -->
    

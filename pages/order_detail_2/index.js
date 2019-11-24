@@ -26,7 +26,7 @@ Page({
     var obj = {
       orderId: this.data.id,
       orderType: 2,
-      price: this.data.result.cmMaintainAmount,
+      price: this.data.result.payAmount,
       repairType: this.data.result.maintainState == 2 ? 0 : 1
     }
     wx.setStorageSync('payObj', obj);
