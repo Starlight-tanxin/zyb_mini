@@ -60,8 +60,10 @@ Page({
   gotoNavList:function(e){
     var id = e.currentTarget.dataset.id;
     var title = e.currentTarget.dataset.title;
+    var collection = e.currentTarget.dataset.collection;
+    console.log("isCollection=" + collection);
     wx.navigateTo({
-      url: '../nav_list/index?id=' + id+'&title='+title,
+      url: '../nav_list/index?id=' + id + '&title=' + title + '&isCollection=' + collection,
     })
   }
 })

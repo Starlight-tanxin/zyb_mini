@@ -15,6 +15,13 @@ Page({
   },
   onLoad: function (options) {
     console.log(options)
+    console.log("collection=" + options.isCollection);
+    if (options.isCollection) {
+      this.setData({
+        isCollection: options.isCollection
+      });
+      console.log("2222222222")
+    }
     if(options.id){
       this.setData({
         id: options.id
@@ -24,7 +31,7 @@ Page({
       wx.setNavigationBarTitle({
         title: options.title,
       })
-    }
+    }  
     this.animation = wx.createAnimation()
     this.getCategoryList();
   },
