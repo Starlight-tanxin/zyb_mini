@@ -13,8 +13,11 @@ Page({
   },
   gotopage:function(){
     if (this.data.type == 2){
-      wx.navigateBack({
-        delta:1
+      // wx.navigateBack({
+      //   delta:1
+      // })
+      wx.navigateTo({
+        url: '../order_detail_2/index?id=' + this.data.id + '&type=1',
       })
     }else if(this.data.type == 3){
      wx.navigateTo({

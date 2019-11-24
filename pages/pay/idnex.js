@@ -60,7 +60,7 @@ Page({
         amount: this.data.result.price
       },res=>[
         wx.navigateTo({
-          url: '../pay-sucess/index?type=' + this.data.type + '&id=' + this.data.id,
+          url: '../pay-sucess/index?type=' + this.data.type + '&id=' + this.data.result.orderId,
         })
       ])
       }else{
@@ -89,7 +89,7 @@ Page({
             amount: this.data.result.price
           });
           wx.navigateTo({
-            url: '../password2/idnex?type=' + this.data.type+'&id='+this.data.id,
+            url: '../password2/idnex?type=' + this.data.type + '&id=' + this.data.result.orderId,
           });
         // }
         
