@@ -17,6 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('type :' +  options.type);
     this.setData({
       type: options.type,
     })
@@ -53,14 +54,14 @@ Page({
       userAddressId: accountPay.userAddressId ? accountPay.userAddressId : '',
       repairType: accountPay.repairType >= 0 ? accountPay.repairType : '',
       userPayPwd: password,
-      amount: accountPay.price
+      amount: accountPay.amount
     }, res => {
       this.setData({
         Value: ''
       });
       wx.removeStorageSync('accountPay');
       wx.navigateTo({
-        url: '../pay-sucess/index?type=' + accountPay.type,
+        url: '../pay-sucess/index?type=' + this.data.type,
       })
     });
 

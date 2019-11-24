@@ -16,6 +16,7 @@ Page({
   },
   onLoad: function (options) {
     var result = wx.getStorageSync('payObj')
+    console.log('支付选择页 ： type =' +options.type);
     this.setData({
       result,
       type: options.type
@@ -52,7 +53,7 @@ Page({
       api.orderPay({
         orderId:this.data.result.orderId,
         orderType: this.data.result.orderType,
-        userAddressId: this.data.result.userAddressId,
+        userAddressId: this.data.result.userAddressId ? this.data.result.userAddressId : '',
         repairType: this.data.result.repairType>=0 ? this.data.result.repairType:'',
         amount: this.data.result.price
       },res=>[
@@ -86,7 +87,7 @@ Page({
             amount: this.data.result.price
           });
           wx.navigateTo({
-            url: '../password2/idnex?type=6'
+            url: '../password2/idnex?type=' + this.data.type,
           });
         // }
         
