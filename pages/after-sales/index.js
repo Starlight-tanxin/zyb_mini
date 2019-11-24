@@ -32,6 +32,12 @@ Page({
       url: '../after-sales-detail/index?id=' + e.currentTarget.dataset.id,
     })
   },
+  // 拨打电话
+  callMobile: function () {
+    wx.makePhoneCall({
+      phoneNumber: '0731-84121691',
+    })
+  },
   onReachBottom: function () {
     if(this.data.last) return;
     this.getList(++this.data.page);

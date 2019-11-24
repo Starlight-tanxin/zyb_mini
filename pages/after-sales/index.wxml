@@ -3,7 +3,7 @@
   <view class='orders' wx:for="{{list}}" wx:key="{{item.id}}">
     <view class='order-title flex-ctr'>
       <text class='left'>{{item.cretaedTime}}</text>
-      <text class='right' style='color:#8e8e8e;'>退款中</text>
+      <text class='right' style='color:#8e8e8e;'>{{item.orderState == 7 ? '退款中' : item.orderState == 0 ? '退款完成' : ''}}</text>
     </view>
     <view class='order-cont'>
       <view class='shop' wx:for="{{item.orderDetails}}" wx:for-item="ite" wx:for-index="idx"  wx:key="{{ite.goodsBookId}}">
@@ -28,7 +28,7 @@
       </view> -->
       <view class='btn-box'>
         <view class='btn btn2' bindtap="gotoDetail" data-id="{{item.id}}">订单详情</view>
-        <view class='btn1 btn'>联系客服</view>
+        <view class='btn1 btn' bindtap="callMobile">联系客服</view>
       </view>
     </view>
   </view>
