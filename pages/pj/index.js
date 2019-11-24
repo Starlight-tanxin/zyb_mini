@@ -62,20 +62,41 @@ Page({
         console.log(res)
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths;
-        for (var i = 0; i < tempFilePaths.length; i++){
-          var arr = that.uploadFile(tempFilePaths,2);
-          console.log(arr)
-          // api.fileUpload({
-          //   file: tempFilePaths[i],
-          //   name:'file'
-          // }, res => {
-          //   res = JSON.parse(res.data);
-          //   console.log(res)
-          //   that.setData({
-          //     tempFilePaths: arr.concat(res.body)
-          //   });
-          // })
+        // var arr = that.uploadFile(tempFilePaths, tempFilePaths.length);
+        var arr = [];
+        var len = tempFilePaths.length;
+        while (len > 0) {
+          api.fileUpload({
+            file: tempFilePaths[len - 1],
+            name: 'file'
+          }, res => {
+            res = JSON.parse(res.data);
+            console.log(res.body, 123, arr)
+            arr.push(res.body);
+            console.log(arr)
+          });
+          len--;
         }
+        if(len == 0){
+          that.setData({
+            tempFilePaths: arr
+          });
+        }
+        
+        // for (var i = 0; i < tempFilePaths.length; i++){
+        //   var arr = that.uploadFile(tempFilePaths,2);
+        //   console.log(arr)
+        //   api.fileUpload({
+        //     file: tempFilePaths[i],
+        //     name:'file'
+        //   }, res => {
+        //     res = JSON.parse(res.data);
+        //     console.log(res)
+        //     that.setData({
+        //       tempFilePaths: arr.concat(res.body)
+        //     });
+        //   })
+        // }
         
         
       }
@@ -83,19 +104,19 @@ Page({
   },
   uploadFile: function (file,len) {
     var arr = [];
-    if(len){
-      len--;
+    while(len>0){
       api.fileUpload({
-        file:file[len],
+        file:file[len-1],
         name: 'file'
       }, res => {
         res = JSON.parse(res.data);
-        console.log(res.body)
+        console.log(res.body,123,arr)
         arr.push(res.body);
+        console.log(arr)
       });
-    }else{
-      return arr;
+      len--;
     }
+    return arr;
     
   },
   setTextArea:function(e){
