@@ -3,7 +3,7 @@ var app = getApp();
 Page({
   data: {
     inputVal:'',
-    id:"KLvCWk7--SwInmMBwi"
+    id:""
   },
   onLoad: function (options) {
     if (options.id){

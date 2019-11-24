@@ -1,0 +1,42 @@
+<!--pages/pj/index.wxml-->
+<view class="content">
+  <view class="box">
+    <view class="lft">评价:</view>
+    <view class="rgt">
+      <view class="textarea">
+        <van-field
+          value="{{ message }}"
+          type="textarea"
+          placeholder="请输入评价"
+          autosize
+          border="{{ false }}"
+        />
+      </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="lft">评价图片:</view>
+    <view class="rgt">
+      <view class="ph">
+        <view class='add-btn'>
+          <image src='../../images/add_ph.png' style='width:75px;height:75px;'></image>
+          <!-- <view class='tip'>
+            请上传jpg格式图片
+          </view> -->
+        </view>
+      </view>
+      
+    </view>
+  </view>
+  <view class="box">
+    <view class="lft">满意度:</view>
+    <view class="rgt">
+      <view class="chose">
+        不满意
+        <view class="dsj" bindtap="showPopup1"></view>
+      </view>
+    </view>
+  </view>
+  <view class="btn">确定</view>
+  
+</view>

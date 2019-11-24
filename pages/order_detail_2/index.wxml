@@ -47,7 +47,7 @@
         </view>
       </view>
 
-      <view class='tip' wx:if="{{result.maintainState!=3}}">
+      <view class='tip' wx:if="{{result.maintainState!=3 && result.maintainState!=5}}">
        <image src='../../images/profile_8.png' style='width:12px;height:12px;margin-right:3px;'></image>
         <text>时间从平台收到物品开始计算，支付完成后请尽快发货或送货上门</text>
       </view>
@@ -59,6 +59,10 @@
     <view class='btn btn2' bindtap="pay" >支付{{result.maintainState==2?'首款':'尾款'}}(￥{{result.cmMaintainAmount}})</view>
     <!-- 评价的情况
     <!-- <view class='btn btn2' style="width:70px;">评价</view> -->
+   
   </view>
+  <view  class='btn-box'>
+     <view class='btn btn2' style="width:70px;" wx:if="{{result.maintainState == 5}}" bindtap="showPopup">评价</view>
+  </view>
+  
 </view>
-

@@ -1,0 +1,45 @@
+/* pages/pj/index.wxss */
+.content{
+  padding: 20px;
+}
+.box{
+  display: flex;
+  margin-bottom: 30px;
+}
+.box>.lft{
+  flex-basis: 80px;
+}
+.box>.rgt{
+  flex: 1;
+}
+.box>.rgt>.textarea{
+  border-radius: 5px;
+  padding: 0 5px;
+  border: 1px solid #893100;
+}
+.chose{
+  width: 75%;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 12px;
+  font-size: 10px;
+  color: #8e8e8e;
+  border: 1px solid #893100;
+  border-radius: 5px;
+  position: relative;
+}
+.dsj{
+  right: 10px;
+  top: 12px;
+  border-top-color: #893100;
+}
+.btn{
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  background-color: #893100;
+  border-radius: 5px;
+  margin: 50px auto;
+}
