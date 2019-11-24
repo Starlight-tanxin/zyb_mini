@@ -72,6 +72,9 @@ Page({
       },res=>{
         wx.showToast({
           title: '回复成功',
+        });
+        wx.navigateBack({
+          delta: 2
         })
       })
     }

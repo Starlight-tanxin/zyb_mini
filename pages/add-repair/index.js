@@ -137,7 +137,7 @@ Page({
     })
   },
   gotoNext:function(){
-    if (this.data.goodsName && this.data.choseVal && this.data.choseId && this.data.checked){
+    if (this.data.goodsName && this.data.choseVal && this.data.choseId && this.data.checked && this.data.textArea){
       
       var obj={
         goodsName: this.data.goodsName,

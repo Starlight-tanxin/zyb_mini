@@ -11,6 +11,8 @@
       clickable
       data-name="1"
       bind:click="onClick"
+      icon="https://hnsxyts.oss-cn-zhangjiakou.aliyuncs.com/icon/wxzficon.png"
+      
     >
       <van-radio slot="right-icon" name="1" />
     </van-cell>
@@ -19,6 +21,7 @@
       clickable
       data-name="2"
       bind:click="onClick"
+      icon="https://hnsxyts.oss-cn-zhangjiakou.aliyuncs.com/icon/qbzficon.png"
     >
       <van-radio slot="right-icon" name="2" />
     </van-cell>
