@@ -7,6 +7,7 @@ Page({
     choseVal: "",
     proId:'',
     tempFilePaths:[],
+    imgStrAry:'',
     actions:[
       { name: '满意', id: 1 },
       { name: '不满意', id: 2 },
@@ -64,10 +65,10 @@ Page({
         const tempFilePaths = res.tempFilePaths;
         // var arr = that.uploadFile(tempFilePaths, tempFilePaths.length);
         var arr = [];
-        var len = tempFilePaths.length;
-        while (len > 0) {
+        // var len = tempFilePaths.length;
+        for (var i = 0; i < tempFilePaths.length; i++){
           api.fileUpload({
-            file: tempFilePaths[len - 1],
+            file: tempFilePaths[i],
             name: 'file'
           }, res => {
             res = JSON.parse(res.data);
@@ -75,29 +76,15 @@ Page({
             arr.push(res.body);
             console.log(arr)
           });
-          len--;
+         
         }
-        if(len == 0){
+        console.log("112",arr)
           that.setData({
             tempFilePaths: arr
           });
-        }
         
-        // for (var i = 0; i < tempFilePaths.length; i++){
-        //   var arr = that.uploadFile(tempFilePaths,2);
-        //   console.log(arr)
-        //   api.fileUpload({
-        //     file: tempFilePaths[i],
-        //     name:'file'
-        //   }, res => {
-        //     res = JSON.parse(res.data);
-        //     console.log(res)
-        //     that.setData({
-        //       tempFilePaths: arr.concat(res.body)
-        //     });
-        //   })
-        // }
-        
+          
+
         
       }
     })
