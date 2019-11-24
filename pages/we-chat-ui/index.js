@@ -7,9 +7,9 @@ Page({
   },
   onLoad: function (options) {
     if (options.id){
-      // this.setData({
-      //   id:options.id
-      // });
+      this.setData({
+        id:options.id
+      });
     }
    
   },
