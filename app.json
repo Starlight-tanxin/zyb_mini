@@ -74,12 +74,7 @@
         "iconPath": "./images/home.png",
         "selectedIconPath": "./images/home_active.png"
       },
-      {
-        "pagePath": "pages/arrre_repair/index",
-        "text": "鉴赏",
-        "iconPath": "./images/look.png",
-        "selectedIconPath": "./images/look_active.png"
-      },
+ 
       {
         "pagePath": "pages/index/index",
         "text": "书城",

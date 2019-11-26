@@ -7,5 +7,5 @@
     "van-row": "../../dist/row/index",
     "van-col": "../../dist/col/index"
   },
-  "navigationBarTitleText": "全部书籍"
+  "navigationBarTitleText": "图书代售"
 }

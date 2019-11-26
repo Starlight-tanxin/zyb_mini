@@ -27,7 +27,7 @@ Page({
     })
   },
   pay:function(){
-    if (JSON.stringify(this.data.result.userAddress)=='{}'){
+    if (JSON.stringify(this.data.result.userAddress) == '{}' || this.data.result.userAddress == null){
       wx.showToast({
         title: '请选择收获地址',
         icon:'none'

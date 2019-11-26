@@ -43,7 +43,7 @@
   <view class='border1px'></view>
   <view class='pancel'>
     <view class='pancel-title'>
-    <navigator url="../all_book/index"> 全部书籍>></navigator>
+    <navigator url="../all_book/index"> 图书代售>></navigator>
     </view>
     <view class='pancel-cont'>
       <van-row gutter="30">
